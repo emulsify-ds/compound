@@ -1,0 +1,154 @@
+{
+  "name": "compound",
+  "homepage": "https://github.com/emulsify-ds/compound",
+  "repository": "https://github.com/emulsify-ds/compound.git",
+  "structure": [
+    {
+      "name": "base",
+      "description": "Base-level components used in virtually every higher-level component"
+    },
+    {
+      "name": "atoms",
+      "description": "Small components commonly used in higher-level components"
+    },
+    {
+      "name": "molecules",
+      "description": "Medium-sized components used as building blocks within a larger component"
+    },
+    {
+      "name": "organisms",
+      "description": "Large components that compose smaller components into a cohesive UI"
+    },
+    {
+      "name": "pages",
+      "description": "Entire pages built using smaller components"
+    }
+  ],
+  "variants": [
+    {
+      "platform": "drupal",
+      "structureImplementations": [
+        {
+          "name": "base",
+          "directory": "./components/00-base"
+        },
+        {
+          "name": "atoms",
+          "directory": "./components/01-atoms"
+        },
+        {
+          "name": "molecules",
+          "directory": "./components/02-molecules"
+        },
+        {
+          "name": "organisms",
+          "directory": "./components/03-organisms"
+        },
+        {
+          "name": "pages",
+          "directory": "./components/04-pages"
+        }
+      ]
+    }
+  ],
+  "components": [
+    {
+      "name": "01-colors",
+      "structure": "base"
+    },
+    {
+      "name": "02-motion",
+      "structure": "base"
+    },
+    {
+      "name": "03-site",
+      "structure": "base"
+    },
+    {
+      "name": "buttons",
+      "structure": "atoms"
+    },
+    {
+      "name": "forms",
+      "structure": "atoms"
+    },
+    {
+      "name": "images",
+      "structure": "atoms"
+    },
+    {
+      "name": "links",
+      "structure": "atoms"
+    },
+    {
+      "name": "lists",
+      "structure": "atoms"
+    },
+    {
+      "name": "tables",
+      "structure": "atoms"
+    },
+    {
+      "name": "text",
+      "structure": "atoms"
+    },
+    {
+      "name": "video",
+      "structure": "atoms"
+    },
+    {
+      "name": "card",
+      "structure": "molecules"
+    },
+    {
+      "name": "cta",
+      "structure": "molecules"
+    },
+    {
+      "name": "menus",
+      "structure": "molecules"
+    },
+    {
+      "name": "pager",
+      "structure": "molecules"
+    },
+    {
+      "name": "status",
+      "structure": "molecules"
+    },
+    {
+      "name": "tabs",
+      "structure": "molecules"
+    },
+    {
+      "name": "grid",
+      "structure": "organisms"
+    },
+    {
+      "name": "site",
+      "structure": "organisms"
+    },
+    {
+      "name": "content-types",
+      "structure": "pages"
+    },
+    {
+      "name": "landing-pages",
+      "structure": "pages"
+    }
+  ],
+  "globalDirectories": [
+    {
+      "name": "defaults",
+      "path": "./components/00-base/00-defaults",
+      "description": "Contains scss files with global defaults"
+    }
+  ],
+  "globalFiles": [
+    {
+      "name": "style",
+      "path": "./components/style.scss",
+      "description": "Primary style scss file"
+    }
+  ]
+}
