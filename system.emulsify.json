@@ -137,6 +137,19 @@
       "structure": "pages"
     }
   ],
+  "requiredComponents": [
+    "01-colors",
+    "02-motion",
+    "03-site",
+    "buttons",
+    "forms",
+    "images",
+    "links",
+    "lists",
+    "tables",
+    "text",
+    "video"
+  ],
   "globalDirectories": [
     {
       "name": "defaults",
