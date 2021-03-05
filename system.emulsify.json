@@ -150,17 +150,19 @@
     "text",
     "video"
   ],
-  "globalDirectories": [
+  "directories": [
     {
       "name": "defaults",
       "path": "./components/00-base/00-defaults",
+      "destination": "./components/00-base/00-defaults",
       "description": "Contains scss files with global defaults"
     }
   ],
-  "globalFiles": [
+  "files": [
     {
       "name": "style",
       "path": "./components/style.scss",
+      "destination": "./components/style.scss",
       "description": "Primary style scss file"
     }
   ]
