@@ -54,47 +54,58 @@
   "components": [
     {
       "name": "01-colors",
-      "structure": "base"
+      "structure": "base",
+      "required": true
     },
     {
       "name": "02-motion",
-      "structure": "base"
+      "structure": "base",
+      "required": true
     },
     {
       "name": "03-site",
-      "structure": "base"
+      "structure": "base",
+      "required": true
     },
     {
       "name": "buttons",
-      "structure": "atoms"
+      "structure": "atoms",
+      "required": true
     },
     {
       "name": "forms",
-      "structure": "atoms"
+      "structure": "atoms",
+      "required": true
     },
     {
       "name": "images",
-      "structure": "atoms"
+      "structure": "atoms",
+      "required": true
     },
     {
       "name": "links",
-      "structure": "atoms"
+      "structure": "atoms",
+      "required": true
     },
     {
       "name": "lists",
-      "structure": "atoms"
+      "structure": "atoms",
+      "required": true
     },
     {
       "name": "tables",
-      "structure": "atoms"
+      "structure": "atoms",
+      "required": true
     },
     {
       "name": "text",
-      "structure": "atoms"
+      "structure": "atoms",
+      "required": true
     },
     {
       "name": "video",
-      "structure": "atoms"
+      "structure": "atoms",
+      "required": true
     },
     {
       "name": "card",
@@ -137,24 +148,11 @@
       "structure": "pages"
     }
   ],
-  "requiredComponents": [
-    "01-colors",
-    "02-motion",
-    "03-site",
-    "buttons",
-    "forms",
-    "images",
-    "links",
-    "lists",
-    "tables",
-    "text",
-    "video"
-  ],
   "directories": [
     {
       "name": "defaults",
       "path": "./components/00-base/00-defaults",
-      "destination": "./components/00-base/00-defaults",
+      "destinationPath": "./components/00-base/00-defaults",
       "description": "Contains scss files with global defaults"
     }
   ],
@@ -162,7 +160,7 @@
     {
       "name": "style",
       "path": "./components/style.scss",
-      "destination": "./components/style.scss",
+      "destinationPath": "./components/style.scss",
       "description": "Primary style scss file"
     }
   ]
