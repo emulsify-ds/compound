@@ -48,120 +48,120 @@
           "name": "pages",
           "directory": "./components/04-pages"
         }
+      ],
+      "directories": [
+        {
+          "name": "defaults",
+          "path": "./components/00-base/00-defaults",
+          "destinationPath": "./components/00-base/00-defaults",
+          "description": "Contains scss files with global defaults"
+        }
+      ],
+      "files": [
+        {
+          "name": "style",
+          "path": "./components/style.scss",
+          "destinationPath": "./components/style.scss",
+          "description": "Primary style scss file"
+        }
+      ],
+      "components": [
+        {
+          "name": "01-colors",
+          "structure": "base",
+          "required": true
+        },
+        {
+          "name": "02-motion",
+          "structure": "base",
+          "required": true
+        },
+        {
+          "name": "03-site",
+          "structure": "base",
+          "required": true
+        },
+        {
+          "name": "buttons",
+          "structure": "atoms",
+          "required": true
+        },
+        {
+          "name": "forms",
+          "structure": "atoms",
+          "required": true
+        },
+        {
+          "name": "images",
+          "structure": "atoms",
+          "required": true
+        },
+        {
+          "name": "links",
+          "structure": "atoms",
+          "required": true
+        },
+        {
+          "name": "lists",
+          "structure": "atoms",
+          "required": true
+        },
+        {
+          "name": "tables",
+          "structure": "atoms",
+          "required": true
+        },
+        {
+          "name": "text",
+          "structure": "atoms",
+          "required": true
+        },
+        {
+          "name": "video",
+          "structure": "atoms",
+          "required": true
+        },
+        {
+          "name": "card",
+          "structure": "molecules"
+        },
+        {
+          "name": "cta",
+          "structure": "molecules"
+        },
+        {
+          "name": "menus",
+          "structure": "molecules"
+        },
+        {
+          "name": "pager",
+          "structure": "molecules"
+        },
+        {
+          "name": "status",
+          "structure": "molecules"
+        },
+        {
+          "name": "tabs",
+          "structure": "molecules"
+        },
+        {
+          "name": "grid",
+          "structure": "organisms"
+        },
+        {
+          "name": "site",
+          "structure": "organisms"
+        },
+        {
+          "name": "content-types",
+          "structure": "pages"
+        },
+        {
+          "name": "landing-pages",
+          "structure": "pages"
+        }
       ]
-    }
-  ],
-  "components": [
-    {
-      "name": "01-colors",
-      "structure": "base",
-      "required": true
-    },
-    {
-      "name": "02-motion",
-      "structure": "base",
-      "required": true
-    },
-    {
-      "name": "03-site",
-      "structure": "base",
-      "required": true
-    },
-    {
-      "name": "buttons",
-      "structure": "atoms",
-      "required": true
-    },
-    {
-      "name": "forms",
-      "structure": "atoms",
-      "required": true
-    },
-    {
-      "name": "images",
-      "structure": "atoms",
-      "required": true
-    },
-    {
-      "name": "links",
-      "structure": "atoms",
-      "required": true
-    },
-    {
-      "name": "lists",
-      "structure": "atoms",
-      "required": true
-    },
-    {
-      "name": "tables",
-      "structure": "atoms",
-      "required": true
-    },
-    {
-      "name": "text",
-      "structure": "atoms",
-      "required": true
-    },
-    {
-      "name": "video",
-      "structure": "atoms",
-      "required": true
-    },
-    {
-      "name": "card",
-      "structure": "molecules"
-    },
-    {
-      "name": "cta",
-      "structure": "molecules"
-    },
-    {
-      "name": "menus",
-      "structure": "molecules"
-    },
-    {
-      "name": "pager",
-      "structure": "molecules"
-    },
-    {
-      "name": "status",
-      "structure": "molecules"
-    },
-    {
-      "name": "tabs",
-      "structure": "molecules"
-    },
-    {
-      "name": "grid",
-      "structure": "organisms"
-    },
-    {
-      "name": "site",
-      "structure": "organisms"
-    },
-    {
-      "name": "content-types",
-      "structure": "pages"
-    },
-    {
-      "name": "landing-pages",
-      "structure": "pages"
-    }
-  ],
-  "directories": [
-    {
-      "name": "defaults",
-      "path": "./components/00-base/00-defaults",
-      "destinationPath": "./components/00-base/00-defaults",
-      "description": "Contains scss files with global defaults"
-    }
-  ],
-  "files": [
-    {
-      "name": "style",
-      "path": "./components/style.scss",
-      "destinationPath": "./components/style.scss",
-      "description": "Primary style scss file"
     }
   ]
 }
