@@ -20,6 +20,10 @@
       "description": "Large components that compose smaller components into a cohesive UI"
     },
     {
+      "name": "templates",
+      "description": "Collection of layout templates."
+    },
+    {
       "name": "pages",
       "description": "Entire pages built using smaller components"
     }
@@ -45,8 +49,12 @@
           "directory": "./components/03-organisms"
         },
         {
+          "name": "templates",
+          "directory": "./components/04-templates"
+        },
+        {
           "name": "pages",
-          "directory": "./components/04-pages"
+          "directory": "./components/05-pages"
         }
       ],
       "directories": [
@@ -152,6 +160,10 @@
         {
           "name": "site",
           "structure": "organisms"
+        },
+        {
+          "name": "placeholder",
+          "structure": "templates"
         },
         {
           "name": "content-types",
