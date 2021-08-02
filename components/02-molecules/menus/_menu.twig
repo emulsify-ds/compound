@@ -23,23 +23,29 @@
   We call a macro which calls itself to render the full tree.
   @see http://twig.sensiolabs.org/doc/tags/macro.html
 #}
-{% macro menu_links(items, attributes, menu_level, menu_class, menu_modifiers, menu_blockname, item_base_class, item_modifiers, item_blockname, directory) %}
+{% macro menu_links(items, attributes, menu_level, menu_base_class, menu_modifiers, menu_blockname, item_base_class, item_modifiers, item_blockname, directory, mobile_nav) %}
   {% import _self as menus %}
   {% if items %}
-
     {# Set classes #}
-    {% set menu_class = menu_class|default('menu') %}
-    {% if not menu_modifiers %}
-      {% set menu_modifiers = [] %}
-    {% endif %}
+    {% set menu_base_class = menu_base_class|default('menu') %}
+    {% set menu_modifiers = menu_modifiers|default([]) %}
+
     {% if menu_level > 0 %}
       {% set menu_modifiers = menu_modifiers|merge(['sub', 'sub-' ~ menu_level]) %}
     {% endif %}
 
-    {% include "@molecules/menus/_menu-list.twig" %}
+    {% include "@molecules/menus/_menu-list.twig" with {
+      mobile_nav: mobile_nav,
+    } %}
   {% endif %}
 {% endmacro %}
 
 {% import _self as menus %}
 
-{{ menus.menu_links(items, attributes, 0, menu_class, menu_modifiers, menu_blockname, item_base_class, item_modifiers, item_blockname, directory) }}
+<nav {{ add_attributes(menu_attributes) }}  {{ bem(menu_blockname) }}>
+  {% block menu_prefix %}
+  {% endblock %}
+  {{ menus.menu_links(items, attributes, 0, menu_base_class, menu_modifiers, menu_blockname, item_base_class, item_modifiers, item_blockname, directory, mobile_nav) }}
+  {% block menu_suffix %}
+  {% endblock %}
+</nav>

@@ -1,6 +1,7 @@
 {% if not item_modifiers %}
   {% set item_modifiers = [] %}
 {% endif %}
+
 {# Pass original item modifiers down to children #}
 {% set original_item_modifiers = item_modifiers %}
 {% if item.in_active_trail == TRUE %}
@@ -12,33 +13,28 @@
 {% if item.below %}
   {% set item_modifiers = item_modifiers|merge(['with-sub']) %}
 {% endif %}
-{# below could maybe be done without a loop? #}
 {% for modifier in item.modifiers %}
   {% set item_modifiers = item_modifiers|merge([modifier]) %}
 {% endfor %}
 
 {% set list_item_label = item_label %}
-{% set li_base_class = item_base_class|default(menu_class ~ '__item') %}
+{% set li_base_class = item_base_class|default(menu_base_class ~ '__item') %}
 {% set li_modifiers = item_modifiers %}
 {% set li_blockname = item_blockname %}
+{% set item_base_class = menu_blockname ~ '__link' %}
+
+{% set item_attributes = item_attributes|default({
+  'title': item.title,
+  }) %}
 
 {% import "@molecules/menus/_menu.twig" as menus %}
-
+{% block menu_item_content %}{% endblock %}
 {% extends "@atoms/lists/_list-item.twig" %}
-  {% block list_item_content %}
-    {# if drupal #}
-    {% if directory %}
-      {{ link(item.title, item.url, bem(item_base_class|default(menu_class ~ '__link'), item_modifiers)) }}
-    {% else %}
-      {% include "@atoms/links/link/link.twig" with {
-        link_content: item.title,
-        link_url: item.url,
-        link_base_class: item_base_class|default(menu_class ~ '__link'),
-        link_modifiers: item_modifiers,
-      } %}
-    {% endif %}
-    {% if item.below %}
+{% block list_item_content %}
+  {% if item.below %}
+    {% if menu_level == 0 and mobile_nav == true %}
       <span class="expand-sub"></span>
-      {{ menus.menu_links(item.below, attributes, menu_level + 1, menu_class, menu_modifiers, menu_blockname, item_base_class, original_item_modifiers, item_blockname, directory) }}
     {% endif %}
-  {% endblock %}
+    {{ menus.menu_links(item.below, attributes, menu_level + 1, menu_class, menu_modifiers, menu_blockname, item_base_class, original_item_modifiers, item_blockname, directory, mobile_nav) }}
+  {% endif %}
+{% endblock %}
