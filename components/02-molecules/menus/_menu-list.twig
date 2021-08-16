@@ -16,13 +16,19 @@
       mobile_nav: mobile_nav,
     } %}
   {% endfor %}
+  {# Mobile nav toggle #}
   {% if menu_level == 1 and mobile_nav == true %}
-    {# TODO: include a list item component instead of li markup. #}
-    {# issue with twig.js breaking if certain amount of includes are nested. #}
-      <li {{ bem(item_base_class, ['back-button'], item_blockname) }}> {% include "@atoms/buttons/button.twig" with {
-        button_content : 'Back',
-        button_modifiers : ['clean'],
-      } %}
-    </li>
+    {% embed "@atoms/lists/_list-item.twig" with {
+      li_base_class: item_base_class,
+      li_modifiers: item_modifiers,
+      li_blockname: item_blockname,
+    }%}
+      {% block list_item_content %}
+        {% include "@atoms/buttons/button.twig" with {
+          button_content : 'Back',
+          button_modifiers : ['clean'],
+        } %}
+      {% endblock %}
+    {% endembed %}
   {% endif %}
 {% endblock %}
