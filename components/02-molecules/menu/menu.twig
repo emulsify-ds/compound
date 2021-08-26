@@ -34,7 +34,7 @@
       {% set menu_modifiers = menu_modifiers|merge(['sub', 'sub-' ~ menu_level]) %}
     {% endif %}
 
-    {% include "@molecules/menus/_menu-list.twig" with {
+    {% include "@molecules/menu/_menu-list.twig" with {
       mobile_nav: mobile_nav,
     } %}
   {% endif %}

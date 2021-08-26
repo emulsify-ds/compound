@@ -13,13 +13,13 @@
       </div>
       <div {{ bem('menu', [], header__base_class) }}>
         {% block header__menu %}
-          {% include "@molecules/menus/main-menu/main-menu.twig" %}
+          {% include "@organisms/menus/main-menu/main-menu.twig" %}
         {% endblock %}
       </div>
     </div>
     <div {{ bem('secondary', [], header__base_class) }}>
       {% block header__breadcrumbs %}
-        {% include "@molecules/menus/breadcrumbs/breadcrumbs.twig" %}
+        {% include "@organisms/menus/breadcrumbs/breadcrumbs.twig" %}
       {% endblock %}
     </div>
   </div>

@@ -1,11 +1,11 @@
-import '../../02-molecules/menus/main-menu/main-menu';
+import '../../03-organisms/menus/main-menu/main-menu';
 
 import articleTwig from './article.twig';
 
-import mainMenuData from '../../02-molecules/menus/main-menu/main-menu.yml';
-import breadcrumbData from '../../02-molecules/menus/breadcrumbs/breadcrumbs.yml';
-import socialMenuData from '../../02-molecules/menus/social/social-menu.yml';
-import footerMenuData from '../../02-molecules/menus/inline/inline-menu.yml';
+import mainMenuData from '../../03-organisms/menus/main-menu/main-menu.yml';
+import breadcrumbData from '../../03-organisms/menus/breadcrumbs/breadcrumbs.yml';
+import socialMenuData from '../../03-organisms/menus/social/social-menu.yml';
+import footerMenuData from '../../03-organisms/menus/inline/inline-menu.yml';
 
 /**
  * Storybook Definition.

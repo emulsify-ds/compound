@@ -4,12 +4,12 @@
   <div {{ bem('inner', [], footer__base_class) }}>
     <div {{ bem('social', [], footer__base_class) }}>
       {% block footer__social %}
-        {% include "@molecules/menus/social/social-menu.twig" %}
+        {% include "@organisms/menus/social/social-menu.twig" %}
       {% endblock %}
     </div>
     <div {{ bem('menu', [], footer__base_class) }}>
       {% block footer__menu %}
-        {% include "@molecules/menus/inline/inline-menu.twig" %}
+        {% include "@organisms/menus/inline/inline-menu.twig" %}
       {% endblock %}
     </div>
   </div>
