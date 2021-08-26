@@ -2,7 +2,7 @@ import footerTwig from './site-footer/site-footer.twig';
 import siteHeader from './site-header/site-header.twig';
 
 import footerSocial from '../menus/social/social-menu.yml';
-import footerMenu from '../menus/inline/inline-menu.yml';
+import footerMenu from '../menus/footer/footer-menu.yml';
 import breadcrumbData from '../menus/breadcrumbs/breadcrumbs.yml';
 import mainMenuData from '../menus/main-menu/main-menu.yml';
 

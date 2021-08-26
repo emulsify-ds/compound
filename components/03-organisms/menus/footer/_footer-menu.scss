@@ -1,12 +1,12 @@
-.inline-menu {
+.footer-menu {
   @include list-reset;
 }
 
-.inline-menu__item {
+.footer-menu__item {
   margin: 0 1em 0.5em 0;
 
   @include large {
-    display: inline;
+    display: footer;
     margin-bottom: 1em;
   }
 
@@ -15,7 +15,7 @@
   }
 }
 
-.inline-menu__link {
+.footer-menu__link {
   @include link;
 
   font-size: 0.75rem;

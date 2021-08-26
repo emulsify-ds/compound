@@ -1,4 +1,4 @@
-import menu from './menu.twig';
+import menuTwig from './menu.twig';
 
 import menuData from './menu.yml';
 
@@ -7,4 +7,4 @@ import menuData from './menu.yml';
  */
 export default { title: 'Molecules/Menu' };
 
-export const baseMenu = () => menu(menuData);
+export const menu = () => menuTwig(menuData);

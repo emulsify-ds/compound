@@ -3,7 +3,7 @@ import withSidebarTwig from './with-sidebar.twig';
 
 import mainMenu from '../03-organisms/menus/main-menu/main-menu.yml';
 import socialMenu from '../03-organisms/menus/social/social-menu.yml';
-import footerMenu from '../03-organisms/menus/inline/inline-menu.yml';
+import footerMenu from '../03-organisms/menus/footer/footer-menu.yml';
 
 /**
  * Storybook Definition.

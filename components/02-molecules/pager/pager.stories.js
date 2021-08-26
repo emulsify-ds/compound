@@ -9,7 +9,7 @@ import pagerFirstLastData from './pager-first-last.yml';
 /**
  * Storybook Definition.
  */
-export default { title: 'Molecules/Menus/Pager' };
+export default { title: 'Organisms/Menus/Pager' };
 
 export const basic = () => pager(pagerData);
 
