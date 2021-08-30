@@ -1,40 +1,52 @@
-{% if not item_modifiers %}
-  {% set item_modifiers = [] %}
-{% endif %}
+{% set item__modifiers = item__modifiers|default([]) %}
 
-{# Pass original item modifiers down to children #}
-{% set original_item_modifiers = item_modifiers %}
-{% if item.in_active_trail == TRUE %}
-  {% set item_modifiers = item_modifiers|merge(['active']) %}
-{% endif %}
-{% if menu_level > 0 %}
-  {% set item_modifiers = item_modifiers|merge(['sub', 'sub-' ~ menu_level]) %}
-{% endif %}
-{% if item.below %}
-  {% set item_modifiers = item_modifiers|merge(['with-sub']) %}
-{% endif %}
-{% for modifier in item.modifiers %}
-  {% set item_modifiers = item_modifiers|merge([modifier]) %}
-{% endfor %}
-
-{% set list_item_label = item_label %}
-{% set li_base_class = item_base_class|default(menu_base_class ~ '__item') %}
-{% set li_modifiers = item_modifiers %}
-{% set li_blockname = item_blockname %}
-{% set item_base_class = menu_blockname ~ '__link' %}
-
-{% set item_attributes = item_attributes|default({
+{% set item__attributes = item_attributes|default({
   'title': item.title,
   }) %}
 
+{% if item.in_active_trail == TRUE %}
+  {% set item__modifiers = item__modifiers|merge(['active']) %}
+{% endif %}
+{% if menu_level > 0 %}
+  {% set item__modifiers = item__modifiers|merge(['sub', 'sub-' ~ menu_level]) %}
+{% endif %}
+{% if item.below %}
+  {% set item__modifiers = item__modifiers|merge(['with-sub']) %}
+{% endif %}
+
 {% import "@molecules/menu/menu.twig" as menus %}
-{% block menu_item_content %}{% endblock %}
-{% extends "@atoms/lists/_list-item.twig" %}
+
+{# Set link component as default #}
+{% set list_item %}
+  {% block list_item_content_block %}
+    {% include "@atoms/links/link/link.twig" with {
+      link_content: item.title,
+      link_url: item.url,
+      link_base_class: 'link',
+      link_blockname: menu__base_class,
+      link_modifiers: item__modifiers,
+      link_attributes: item__attributes
+    } %}
+  {% endblock %}
+{% endset %}
+
+{% embed "@atoms/lists/_list-item.twig" with {
+  list_item_label: item__label,
+  li_base_class: item__base_class|default('item'),
+  li_modifiers: item__modifiers,
+  li_blockname: item__blockname,
+}%}
 {% block list_item_content %}
+  {{ list_item }}
   {% if item.below %}
-    {% if menu_level == 0 and mobile_nav == true %}
-      <span class="expand-sub"></span>
+    {% if menu__toggle %}
+      {% include "@atoms/buttons/button.twig" with {
+        button_content: 'Expand Menu'|t,
+        button_base_class: 'toggle',
+        button_blockname: menu__base_class,
+      } %}
     {% endif %}
-    {{ menus.menu_links(item.below, attributes, menu_level + 1, menu_class, menu_modifiers, menu_blockname, item_base_class, original_item_modifiers, item_blockname, directory, mobile_nav) }}
+    {{ menus.menu_links(item.below, attributes, menu_level + 1, menu__base_class, menu__modifiers, menu__blockname, menu__toggle, item__base_class, item__blockname) }}
   {% endif %}
 {% endblock %}
+{% endembed %}

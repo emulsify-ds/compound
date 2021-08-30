@@ -19,33 +19,62 @@
  */
 #}
 
+{# Set classes #}
+{% set menu__base_class = menu__base_class|default('menu') %}
+{% set menu__blockname = menu__blockname|default('menu') %}
+{% set menu__modifiers = menu__modifiers|default([]) %}
+{% set menu__attributes = menu__attributes|default([]) %}
+{% set menu__additional_classes = menu__additional_classes|default([]) %}
+
+{% if menu__base_class != 'menu'%}
+  {% set menu__base_class = menu__base_class ~ '-menu' %}
+  {% set menu__additional_classes = menu__additional_classes|merge(['menu']) %}
+{% endif %}
+
+{% if menu__toggle %}
+  {% set menu__additional_classes = menu__additional_classes|merge(['menu-with-toggle']) %}
+  {% set menu__attributes = menu__attributes|merge({
+    'aria-expanded': 'false',
+  }) %}
+{% endif %}
+
+{% set menu__attributes = menu__attributes|merge({
+  'id': menu__base_class,
+  'class': bem(menu__base_class, menu__blockname, menu__modifiers, menu__additional_classes),
+  'data-component-layout': menu__layout|default('inline'),
+  'data-component-alignment': menu__alignment|default('left'),
+}) %}
+
 {#
   We call a macro which calls itself to render the full tree.
   @see http://twig.sensiolabs.org/doc/tags/macro.html
 #}
-{% macro menu_links(items, attributes, menu_level, menu_base_class, menu_modifiers, menu_blockname, item_base_class, item_modifiers, item_blockname, directory, mobile_nav) %}
+{% macro menu_links(items, attributes, menu_level, menu__base_class, menu__modifiers, menu__blockname, menu__toggle, item__base_class, item__modifiers, item__blockname) %}
   {% import _self as menus %}
   {% if items %}
-    {# Set classes #}
-    {% set menu_base_class = menu_base_class|default('menu') %}
-    {% set menu_modifiers = menu_modifiers|default([]) %}
 
     {% if menu_level > 0 %}
-      {% set menu_modifiers = menu_modifiers|merge(['sub', 'sub-' ~ menu_level]) %}
+      {% set menu__modifiers = ['sub', 'sub-' ~ menu_level] %}
     {% endif %}
 
-    {% include "@molecules/menu/_menu-list.twig" with {
-      mobile_nav: mobile_nav,
-    } %}
+    {% include "@molecules/menu/_menu-list.twig" %}
   {% endif %}
 {% endmacro %}
 
 {% import _self as menus %}
 
-<nav {{ add_attributes(menu_attributes) }}  {{ bem(menu_blockname) }}>
+<nav {{ add_attributes(menu__attributes) }}>
   {% block menu_prefix %}
   {% endblock %}
-  {{ menus.menu_links(items, attributes, 0, menu_base_class, menu_modifiers, menu_blockname, item_base_class, item_modifiers, item_blockname, directory, mobile_nav) }}
+  {{ menus.menu_links(items, attributes, 0, menu__base_class, menu__modifiers, menu__blockname, menu__toggle, item__base_class, item__modifiers, item__blockname) }}
+  {# Mobile nav toggle #}
+  {% if menu__toggle %}
+    {% include "@atoms/buttons/button.twig" with {
+      button_content: 'Menu Open'|t,
+      button_base_class: 'toggle',
+      button_blockname: menu__base_class,
+    } %}
+  {% endif %}
   {% block menu_suffix %}
   {% endblock %}
 </nav>

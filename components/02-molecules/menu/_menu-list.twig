@@ -1,34 +1,29 @@
-{% set ul_base_class = menu_base_class %}
-{% set ul_modifiers = menu_modifiers %}
-{% set ul_blockname = menu_blockname %}
-
-{% set item_blockname = menu_blockname %}
-{% set item_base_class = 'menu-item' %}
+{% set item__blockname = menu__base_class %}
+{% set item__base_class = 'menu-item' %}
 
 {# List #}
-{% extends "@atoms/lists/ul.twig" %}
+{% embed "@atoms/lists/ul.twig" with {
+  ul_base_class: 'menu-list',
+  ul_blockname: menu__base_class,
+  ul_modifiers: menu__modifiers,
+}%}
 {% block list_content %}
   {% for item in items %}
-    {% include "@molecules/menu/_menu-item.twig" with {
-      li_base_class: item_base_class,
-      li_modifiers: item_modifiers,
-      li_blockname: item_blockname,
-      mobile_nav: mobile_nav,
-    } %}
+    {% include "@molecules/menu/_menu-item.twig" %}
   {% endfor %}
-  {# Mobile nav toggle #}
-  {% if menu_level == 1 and mobile_nav == true %}
-    {% embed "@atoms/lists/_list-item.twig" with {
-      li_base_class: item_base_class,
-      li_modifiers: item_modifiers,
-      li_blockname: item_blockname,
+  {# Menu level navigation #}
+  {% if menu_level > 0 and menu__toggle %}
+    {% embed "@molecules/menu/_menu-item.twig" with {
+      item__modifiers: 'sub-' ~ menu_level,
     }%}
-      {% block list_item_content %}
-        {% include "@atoms/buttons/button.twig" with {
-          button_content : 'Back',
-          button_modifiers : ['clean'],
-        } %}
-      {% endblock %}
+    {% block list_item_content_block %}
+      {% include "@atoms/buttons/button.twig" with {
+        button_content: 'Back'|t,
+        button_base_class: 'toggle',
+        button_blockname: menu__base_class,
+      } %}
+    {% endblock %}
     {% endembed %}
   {% endif %}
 {% endblock %}
+{% endembed %}
