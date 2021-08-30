@@ -1,0 +1,71 @@
+.menu {
+
+  &[data-component-layout='inline'] {
+
+    [class$='__menu-list'] {
+
+      @include large {
+        flex-flow: row nowrap;
+      }
+    }
+  }
+
+  &[data-component-layout='stacked'] {
+
+    [class$='__menu-list'] {
+      flex-flow: column nowrap;
+    }
+  }
+
+  &[data-component-alignment='center'] {
+
+    [class$='__menu-list'] {
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  &[data-component-alignment='right'] {
+
+    [class$='__menu-list'] {
+      justify-content: flex-end;
+      text-align: right;
+    }
+  }
+
+  &[aria-expanded='true'] {
+
+    // Set flex for only top level.
+    [class$='__menu-list'] {
+      display: flex;
+    }
+  }
+
+  &[aria-expanded='false'] {
+
+    // Set flex for only top level.
+    [class$='__menu-list'] {
+      display: none;
+
+      @include large {
+        display: flex;
+      }
+    }
+  }
+
+  // Reset list styles.
+  [class*='__menu-list'] {
+    @include list-reset;
+  }
+
+  // Set flex for only top level.
+  [class$='__menu-list'] {
+    display: flex;
+  }
+
+  [class*='__toggle'] {
+    @include large {
+      display: none;
+    }
+  }
+}
