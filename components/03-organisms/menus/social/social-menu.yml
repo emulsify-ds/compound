@@ -1,4 +1,4 @@
-social_menu_items:
+items:
   - title: 'Twitter'
     url: '#'
     icon: 'twitter'

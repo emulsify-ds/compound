@@ -58,6 +58,14 @@
     @include list-reset;
   }
 
+  [class*='--sub']:not(.sub--open) {
+    display: none;
+
+    @include large {
+      display: block;
+    }
+  }
+
   // Set flex for only top level.
   [class$='__menu-list'] {
     display: flex;

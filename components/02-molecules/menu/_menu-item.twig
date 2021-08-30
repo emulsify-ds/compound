@@ -44,6 +44,7 @@
         button_content: 'Expand Menu'|t,
         button_base_class: 'toggle',
         button_blockname: menu__base_class,
+        additional_attributes: toggle__attributes|default({'aria-expanded': 'false'}),
       } %}
     {% endif %}
     {{ menus.menu_links(item.below, attributes, menu_level + 1, menu__base_class, menu__modifiers, menu__blockname, menu__toggle, item__base_class, item__blockname) }}

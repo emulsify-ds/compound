@@ -24,6 +24,7 @@
 {% set menu__blockname = menu__blockname|default('menu') %}
 {% set menu__modifiers = menu__modifiers|default([]) %}
 {% set menu__attributes = menu__attributes|default([]) %}
+{% set menu__label = menu__label|default([]) %}
 {% set menu__additional_classes = menu__additional_classes|default([]) %}
 
 {% if menu__base_class != 'menu'%}
@@ -33,9 +34,6 @@
 
 {% if menu__toggle %}
   {% set menu__additional_classes = menu__additional_classes|merge(['menu-with-toggle']) %}
-  {% set menu__attributes = menu__attributes|merge({
-    'aria-expanded': 'false',
-  }) %}
 {% endif %}
 
 {% set menu__attributes = menu__attributes|merge({
@@ -75,6 +73,7 @@
       button_content: 'Menu Open'|t,
       button_base_class: 'toggle',
       button_blockname: menu__base_class,
+      additional_attributes: toggle__attributes|default({'aria-expanded': 'false'}),
     } %}
   {% endif %}
   {% block menu_suffix %}
