@@ -1,3 +1,4 @@
+menu__label: Base Menu Component
 items:
   - title: 'Menu Item 1'
     url: '#'
