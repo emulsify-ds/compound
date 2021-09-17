@@ -39,7 +39,7 @@
 {% block list_item_content %}
   {{ list_item }}
   {% if item.below %}
-    {% if menu__toggle %}
+    {% if menu__level_toggle %}
       {% include "@atoms/buttons/button.twig" with {
         button_content: 'Expand Menu'|t,
         button_base_class: 'toggle',

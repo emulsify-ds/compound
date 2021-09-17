@@ -12,7 +12,7 @@
     {% include "@molecules/menu/_menu-item.twig" %}
   {% endfor %}
   {# Menu level navigation #}
-  {% if menu_level > 0 and menu__toggle %}
+  {% if menu_level > 0 and menu__level_toggle %}
     {% embed "@molecules/menu/_menu-item.twig" with {
       item__modifiers: 'sub-' ~ menu_level,
     }%}

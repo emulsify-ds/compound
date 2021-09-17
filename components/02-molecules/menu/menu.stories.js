@@ -28,15 +28,27 @@ export default {
       control: {
         type: 'boolean',
       },
+      defaultValue: true,
+    },
+    menuLevelToggle: {
+      control: {
+        type: 'boolean',
+      },
       defaultValue: false,
     },
   },
 };
 
-export const menu = ({ menuLayout, menuAlignment, menuToggle }) =>
+export const menu = ({
+  menuLayout,
+  menuAlignment,
+  menuToggle,
+  menuLevelToggle,
+}) =>
   menuTwig({
     ...menuData,
     menu__layout: menuLayout,
     menu__alignment: menuAlignment,
     menu__toggle: menuToggle,
+    menu__level_toggle: menuLevelToggle,
   });

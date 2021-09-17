@@ -32,7 +32,7 @@
   {% set menu__additional_classes = menu__additional_classes|merge(['menu']) %}
 {% endif %}
 
-{% if menu__toggle %}
+{% if menu__toggle or menu__level_toggle %}
   {% set menu__additional_classes = menu__additional_classes|merge(['menu-with-toggle']) %}
 {% endif %}
 
