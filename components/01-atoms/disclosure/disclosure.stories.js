@@ -13,7 +13,7 @@ export default {
         type: 'select',
         options: ['stacked', 'tooltip'],
       },
-      defaultValue: 'expand',
+      defaultValue: 'stacked',
     },
     disclosurePosition: {
       control: {

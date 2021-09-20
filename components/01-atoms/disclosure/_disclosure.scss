@@ -4,14 +4,14 @@
   &[data-component-layout='stacked'] {
     display: flex;
     flex-flow: column nowrap;
-  }
 
-  &[data-component-layout='stacked'][data-alignment='center'] {
-    text-align: center;
-  }
+    &[data-alignment='center'] {
+      text-align: center;
+    }
 
-  &[data-component-layout='stacked'][data-alignment='right'] {
-    text-align: right;
+    &[data-alignment='right'] {
+      text-align: right;
+    }
   }
 
   &[data-component-layout='tooltip'] {
@@ -20,6 +20,15 @@
   }
 
   &__summary {
+    cursor: pointer;
+
+    [data-component-layout='tooltip'] & {
+      list-style: none;
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+    }
 
     [data-component-layout='stacked'] & {
       padding: $space;
@@ -27,6 +36,12 @@
   }
 
   &__content {
+    opacity: 0;
+    transition: transform 300ms, opacity 300ms;
+
+    [open] & {
+      opacity: 1;
+    }
 
     [data-component-layout='stacked'] & {
       padding: $space;
@@ -35,35 +50,39 @@
     [data-component-layout='tooltip'] & {
       display: table;
       position: fixed;
-      top: 100%;
-      transform: translateY(-10%) translateX(0%);
-      transition: transform 300ms, opacity 300ms;
+      transform: translateY(0%) translateX(0%);
       width: auto;
       min-width: $space * 20;
       max-width: 100vw;
       padding: $space;
       border-radius: $space / 2;
-      background: clr(background);
+      background: clr(background-section);
       color: clr(text);
-      opacity: 0;
     }
 
-    [data-component-layout='tooltip'][open] & {
-      opacity: 1;
-      transform: translateY(0%);
+    [data-component-layout='tooltip'][data-position='top'] & {
+      bottom: calc(100% + #{$space});
+    }
+
+    [data-component-layout='tooltip'][data-position='bottom'] & {
+      top: calc(100% + #{$space});
     }
 
     [data-component-layout='tooltip'][data-alignment='left'][open] & {
-      transform: translateY(0%) translateX(0%);
+      transform: translateY(-10%) translateX(0%);
+    }
+
+    [data-component-layout='tooltip'][data-alignment='center'] & {
+      transform: translateY(0%) translateX(-25%);
     }
 
     [data-component-layout='tooltip'][data-alignment='center'][open] & {
-      transform: translateY(0%) translateX(-25%);
+      transform: translateY(-10%) translateX(-25%);
     }
 
     [data-component-layout='tooltip'][data-alignment='right'][open] & {
       right: 0;
-      transform: translateY(0%) translateX(0%);
+      transform: translateY(-10%) translateX(0%);
     }
 
     [data-component-layout='stacked'][data-alignment='center'] & {
