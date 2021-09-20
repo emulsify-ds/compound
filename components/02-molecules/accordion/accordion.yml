@@ -1,0 +1,5 @@
+items:
+  - summary: Click me
+    content: <p>What up?</p>
+  - summary: Second that
+    content: <p>Second thing to see</p>

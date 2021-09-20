@@ -1,0 +1,36 @@
+{#
+/**
+ * Available variables:
+ * - disclosure_layout - the type of disclosure widget
+ * - disclosure_alignment - aligmment of the summary if not inline
+ * - disclosure_summary - label that is always visible
+ * - disclosure_content - what is revealed upon click
+ *
+ * Available blocks:
+ * - disclosure__summary: replace the displayed label
+ * - disclosure_content: replace what is revealed upon click
+ */
+#}
+{% set disclosure__base_class = disclosure__base_class|default('disclosure') %}
+{% set disclosure__blockname = disclosure__blockname|default('disclosure') %}
+{% set disclosure__modifiers = disclosure__modifiers|default([]) %}
+
+{% set disclosure__attributes = disclosure__attributes|default({
+  'class': bem(disclosure__base_class, disclosure__blockname, disclosure__modifiers),
+  'data-position': disclosure__position|default('bottom'),
+  'data-alignment': disclosure__alignment|default('left'),
+  'data-component-layout': disclosure__layout|default('stacked'),
+}) %}
+
+<details {{ add_attributes(disclosure__attributes) }}>
+  <summary {{ bem('summary', [], disclosure__blockname) }}>
+  {% block disclosure__summary %}
+    {{ disclosure_summary }}
+  {% endblock %}
+  </summary>
+  <div {{ bem('content', [], disclosure__blockname) }}>
+    {% block disclosure__content %}
+      {{ disclosure_content }}
+    {% endblock %}
+  </div>
+</details>
