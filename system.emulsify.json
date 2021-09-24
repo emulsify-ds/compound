@@ -63,6 +63,12 @@
           "path": "./components/00-base/00-defaults",
           "destinationPath": "./components/00-base/00-defaults",
           "description": "Contains scss files with global defaults"
+        },
+        {
+          "name": "templates",
+          "path": "./components/04-templates",
+          "destinationPath": "./components/04-templates",
+          "description": "Contains default templates and layouts that are required"
         }
       ],
       "files": [
@@ -139,15 +145,18 @@
         },
         {
           "name": "menus",
-          "structure": "molecules"
+          "structure": "molecules",
+          "required": true
         },
         {
           "name": "pager",
-          "structure": "molecules"
+          "structure": "molecules",
+          "required": true
         },
         {
           "name": "status",
-          "structure": "molecules"
+          "structure": "molecules",
+          "required": true
         },
         {
           "name": "tabs",
@@ -155,11 +164,13 @@
         },
         {
           "name": "grid",
-          "structure": "organisms"
+          "structure": "organisms",
+          "required": true
         },
         {
           "name": "site",
-          "structure": "organisms"
+          "structure": "organisms",
+          "required": true
         },
         {
           "name": "placeholder",
