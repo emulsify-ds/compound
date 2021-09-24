@@ -144,7 +144,7 @@
         {
           "name": "pager",
           "structure": "molecules",
-          "required": "true"
+          "required": true
         },
         {
           "name": "status",
