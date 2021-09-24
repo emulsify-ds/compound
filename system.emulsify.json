@@ -63,6 +63,12 @@
           "path": "./components/00-base/00-defaults",
           "destinationPath": "./components/00-base/00-defaults",
           "description": "Contains scss files with global defaults"
+        },
+        {
+          "name": "defaults",
+          "path": "./components/04-templates",
+          "destinationPath": "./components/04-templates",
+          "description": "Contains default templates and layouts that are required"
         }
       ],
       "files": [
