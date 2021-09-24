@@ -65,7 +65,7 @@
           "description": "Contains scss files with global defaults"
         },
         {
-          "name": "defaults",
+          "name": "templates",
           "path": "./components/04-templates",
           "destinationPath": "./components/04-templates",
           "description": "Contains default templates and layouts that are required"
