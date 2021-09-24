@@ -155,7 +155,8 @@
         },
         {
           "name": "status",
-          "structure": "molecules"
+          "structure": "molecules",
+          "required": true
         },
         {
           "name": "tabs",
