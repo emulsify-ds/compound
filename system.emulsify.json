@@ -65,10 +65,16 @@
           "description": "Contains scss files with global defaults"
         },
         {
-          "name": "templates",
+          "name": "template-components",
           "path": "./components/04-templates",
           "destinationPath": "./components/04-templates",
           "description": "Contains default templates and layouts that are required"
+        },
+        {
+          "name": "templates",
+          "path": "./templates",
+          "destinationPath": "./templates",
+          "description": "Contains Drupal templates"
         }
       ],
       "files": [
