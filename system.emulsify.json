@@ -144,7 +144,7 @@
           "structure": "molecules"
         },
         {
-          "name": "menus",
+          "name": "menu",
           "structure": "molecules",
           "required": true
         },
@@ -169,6 +169,11 @@
         },
         {
           "name": "site",
+          "structure": "organisms",
+          "required": true
+        },
+        {
+          "name": "menus",
           "structure": "organisms",
           "required": true
         },
