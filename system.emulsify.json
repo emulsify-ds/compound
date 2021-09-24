@@ -145,7 +145,8 @@
         },
         {
           "name": "menus",
-          "structure": "molecules"
+          "structure": "molecules",
+          "required": true
         },
         {
           "name": "pager",
