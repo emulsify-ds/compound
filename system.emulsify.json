@@ -163,11 +163,13 @@
         },
         {
           "name": "grid",
-          "structure": "organisms"
+          "structure": "organisms",
+          "required": true
         },
         {
           "name": "site",
-          "structure": "organisms"
+          "structure": "organisms",
+          "required": true
         },
         {
           "name": "placeholder",
