@@ -55,7 +55,7 @@
       min-width: $space * 20;
       max-width: 100vw;
       padding: $space;
-      border-radius: $space / 2;
+      border-radius: 0.5rem;
       background: clr(background-section);
       color: clr(text);
     }

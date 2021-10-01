@@ -10,10 +10,11 @@
 <div {{ add_attributes(accordion__attributes) }}>
   {% for item in items %}
     {% include "@atoms/disclosure/disclosure.twig" with {
-      disclosure__blockname: accordion__blockname,
       disclosure_summary: item.summary,
       disclosure_content: item.content,
       disclosure__layout: accordion__layout,
+      disclosure__position: accordion__position,
+      disclosure__alignment: accordion__alignment,
     } %}
   {% endfor %}
 </div>
