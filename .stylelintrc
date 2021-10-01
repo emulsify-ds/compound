@@ -8,22 +8,21 @@
       true,
       {
         "ignoreAtRules": [
-          "include",
-          "mixin",
-          "extend",
-          "if",
-          "else",
-          "each",
           "content",
-          "import",
+          "each",
+          "else",
+          "extend",
           "forward",
           "function",
+          "if",
+          "import",
+          "include",
+          "mixin",
           "return",
           "use"
         ]
       }
     ],
-    "no-descending-specificity": null,
     "function-calc-no-invalid": null
   }
 }
