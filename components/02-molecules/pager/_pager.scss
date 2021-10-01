@@ -30,8 +30,7 @@
   }
 }
 
-.pager__link--next,
-.pager__link--prev {
+@mixin pager-link {
   display: block;
 
   span {
@@ -54,6 +53,10 @@
       border-left-color: clr(accent);
     }
   }
+}
+.pager__link--next,
+.pager__link--prev {
+  @include pager-link;
 }
 
 .pager__link--prev {
