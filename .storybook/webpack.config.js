@@ -1,8 +1,5 @@
-const path = require('path');
 const globImporter = require('node-sass-glob-importer');
-const _StyleLintPlugin = require('stylelint-webpack-plugin');
 const { namespaces } = require('./setupTwig');
-const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = async ({ config }) => {
   // Twig
@@ -42,20 +39,6 @@ module.exports = async ({ config }) => {
       },
     ],
   });
-
-  config.plugins.push(
-    new _StyleLintPlugin({
-      configFile: path.resolve(__dirname, '../', 'webpack/.stylelintrc'),
-      context: path.resolve(__dirname, '../', 'components'),
-      files: '**/*.scss',
-      failOnError: false,
-      quiet: false,
-    }),
-    new ESLintPlugin({
-      context: path.resolve(__dirname, '../', 'components'),
-      extensions: ['js'],
-    }),
-  );
 
   // YAML
   config.module.rules.push({
