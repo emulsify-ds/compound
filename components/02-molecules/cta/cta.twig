@@ -1,7 +1,16 @@
+{#
+ # Available variables:
+ # - cta__heading
+ # - cta__button__text
+ #}
+
 {% set cta__base_class = 'cta' %}
+
 <div {{ bem(cta__base_class, cta__modifiers, cta__blockname, cta__extra_classes) }}>
-  <h2>{{ cta__heading }}</h2>
+  <h2 {{ bem('heading', [], cta__base_class)}}>{{ cta__heading }}</h2>
   {% include "@atoms/buttons/button.twig" with {
-    button__content: cta__button_text,
+    button__content: cta__button__text,
+    button__size: 'small',
+    button__variation: cta__button__variation|default('primary'),
   } %}
 </div>
