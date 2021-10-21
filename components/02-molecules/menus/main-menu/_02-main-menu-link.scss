@@ -6,6 +6,7 @@
   padding: $space $space-triple $space $space-double;
   text-decoration: none;
   font-weight: bold;
+  color: clr(primary);
 
   &--with-sub {
     width: 80%;
@@ -38,12 +39,10 @@
 
 /* A (Nested) */
 .main-menu__link--sub {
-  // color: clr(accent);
   padding-left: $space-triple;
   font-weight: normal;
 
   @include breakpoint($main-menu-desktop) {
-    // color: clr(highlight);
     display: block;
     padding: $space-one-third $space;
   }

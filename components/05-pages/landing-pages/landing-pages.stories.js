@@ -1,4 +1,3 @@
-import { borderRadiusControl } from '../../../.storybook/sharedControls';
 import '../../02-molecules/menus/main-menu/main-menu';
 
 import home from './home.twig';
@@ -16,16 +15,10 @@ export default {
   parameters: {
     layout: 'fullscreen',
   },
-  argTypes: {
-    borderRadius: borderRadiusControl,
-  },
 };
 
-export const homePage = ({ borderRadius }) => {
-  const root = document.documentElement;
-  root.style.setProperty('--border-radius', borderRadius);
-
-  return home({
+export const homePage = () =>
+  home({
     page_layout_modifier: 'contained',
     ...mainMenuData,
     ...breadcrumbData,
@@ -33,4 +26,3 @@ export const homePage = ({ borderRadius }) => {
     ...footerMenuData,
     card__link__text: 'Click here',
   });
-};

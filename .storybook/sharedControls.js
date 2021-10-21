@@ -9,3 +9,14 @@ export const borderRadiusControl = {
   },
   defaultValue: 'None',
 };
+
+export const colorControl = {
+  type: 'select',
+  options: ['Yale', 'Forest', 'Beach'],
+  mapping: {
+    Yale: '#000f9f',
+    Forest: '#136740',
+    Beach: '#e9bf16',
+  },
+  defaultValue: 'Yale',
+};
