@@ -6,7 +6,7 @@ body {
   background-color: clr(background);
   color: clr(text);
 
-  @include body-copy;
+  // Typography is defined in _text.scss.
 }
 
 *,

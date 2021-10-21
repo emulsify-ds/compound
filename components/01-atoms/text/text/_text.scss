@@ -5,6 +5,16 @@
   margin: $margin;
 }
 
+@mixin body-copy {
+  font-family: $font-body;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+body {
+  @include body-copy;
+}
+
 .paragraph {
   @include paragraph;
 }

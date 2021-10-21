@@ -1,26 +1,6 @@
 /*
  * General Mixins (put specific ones in component files where applicable)
 */
-
-/* Mixin - Clearfix.
- * Adds clearfix based on http://bourbon.io/docs/#clearfix
- * use example =   @include cleafix
-*/
-
-@mixin body-copy {
-  font-family: $font-body;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-@mixin clearfix {
-  &::after {
-    clear: both;
-    content: '';
-    display: table;
-  }
-}
-
 $outer-container-break: $small;
 
 /// Mixin - Wrapper
