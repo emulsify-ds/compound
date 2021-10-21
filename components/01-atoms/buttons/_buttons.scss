@@ -1,29 +1,25 @@
-// Sass map to define colors. Each set should have a "Dark" variation when required.
-// e.g. `default` and `default-dark`. Or `purple` and `purple-dark`.
+// Sass map to define colors.
 $button-colors: (
   primary: (
     text: clr(text-inverse),
     bg: clr(primary),
-    text-hover: clr(primary),
-    bg-hover: clr(highlight),
-  ),
-  primary-dark: (
-    text: clr(text),
-    bg: clr(primary),
     text-hover: clr(text),
-    bg-hover: clr(highlight-high),
+    bg-hover: transparent,
+    border-color: clr(primary),
   ),
   secondary: (
     text: clr(text-inverse),
     bg: clr(secondary),
     text-hover: clr(secondary),
-    bg-hover: clr(highlight),
+    bg-hover: transparent,
+    border-color: clr(secondary),
   ),
-  secondary-dark: (
+  tertiary: (
     text: clr(text),
-    bg: clr(secondary),
-    text-hover: clr(text),
-    bg-hover: clr(highlight-high),
+    bg: transparent,
+    text-hover: clr(text-inverse),
+    bg-hover: clr(text),
+    border-color: clr(text),
   ),
 );
 
@@ -32,69 +28,106 @@ $button-colors: (
 // e.g. @include buttonColors(default) will get all of the colors defined in the "default" section.
 @mixin buttonColors(
   $scheme,
-  $pallate: map-get($button-colors, $scheme),
+  $palate: map-get($button-colors, $scheme),
   $map: $button-colors
 ) {
-  color: map-get($pallate, text);
-  background-color: map-get($pallate, bg);
+  color: map-get($palate, text);
+  background-color: map-get($palate, bg);
+  border-color: map-get($palate, border-color);
 
   &:visited {
-    color: map-get($pallate, text);
+    color: map-get($palate, text);
   }
 
   &:hover {
-    color: map-get($pallate, text-hover);
-    background-color: map-get($pallate, bg-hover);
+    color: map-get($palate, text-hover);
+    background-color: map-get($palate, bg-hover);
   }
+}
+
+// The button-reset mixin is used to remove browser default styles for button
+// Elements that shouldn't look like a traditional "button"
+@mixin button-reset {
+  border: 0;
+  background: transparent;
+  padding: 0;
 }
 
 // The button-base mixin contains styles that apply to all buttons
 // regardless of color or size.
 @mixin button-base {
-  border: none;
-  cursor: pointer;
   display: inline-block;
+  font-family: $font-heading;
+  font-weight: bold;
+  border: 2px solid;
+  cursor: pointer;
   text-decoration: none;
   text-align: center;
-  text-transform: uppercase;
-}
-
-// Button color variations
-// Note how we include dark mode options for each
-@mixin button-color-primary {
-  @include buttonColors(primary);
-
-  @media (prefers-color-scheme: dark) {
-    @include buttonColors(primary-dark);
-  }
-}
-
-@mixin button-color-secondary {
-  @include buttonColors(secondary);
-
-  @media (prefers-color-scheme: dark) {
-    @include buttonColors(secondary-dark);
-  }
+  text-transform: capitalize;
 }
 
 // Button size variations
-@mixin button-medium {
-  line-height: 1.4;
-  padding: $space-one-half $space;
-}
+// @mixin button-medium {
+//   font-size: rem-calc(26);
+//   line-height: 1.73;
+//   padding: rem-calc(12) rem-calc(32);
+// }
 
-@mixin button-large {
-  line-height: 2;
-  padding: $space $space-double;
-}
+// @mixin button-small {
+//   font-size: rem-calc(20);
+//   line-height: 1.75;
+//   padding: rem-calc(6) rem-calc(28);
+// }
 
 .button {
   @include button-base;
-  @include button-color-primary;
-  @include button-medium;
-
-  &--alt {
-    @include button-color-secondary;
-    @include button-large;
-  }
 }
+
+// Button color variations
+[data-button-variation='primary'] {
+  @include buttonColors(primary);
+}
+
+[data-button-variation='secondary'] {
+  @include buttonColors(secondary);
+}
+
+[data-button-variation='tertiary'] {
+  @include buttonColors(tertiary);
+}
+
+// Button size Variations
+[data-button-size='small'] {
+  font-size: 1rem;
+  padding: 0.5rem 1.5rem;
+}
+
+[data-button-size='medium'] {
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+}
+
+[data-button-size='large'] {
+  font-size: 2rem;
+  padding: 1rem 2.25rem;
+}
+
+// .button--primary {
+//   @include button-color-primary;
+// }
+
+// .button--secondary {
+//   @include button-color-secondary;
+// }
+
+// .button--outline {
+//   @include button-color-outline;
+// }
+
+// .button--medium {
+//   @include button-medium;
+// }
+
+// .button--small {
+//   @include button-small;
+// }
