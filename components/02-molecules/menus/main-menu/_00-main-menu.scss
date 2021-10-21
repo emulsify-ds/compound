@@ -5,7 +5,7 @@ $main-menu-medium: $medium;
 .main-nav {
   display: none;
 
-  @include medium {
+  @include breakpoint($medium) {
     display: block;
   }
 
@@ -29,7 +29,7 @@ $main-menu-medium: $medium;
   position: relative;
   z-index: 10;
 
-  @include medium {
+  @include breakpoint($medium) {
     border-bottom: none;
   }
 }
@@ -46,7 +46,7 @@ $main-menu-medium: $medium;
   background-color: clr(muted);
   width: 100%;
 
-  @include medium {
+  @include breakpoint($medium) {
     background-color: clr(highlight-high);
     display: none;
     height: auto;
@@ -62,7 +62,7 @@ $main-menu-medium: $medium;
   }
 
   &:hover {
-    @include medium {
+    @include breakpoint($medium) {
       opacity: 1;
       background-color: clr(accent-high);
       transition: all 0.2s;
@@ -87,7 +87,7 @@ $main-menu-medium: $medium;
 }
 
 .main-menu--sub-2 {
-  @include medium {
+  @include breakpoint($medium) {
     display: none; /* Never shown on large screens */
   }
 }

@@ -5,7 +5,7 @@
   flex-wrap: wrap;
   position: relative;
 
-  @include medium {
+  @include breakpoint($medium) {
     border-top: none;
     display: inline-block;
 
@@ -36,7 +36,7 @@
   color: clr(text-inverse);
   position: relative;
 
-  @include medium {
+  @include breakpoint($medium) {
     display: none;
   }
 
@@ -75,7 +75,7 @@
 
 /* LI (Nested) */
 .main-menu__item--sub {
-  @include medium {
+  @include breakpoint($medium) {
     display: block;
 
     &:not(:first-child) {

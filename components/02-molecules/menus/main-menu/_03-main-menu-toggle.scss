@@ -2,7 +2,7 @@
 .toggle-expand {
   @include link;
 
-  @include medium {
+  @include breakpoint($medium) {
     display: none;
   }
 

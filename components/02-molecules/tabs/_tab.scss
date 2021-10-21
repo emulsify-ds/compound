@@ -12,7 +12,7 @@
   text-decoration: none;
   transition: color 0.3s;
 
-  @include large {
+  @include breakpoint($large) {
     border-bottom: 1px solid clr(highlight-high);
     border-left: none;
     display: inline-block;
@@ -33,7 +33,7 @@
     border: 1px solid clr(text);
     color: clr(text-inverse);
 
-    @include large {
+    @include breakpoint($large) {
       background-color: clr(background);
       border: 1px solid clr(highlight-high);
       border-bottom: 1px solid clr(highlight-high);

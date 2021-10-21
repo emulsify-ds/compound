@@ -2,7 +2,7 @@
   flex: 1 1 100%;
   margin-bottom: $space-double;
 
-  @include large {
+  @include breakpoint($large) {
     margin: 0 $space-double 0 0;
     flex-basis: 30%;
   }

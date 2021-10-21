@@ -12,7 +12,7 @@
     width: 80%;
   }
 
-  @include medium {
+  @include breakpoint($medium) {
     border-bottom: none;
     display: inline-block;
     font-size: 1.1rem;
@@ -58,7 +58,7 @@
   padding-left: $space-triple;
   font-weight: normal;
 
-  @include medium {
+  @include breakpoint($medium) {
     color: clr(highlight);
     display: block;
     padding: $space-one-third $space;
