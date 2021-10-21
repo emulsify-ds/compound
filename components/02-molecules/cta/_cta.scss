@@ -2,6 +2,7 @@
   background-color: clr(background-section);
   padding: $space-triple;
   text-align: center;
+  border-radius: var(--border-radius, 0);
 }
 
 .cta__heading {
