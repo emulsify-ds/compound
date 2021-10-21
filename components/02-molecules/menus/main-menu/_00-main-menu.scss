@@ -1,12 +1,11 @@
 /* Menu media */
-$main-menu-medium: $medium;
+$main-menu-mobile: $medium-max;
+$main-menu-desktop: $medium;
 
 /* Nav */
 .main-nav {
-  display: none;
-
-  @include breakpoint($medium) {
-    display: block;
+  @include breakpoint($main-menu-mobile) {
+    display: none;
   }
 
   &--open {
@@ -25,12 +24,11 @@ $main-menu-medium: $medium;
 .main-menu {
   @include list-reset;
 
-  border-bottom: 1px solid;
   position: relative;
   z-index: 10;
 
-  @include breakpoint($medium) {
-    border-bottom: none;
+  @include breakpoint($main-menu-mobile) {
+    border-bottom: 1px solid;
   }
 }
 
@@ -46,8 +44,7 @@ $main-menu-medium: $medium;
   background-color: clr(muted);
   width: 100%;
 
-  @include breakpoint($medium) {
-    background-color: clr(highlight-high);
+  @include breakpoint($main-menu-desktop) {
     display: none;
     height: auto;
     left: 0;
@@ -58,26 +55,7 @@ $main-menu-medium: $medium;
     width: 315px;
     z-index: 1;
     font-size: 0.9rem;
-    opacity: 0.6;
-  }
-
-  &:hover {
-    @include breakpoint($medium) {
-      opacity: 1;
-      background-color: clr(accent-high);
-      transition: all 0.2s;
-
-      .main-menu__link--sub {
-        color: clr(highlight);
-
-        &.active,
-        &:active,
-        &:hover {
-          color: clr(background);
-          background-color: clr(accent-high);
-        }
-      }
-    }
+    // opacity: 0.6;
   }
 
   /* See main-menu.js */
@@ -87,7 +65,7 @@ $main-menu-medium: $medium;
 }
 
 .main-menu--sub-2 {
-  @include breakpoint($medium) {
+  @include breakpoint($main-menu-desktop) {
     display: none; /* Never shown on large screens */
   }
 }

@@ -1,6 +1,5 @@
 /* A */
 .main-menu__link {
-  color: clr(accent);
   display: block;
   font-size: 1.2rem;
   line-height: 1.5;
@@ -12,7 +11,7 @@
     width: 80%;
   }
 
-  @include breakpoint($medium) {
+  @include breakpoint($main-menu-desktop) {
     border-bottom: none;
     display: inline-block;
     font-size: 1.1rem;
@@ -21,14 +20,7 @@
     position: relative;
     width: auto;
 
-    &.active,
-    &:active,
-    &:hover {
-      color: clr(highlight-high);
-    }
-
     &::after {
-      color: clr(text-inverse);
       display: inline-block;
       content: '>';
       margin-left: 0.5rem;
@@ -36,14 +28,6 @@
 
     &--sub::after {
       display: none;
-    }
-
-    &:hover {
-      color: clr(background);
-
-      &::after {
-        color: clr(highlight);
-      }
     }
   }
 }
@@ -54,19 +38,15 @@
 
 /* A (Nested) */
 .main-menu__link--sub {
-  color: clr(accent);
+  // color: clr(accent);
   padding-left: $space-triple;
   font-weight: normal;
 
-  @include breakpoint($medium) {
-    color: clr(highlight);
+  @include breakpoint($main-menu-desktop) {
+    // color: clr(highlight);
     display: block;
     padding: $space-one-third $space;
   }
-}
-
-.main-menu--sub-2 {
-  background-color: clr(highlight-high);
 }
 
 .main-menu__link--sub-2 {

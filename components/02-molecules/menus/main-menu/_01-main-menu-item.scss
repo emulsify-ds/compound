@@ -5,24 +5,18 @@
   flex-wrap: wrap;
   position: relative;
 
-  @include breakpoint($medium) {
+  @include breakpoint($main-menu-desktop) {
     border-top: none;
     display: inline-block;
 
     /* Only top level */
     &:not(.main-menu__item--sub):hover {
-      background-color: clr(accent-high);
+      // background-color: clr(accent-high);
       transition: all 0.2s;
 
       & > .main-menu--sub {
         display: block;
       }
-    }
-  }
-
-  &:hover {
-    .main-menu__link::after {
-      color: clr(text);
     }
   }
 }
@@ -36,7 +30,7 @@
   color: clr(text-inverse);
   position: relative;
 
-  @include breakpoint($medium) {
+  @include breakpoint($main-menu-desktop) {
     display: none;
   }
 
@@ -75,7 +69,7 @@
 
 /* LI (Nested) */
 .main-menu__item--sub {
-  @include breakpoint($medium) {
+  @include breakpoint($main-menu-desktop) {
     display: block;
 
     &:not(:first-child) {
