@@ -21,25 +21,37 @@ export default {
       },
       defaultValue: 'Button Text',
     },
+    borderRadius: {
+      control: {
+        type: 'select',
+        options: ['None', '4px', '8px', '100vmax'],
+      },
+      defaultValue: 'None',
+    },
   },
 };
 
-export const buttonVariations = ({ buttonText, buttonSize }) => `
-  <p><strong>Primary</strong></p>
-  ${buttonTwig({
-    button__content: buttonText,
-    button__size: buttonSize,
-  })}<br />
-  <p><strong>Secondary</strong></p>
-  ${buttonTwig({
-    button__content: buttonText,
-    button__size: buttonSize,
-    button__variation: 'secondary',
-  })}<br />
-  <p><strong>Tertiary</strong></p>
-  ${buttonTwig({
-    button__content: buttonText,
-    button__size: buttonSize,
-    button__variation: 'tertiary',
-  })}
-`;
+export const buttonVariations = ({ buttonText, buttonSize, borderRadius }) => {
+  const root = document.documentElement;
+  root.style.setProperty('--border-radius', borderRadius);
+
+  return `
+    <p><strong>Primary</strong></p>
+    ${buttonTwig({
+      button__content: buttonText,
+      button__size: buttonSize,
+    })}<br />
+    <p><strong>Secondary</strong></p>
+    ${buttonTwig({
+      button__content: buttonText,
+      button__size: buttonSize,
+      button__variation: 'secondary',
+    })}<br />
+    <p><strong>Tertiary</strong></p>
+    ${buttonTwig({
+      button__content: buttonText,
+      button__size: buttonSize,
+      button__variation: 'tertiary',
+    })}
+  `;
+};

@@ -60,6 +60,7 @@ $button-colors: (
   font-family: $font-heading;
   font-weight: bold;
   border: 2px solid;
+  border-radius: var(--border-radius, 0);
   cursor: pointer;
   text-decoration: none;
   text-align: center;
