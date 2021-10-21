@@ -1,5 +1,3 @@
-import { borderRadiusControl } from '../../../.storybook/sharedControls';
-
 // Buttons Stories
 import buttonTwig from './button.twig';
 
@@ -23,14 +21,10 @@ export default {
       },
       defaultValue: 'Button Text',
     },
-    borderRadius: borderRadiusControl,
   },
 };
 
-export const buttonVariations = ({ buttonText, buttonSize, borderRadius }) => {
-  const root = document.documentElement;
-  root.style.setProperty('--border-radius', borderRadius);
-
+export const buttonVariations = ({ buttonText, buttonSize }) => {
   return `
     <p><strong>Primary</strong></p>
     ${buttonTwig({
