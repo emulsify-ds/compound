@@ -1,10 +1,25 @@
 import cta from './cta.twig';
 
-import ctaData from './cta.yml';
-
 /**
  * Storybook Definition.
  */
-export default { title: 'Molecules/CTA' };
+export default {
+  title: 'Molecules/CTA',
+  argTypes: {
+    ctaHeading: {
+      control: {
+        type: 'text',
+      },
+      defaultValue: 'This is a reason to act',
+    },
+    buttonText: {
+      control: {
+        type: 'text',
+      },
+      defaultValue: 'Click Here',
+    },
+  },
+};
 
-export const ctaExample = () => cta(ctaData);
+export const ctaExample = ({ ctaHeading, buttonText }) =>
+  cta({ cta__heading: ctaHeading, cta__button__text: buttonText });
