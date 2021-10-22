@@ -48,13 +48,17 @@ export const radiusAndColor = ({ borderRadius, color, spacing }) => {
   root.style.setProperty('--grid-gutter', spacing);
 
   return `
-    <p>You can define your site-wide settings on this page, and they will take effect throughout Storybook. Choose your site settings in the "Controls" tab.</p>
+    <h1>Site Settings</h1>
+    <p>You can define "site-wide" settings on this page, and they will take effect throughout Storybook. Make your selections in the "Controls" tab.</p>
+    ${/* Primary Color */ ''}
     <h2>Primary Color</h2>
     <div style="background: var(--c-primary); height: 100px; width: 100px;"></div>
+    ${/* Border Radius */ ''}
     <h2>Border Radius</h2>
     ${buttonTwig({
       button__content: 'Check out my border radius!',
     })}
+    ${/* Spacing */ ''}
     <h2>Spacing</h2>
     ${gridTwig(gridData)}
   `;

@@ -67,19 +67,6 @@ $button-colors: (
   text-transform: capitalize;
 }
 
-// Button size variations
-// @mixin button-medium {
-//   font-size: rem-calc(26);
-//   line-height: 1.73;
-//   padding: rem-calc(12) rem-calc(32);
-// }
-
-// @mixin button-small {
-//   font-size: rem-calc(20);
-//   line-height: 1.75;
-//   padding: rem-calc(6) rem-calc(28);
-// }
-
 .button {
   @include button-base;
 }
@@ -112,23 +99,3 @@ $button-colors: (
   font-size: 2rem;
   padding: 1rem 2.25rem;
 }
-
-// .button--primary {
-//   @include button-color-primary;
-// }
-
-// .button--secondary {
-//   @include button-color-secondary;
-// }
-
-// .button--outline {
-//   @include button-color-outline;
-// }
-
-// .button--medium {
-//   @include button-medium;
-// }
-
-// .button--small {
-//   @include button-small;
-// }
