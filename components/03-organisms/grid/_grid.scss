@@ -3,6 +3,8 @@
 }
 
 @mixin grid {
+  @include space-stack-page;
+
   display: flex;
   flex-wrap: wrap;
   gap: var(--grid-gutter);
