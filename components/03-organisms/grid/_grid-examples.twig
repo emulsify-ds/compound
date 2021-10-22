@@ -1,6 +1,5 @@
 {% if item_type == 'card' %}
   {% include "@molecules/card/card.twig" with {
-    card__extra_classes: ['grid__item'],
     card__blockname: item.card__blockname,
     card__modifiers: item.card__modifiers,
     card__image__src: item.card__image__src,
@@ -14,10 +13,9 @@
   } %}
 {% elseif item_type == 'cta' %}
   {% include "@molecules/cta/cta.twig" with {
-    cta__extra_classes: ['grid__item'],
     cta__heading: item.cta__heading,
     cta__button__text: item.cta__button__text,
   } %}
 {% else %}
-  <div class="grid__item grid__item--example"></div>
+  <div class="grid-example"></div>
 {% endif %}

@@ -1,12 +1,27 @@
+:root {
+  --grid-gutter: #{$space-double};
+}
+
 @mixin grid {
   display: flex;
   flex-wrap: wrap;
+  gap: var(--grid-gutter);
+
+  & > * {
+    flex: 1 1 100%;
+
+    @include breakpoint($medium) {
+      flex-basis: 30%;
+    }
+  }
 }
 
 .grid {
   @include grid;
+}
 
-  &--card {
-    @include space-stack-page;
-  }
+.grid-example {
+  /* This is just for the component library example */
+  background-color: clr(highlight-high);
+  padding: $space-quadruple;
 }
