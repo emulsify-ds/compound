@@ -1,70 +1,30 @@
 /*
  * General Layout
 */
-
-$sidebar-width: 33%;
-$gutter: $space;
-$main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
-
-/*
- * Layout Using Flexbox (IE11+).
- * Remove this and uncomment Grid code below to use CSS Grid.
-*/
-
-// .main {
-//   @include wrapper;
-
-//   margin-bottom: 4em;
-
-//   @include breakpoint($large) {
-//     display: flex;
-//   }
-// }
-
-// .main-sidebar {
-//   margin-bottom: $space-double;
-
-//   @include breakpoint($large) {
-//     order: 2;
-//     width: $sidebar-width;
-//     margin-bottom: 0;
-//   }
-// }
-
-// .main-content {
-//   width: 100%;
-
-//   @include breakpoint($large) {
-//     &--with-sidebar {
-//       margin-right: $gutter;
-//       width: $main-width;
-//     }
-//   }
-// }
-
-/*
- * Layout Using CSS Grid (NO IE11 support)
- * Remove Flexbox code above and uncomment this section to use CSS Grid.
-*/
-
 .main {
   @include wrapper;
 
+  display: grid;
+  grid-template-areas:
+    'sidebar'
+    'content';
   margin-bottom: 4em;
 
   &--with-sidebar {
+    @include breakpoint($large-max) {
+      row-gap: var(--page-gutter, var(--grid-gutter));
+    }
+
     @include breakpoint($large) {
-      display: grid;
-      grid-gap: $gutter;
       grid-template-areas: 'content sidebar';
-      grid-template-columns: $main-width #{$sidebar-width};
+      grid-template-columns: 1fr var(--sidebar-width, 30%);
+      column-gap: var(--page-gutter, var(--grid-gutter));
     }
   }
 }
 
 .main-sidebar {
   grid-area: sidebar;
-  margin-bottom: $space-double;
 }
 
 .main-content {
