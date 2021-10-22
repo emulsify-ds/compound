@@ -1,5 +1,5 @@
 :root {
-  --grid-gutter: #{$space-double};
+  --grid-gutter: var(--space-cozy);
 }
 
 @mixin grid {
