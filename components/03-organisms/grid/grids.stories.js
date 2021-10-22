@@ -1,4 +1,4 @@
-import grid from './grid.twig';
+import gridTwig from './grid.twig';
 
 import gridData from './grid.yml';
 import gridCardData from './grid-cards.yml';
@@ -9,8 +9,8 @@ import gridCtaData from './grid-ctas.yml';
  */
 export default { title: 'Organisms/Grids' };
 
-export const defaultGrid = () => grid(gridData);
+export const defaultGrid = () => gridTwig(gridData);
 
-export const cardGrid = () => grid({ ...gridData, ...gridCardData });
+export const cardGrid = () => gridTwig({ ...gridData, ...gridCardData });
 
-export const ctaGrid = () => grid({ ...gridData, ...gridCtaData });
+export const ctaGrid = () => gridTwig({ ...gridData, ...gridCtaData });
