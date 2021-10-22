@@ -1,5 +1,6 @@
 import gridTwig from '../../03-organisms/grid/grid.twig';
 import gridData from '../../03-organisms/grid/grid.yml';
+import buttonTwig from '../../01-atoms/buttons/button.twig';
 
 /**
  * Storybook Definition.
@@ -7,6 +8,16 @@ import gridData from '../../03-organisms/grid/grid.yml';
 export default {
   title: 'Base/Site Settings',
   argTypes: {
+    color: {
+      type: 'select',
+      options: ['Yale', 'Forest', 'Beach'],
+      mapping: {
+        Yale: '#000f9f',
+        Forest: '#136740',
+        Beach: '#e9bf16',
+      },
+      defaultValue: 'Yale',
+    },
     borderRadius: {
       type: 'select',
       options: ['None', 'Some', 'More', 'A lot'],
@@ -17,16 +28,6 @@ export default {
         'A lot': 'var(--border-radius-a-lot)',
       },
       defaultValue: 'None',
-    },
-    color: {
-      type: 'select',
-      options: ['Yale', 'Forest', 'Beach'],
-      mapping: {
-        Yale: '#000f9f',
-        Forest: '#136740',
-        Beach: '#e9bf16',
-      },
-      defaultValue: 'Yale',
     },
     spacing: {
       type: 'select',
@@ -51,7 +52,9 @@ export const radiusAndColor = ({ borderRadius, color, spacing }) => {
     <h2>Primary Color</h2>
     <div style="background: var(--c-primary); height: 100px; width: 100px;"></div>
     <h2>Border Radius</h2>
-    <div style="padding: 2rem; display: inline-block; border: 1px solid; border-radius: var(--border-radius);">Check out my border radius!</div>
+    ${buttonTwig({
+      button__content: 'Check out my border radius!',
+    })}
     <h2>Spacing</h2>
     ${gridTwig(gridData)}
   `;
