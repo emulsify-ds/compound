@@ -6,9 +6,11 @@
   "scripts": {
     "build-storybook": "build-storybook",
     "develop": "concurrently --raw \"npm run webpack\" \"npm run storybook\"",
+    "percy": "percy",
     "sass": "sass",
     "storybook": "start-storybook --ci -s ./images -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "visreg": "percy storybook http://localhost:6006",
     "webpack": "webpack --watch --config ./webpack/webpack.dev.js"
   },
   "repository": {
@@ -24,6 +26,8 @@
   "homepage": "https://github.com/emulsify-ds/compound#readme",
   "devDependencies": {
     "@babel/core": "^7.15.5",
+    "@percy/cli": "^1.0.0-beta.70",
+    "@percy/storybook": "^4.1.0",
     "@storybook/addon-a11y": "^6.1.18",
     "@storybook/addon-actions": "^6.3.8",
     "@storybook/addon-essentials": "^6.3.8",
