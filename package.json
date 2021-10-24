@@ -4,14 +4,15 @@
   "description": "Compound is the default Emulsify system, and includes variants for the platforms that Emulsify supports.",
   "main": "index.js",
   "scripts": {
-    "build-storybook": "build-storybook",
+    "build": "webpack --config ./webpack/webpack.prod.js",
+    "build-storybook": "npm run build && build-storybook -s images,dist -o .out",
     "develop": "concurrently --raw \"npm run webpack\" \"npm run storybook\"",
     "percy": "percy",
     "sass": "sass",
-    "storybook": "start-storybook --ci -s ./images -p 6006",
+    "storybook": "start-storybook --ci -s images,dist -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1",
     "visreg": "percy storybook http://localhost:6006",
-    "visreg-ci": "percy storybook ./storybook-static",
+    "visreg-ci": "percy storybook .out",
     "webpack": "webpack --watch --config ./webpack/webpack.dev.js"
   },
   "repository": {
