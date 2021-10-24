@@ -1,0 +1,11 @@
+version: 1
+snapshot:
+  percy-css: |
+    img {
+      position: absolute !important;
+      clip: rect(1px, 1px, 1px, 1px);
+      overflow: hidden;
+      height: 1px;
+      width: 1px;
+      word-wrap: normal;
+    }
