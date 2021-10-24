@@ -3,7 +3,7 @@ discovery:
   disable-cache: true
 snapshot:
   percy-css: |
-    img {
+    img::after {
       content: "";
       top: 0;
       left: 0;
