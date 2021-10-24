@@ -3,12 +3,6 @@ discovery:
   disable-cache: true
 snapshot:
   percy-css: |
-    img::after {
-      content: "";
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: black;
-      position: absolute;
+    img:not(.logo__image) {
+      visibility: hidden;
     }
