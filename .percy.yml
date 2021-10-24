@@ -4,10 +4,11 @@ discovery:
 snapshot:
   percy-css: |
     img {
-      position: absolute !important;
-      clip: rect(1px, 1px, 1px, 1px);
-      overflow: hidden;
-      height: 1px;
-      width: 1px;
-      word-wrap: normal;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      position: absolute;
     }
