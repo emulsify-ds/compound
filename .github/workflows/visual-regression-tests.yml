@@ -1,4 +1,4 @@
-name: GitHub Actions Demo
+name: Visual Regression Tests
 on:
   pull_request:
     types: [ready_for_review]
