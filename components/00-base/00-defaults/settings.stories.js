@@ -10,13 +10,13 @@ export default {
   argTypes: {
     color: {
       type: 'select',
-      options: ['Yale', 'Forest', 'Beach'],
+      options: ['Ocean', 'Forest', 'Sunshine'],
       mapping: {
-        Yale: '#000f9f',
+        Ocean: '#000f9f',
         Forest: '#136740',
-        Beach: '#e9bf16',
+        Sunshine: '#e9bf16',
       },
-      defaultValue: 'Yale',
+      defaultValue: 'Ocean',
     },
     borderRadius: {
       type: 'select',
