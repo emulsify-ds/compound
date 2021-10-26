@@ -10,11 +10,11 @@ export default {
   argTypes: {
     color: {
       type: 'select',
-      options: ['Ocean', 'Forest', 'Sunshine'],
+      options: ['Ocean', 'Grape', 'Monochrome'],
       mapping: {
-        Ocean: '#000f9f',
-        Forest: '#136740',
-        Sunshine: '#e9bf16',
+        Ocean: 'var(--c-blue)',
+        Grape: 'var(--c-purple)',
+        Monochrome: 'var(--c-gray)',
       },
       defaultValue: 'Ocean',
     },

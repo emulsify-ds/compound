@@ -1,3 +1,4 @@
+@use 'colors-vars';
 @use 'colors-used' as *;
 
 // These styles only affect the colors "Usage" page in the component library
@@ -25,11 +26,7 @@
 }
 
 // Dynamically set swatch text color based on the lightness of the background color
-@function set-color(
-  $color,
-  $text-primary: accent-high,
-  $text-secondary: muted
-) {
+@function set-color($color, $text-primary: black, $text-secondary: white) {
   @if (lightness($color) > 50) {
     @return clr($text-primary);
   } @else {
@@ -40,19 +37,19 @@
 // Style default color swatches
 @each $name, $color in $defaultColors {
   .cl-colors__item--default {
-    &-#{$name} {
+    &-#{'' + $name} {
       background-color: clr($name);
       color: set-color($color);
     }
   }
 }
 
-// Style dark color swatches
-@each $name, $color in $darkColors {
-  .cl-colors__item--dark {
-    &-#{$name} {
-      background-color: clr($name);
-      color: set-color($color, muted, accent-high);
-    }
-  }
-}
+// // Style dark color swatches
+// @each $name, $color in $darkColors {
+//   .cl-colors__item--dark {
+//     &-#{$name} {
+//       background-color: clr($name);
+//       color: set-color($color, muted, accent-high);
+//     }
+//   }
+// }

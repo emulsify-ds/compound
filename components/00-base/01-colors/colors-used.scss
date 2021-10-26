@@ -19,23 +19,44 @@ $defaultColors: (
   message: colors-vars.$green-light,
 );
 
-$darkColors: (
-  text: colors-vars.$white,
-  text-inverse: colors-vars.$gray,
-  background: colors-vars.$gray,
-  background-inverse: colors-vars.$gray-light,
-  background-section: colors-vars.$gray-dark,
-  primary: colors-vars.$blue,
-  secondary: colors-vars.$purple,
-  accent: colors-vars.$gray-lightest,
-  accent-high: colors-vars.$white,
-  highlight: colors-vars.$gray-dark,
-  highlight-high: colors-vars.$gray-darker,
-  muted: colors-vars.$gray-darker,
-  warning: colors-vars.$yellow-light,
-  error: colors-vars.$red-light,
-  message: colors-vars.$green-light,
+// $darkColors: (
+//   text: colors-vars.$white,
+//   text-inverse: colors-vars.$gray,
+//   background: colors-vars.$gray,
+//   background-inverse: colors-vars.$gray-light,
+//   background-section: colors-vars.$gray-dark,
+//   primary: colors-vars.$blue,
+//   secondary: colors-vars.$purple,
+//   accent: colors-vars.$gray-lightest,
+//   accent-high: colors-vars.$white,
+//   highlight: colors-vars.$gray-dark,
+//   highlight-high: colors-vars.$gray-darker,
+//   muted: colors-vars.$gray-darker,
+//   warning: colors-vars.$yellow-light,
+//   error: colors-vars.$red-light,
+//   message: colors-vars.$green-light,
+// );
+
+$componentLibraryColors: (
+  // These are only defined for the component library.
+  // They should not be implemented in components.
+  white: colors-vars.$white,
+  near-white: colors-vars.$near-white,
+  gray-lightest: colors-vars.$gray-lightest,
+  gray-lighter: colors-vars.$gray-lighter,
+  gray-light: colors-vars.$gray-light,
+  gray: colors-vars.$gray,
+  gray-dark: colors-vars.$gray-dark,
+  gray-darker: colors-vars.$gray-darker,
+  black: colors-vars.$black,
+  blue: colors-vars.$blue,
+  purple: colors-vars.$purple,
+  yellow: colors-vars.$yellow-light,
+  red: colors-vars.$red-light,
+  green: colors-vars.$green-light
 );
+
+$defaultColors: map-merge($defaultColors, $componentLibraryColors);
 
 ///////////
 // Usage //
@@ -70,31 +91,31 @@ $darkColors: (
 :root {
   // Create custom properties for default colors
   @each $name, $color in $defaultColors {
-    --c-#{$name}: #{$color};
+    --c-#{'' + $name}: #{$color};
   }
 
   // Create custom properties for dark colors, an duse them if the user's OS has dark mode enabled
-  @media (prefers-color-scheme: dark) {
-    @each $name, $color in $darkColors {
-      --c-#{$name}: #{$color};
-    }
-  }
+  // @media (prefers-color-scheme: dark) {
+  //   @each $name, $color in $darkColors {
+  //     --c-#{'' + $name}: #{$color};
+  //   }
+  // }
 
   // Use the default color scheme for the "Default Theme" section of the
   // component library regardless of OS setting.
   // This is required to show the correct colors in the component library at all times
-  [data-theme='default'] {
-    @each $name, $color in $defaultColors {
-      --c-#{$name}: #{$color};
-    }
-  }
+  // [data-theme='default'] {
+  //   @each $name, $color in $defaultColors {
+  //     --c-#{'' + $name}: #{$color};
+  //   }
+  // }
 
   // Use the dark color scheme for the "Dark Theme" section of the  component
   // library regardless of OS setting.
   // This is required to show the correct colors in the component library at all times
-  [data-theme='dark'] {
-    @each $name, $color in $darkColors {
-      --c-#{$name}: #{$color};
-    }
-  }
+  // [data-theme='dark'] {
+  //   @each $name, $color in $darkColors {
+  //     --c-#{'' + $name}: #{$color};
+  //   }
+  // }
 }
