@@ -1,13 +1,9 @@
-:root {
-  --grid-gutter: var(--space-cozy);
-}
-
 @mixin grid {
   @include space-stack-page;
 
   display: flex;
   flex-wrap: wrap;
-  gap: var(--grid-gutter);
+  gap: var(--grid-gutter, var(--gutter));
 
   & > * {
     flex: 1 1 100%;

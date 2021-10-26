@@ -27,6 +27,9 @@ $space-one-eighth: calc($space/8);
 }
 
 :root {
+  // Spacing Options
   --space-cozy: #{$space-double};
   --space-compact: #{$space};
+  // Gutter spacing
+  --gutter: var(--space-cozy);
 }

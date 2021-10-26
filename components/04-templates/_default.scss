@@ -12,13 +12,13 @@
 
   &--with-sidebar {
     @include breakpoint($large-max) {
-      row-gap: var(--page-gutter, var(--grid-gutter));
+      row-gap: var(--page-gutter, var(--gutter));
     }
 
     @include breakpoint($large) {
       grid-template-areas: 'content sidebar';
       grid-template-columns: 1fr var(--sidebar-width, 30%);
-      column-gap: var(--page-gutter, var(--grid-gutter));
+      column-gap: var(--page-gutter, var(--gutter));
     }
   }
 }

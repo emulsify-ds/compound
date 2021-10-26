@@ -45,7 +45,7 @@ export const radiusAndColor = ({ borderRadius, color, spacing }) => {
   const root = document.documentElement;
   root.style.setProperty('--border-radius', borderRadius);
   root.style.setProperty('--c-primary', color);
-  root.style.setProperty('--grid-gutter', spacing);
+  root.style.setProperty('--gutter', spacing);
 
   return `
     <h1>Site Settings</h1>

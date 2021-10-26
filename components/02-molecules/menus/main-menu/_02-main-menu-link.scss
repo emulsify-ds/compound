@@ -1,11 +1,11 @@
 /* A */
 .main-menu__link {
   display: block;
+  padding: $space $space-triple $space $space-double;
   font-size: 1.2rem;
   line-height: 1.5;
-  padding: $space $space-triple $space $space-double;
-  text-decoration: none;
   font-weight: bold;
+  text-decoration: none;
   color: clr(primary);
 
   &--with-sub {
