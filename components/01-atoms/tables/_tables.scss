@@ -17,6 +17,7 @@
     border-right: none;
   }
 }
+
 .table__heading-cell,
 .table__cell {
   @include table-cell-base;

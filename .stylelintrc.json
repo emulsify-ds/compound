@@ -3,6 +3,9 @@
     "stylelint-config-standard",
     "stylelint-config-prettier"
   ],
+  "plugins": [
+    "stylelint-prettier"
+  ],
   "rules": {
     "at-rule-no-unknown": [
       true,
@@ -23,6 +26,8 @@
         ]
       }
     ],
-    "function-calc-no-invalid": null
+    "number-leading-zero": "always",
+    "number-no-trailing-zeros": true,
+    "prettier/prettier": true
   }
 }
