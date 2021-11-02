@@ -1,9 +1,10 @@
 root: true
 extends:
-  - airbnb
-  - prettier
+  - airbnb-base
+  - plugin:security/recommended
   - plugin:prettier/recommended
 plugins:
+  - security
   - prettier
   - jest
 env:

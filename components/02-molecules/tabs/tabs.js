@@ -16,10 +16,10 @@ Drupal.behaviors.tabs = {
         index >= 0 &&
         index <= tabNavigationLinks.length
       ) {
-        tabNavigationLinks[activeIndex].classList.remove('is-active');
-        tabNavigationLinks[index].classList.add('is-active');
-        tabContentContainers[activeIndex].classList.remove('is-active');
-        tabContentContainers[index].classList.add('is-active');
+        tabNavigationLinks[Number(activeIndex)].classList.remove('is-active');
+        tabNavigationLinks[Number(index)].classList.add('is-active');
+        tabContentContainers[Number(activeIndex)].classList.remove('is-active');
+        tabContentContainers[Number(index)].classList.add('is-active');
         activeIndex = index;
       }
     }
@@ -45,11 +45,11 @@ Drupal.behaviors.tabs = {
      *   Returns nothing.
      */
     for (let e = 0; e < el.length; e += 1) {
-      el[e].classList.remove('no-js');
+      el[Number(e)].classList.remove('no-js');
     }
 
     for (let i = 0; i < tabNavigationLinks.length; i += 1) {
-      const link = tabNavigationLinks[i];
+      const link = tabNavigationLinks[Number(i)];
       handleClick(link, i);
     }
   },
