@@ -34,7 +34,6 @@
   "homepage": "https://github.com/emulsify-ds/compound#readme",
   "dependencies": {
     "@babel/eslint-parser": "^7.12.17",
-    "@storybook/addon-docs": "^6.3.8",
     "add-attributes-twig-extension": "^0.1.0",
     "bem-twig-extension": "^0.1.1",
     "breakpoint-sass": "^2.7.1",
