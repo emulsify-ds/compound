@@ -2,7 +2,7 @@ name: Deploy Component Library
 on:
   push:
     branches:
-      - 'deploy-storybook'
+      - 'main'
 jobs:
   component-library-release:
     runs-on: ubuntu-latest
