@@ -1,0 +1,22 @@
+{% set colors_base_class = "cl-colors" %}
+{% set colors_title_modifiers = ['card'] %}
+
+<div {{ bem(colors_base_class) }}>
+  <ul {{ bem('list', ['card'], colors_base_class) }} data-theme="">
+    {% for color, value in _context.colors %}
+      {% if value.value is defined %}
+        <li {{ bem("item", ['card'], colors_base_class) }} style="background: var(--colors-{{color}});">
+          <span {{ bem("title", colors_title_modifiers, colors_base_class) }}>{{color}}</span>
+          <br/>
+        </li>
+      {% else %}
+        {% for nestedColor, nestedValue in value %}
+          <li {{ bem("item", ['card'], colors_base_class) }} style="background: var(--colors-{{color}}-{{nestedColor}});">
+            <span {{ bem("title", colors_title_modifiers, colors_base_class) }}>{{color}}-{{nestedColor}}</span>
+            <br/>
+          </li>
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>
