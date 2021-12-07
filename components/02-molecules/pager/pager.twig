@@ -32,7 +32,7 @@
 {% set pager__base_class = 'pager' %}
 
 {% if items %}
-  <nav {{ bem(pager__base_class) }} aria-label="{{ 'Pagination'|t }}">
+  <nav {{ bem(pager__base_class) }} aria-label="{{ pagination_id|default('Pagination'|t) }}">
     <ul {{ bem('items', [], pager__base_class, ['js-pager__items']) }}>
       {# Print previous item if we are not on the first page. #}
       {% if items.previous %}
