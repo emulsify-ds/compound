@@ -1,7 +1,3 @@
-/* Mixin - list-reset
- * Reset list item defaults when no margin, padding, list styles needed
-*/
-
 ul,
 ol {
   padding-left: 1em;
@@ -19,8 +15,6 @@ ol {
   margin-bottom: 0.2em;
   padding-left: 1em;
 }
-
-/* TODO: BEM selectors should be applied to wysiwyg-created content */
 
 .text-long {
   ol,
