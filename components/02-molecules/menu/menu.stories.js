@@ -10,20 +10,6 @@ import './menu';
 export default {
   title: 'Molecules/Menu',
   argTypes: {
-    menuLayout: {
-      control: {
-        type: 'select',
-        options: ['inline', 'stacked'],
-      },
-      defaultValue: 'inline',
-    },
-    menuAlignment: {
-      control: {
-        type: 'select',
-        options: ['left', 'center', 'right'],
-      },
-      defaultValue: 'left',
-    },
     menuToggle: {
       control: {
         type: 'boolean',

@@ -4,7 +4,7 @@ Drupal.behaviors.menuToggle = {
 
     function toggleAria(el) {
       let x = el.getAttribute('aria-expanded');
-      if (x == 'true') {
+      if (x === 'true') {
         x = 'false';
       } else {
         x = 'true';
@@ -21,7 +21,7 @@ Drupal.behaviors.menuToggle = {
         if (
           el.nextElementSibling &&
           el.nextElementSibling.classList.contains(
-            menuName + '__menu-list--sub',
+            `${menuName}__menu-list--sub`,
           )
         ) {
           el.nextElementSibling.classList.toggle('sub--open');
@@ -33,7 +33,7 @@ Drupal.behaviors.menuToggle = {
 
     // Toggle mobile menu classes when clicked.
     if (menu) {
-      const toggleExpand = menu.getElementsByClassName(menu.id + '__toggle');
+      const toggleExpand = menu.getElementsByClassName(`${menu.id}__toggle`);
 
       toggleExpand.forEach((item) => {
         item.addEventListener('click', () => {

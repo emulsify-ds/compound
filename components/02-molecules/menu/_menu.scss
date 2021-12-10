@@ -1,48 +1,15 @@
 .menu {
-
-  &[data-component-layout='inline'] {
-
-    [class$='__menu-list'] {
-
-      @include large {
-        flex-flow: row nowrap;
-      }
-    }
+  // Set flex for only top level.
+  [class$='__menu-list'] {
+    display: flex;
   }
 
-  &[data-component-layout='stacked'] {
-
-    [class$='__menu-list'] {
-      flex-flow: column nowrap;
-    }
-  }
-
-  &[data-component-alignment='center'] {
-
-    [class$='__menu-list'] {
-      justify-content: center;
-      text-align: center;
-    }
-  }
-
-  &[data-component-alignment='right'] {
-
-    [class$='__menu-list'] {
-      justify-content: flex-end;
-      text-align: right;
-    }
-  }
-
-  &[aria-expanded='true'] {
-
-    // Set flex for only top level.
-    [class$='__menu-list'] {
-      display: flex;
-    }
+  // Reset list styles.
+  [class*='__menu-list'] {
+    @include list-reset;
   }
 
   &[aria-expanded='false'] {
-
     // Set flex for only top level.
     [class$='__menu-list'] {
       display: none;
@@ -53,22 +20,12 @@
     }
   }
 
-  // Reset list styles.
-  [class*='__menu-list'] {
-    @include list-reset;
-  }
-
   [class*='--sub']:not(.sub--open) {
     display: none;
 
     @include large {
       display: block;
     }
-  }
-
-  // Set flex for only top level.
-  [class$='__menu-list'] {
-    display: flex;
   }
 
   [class*='__toggle'] {
