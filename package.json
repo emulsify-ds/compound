@@ -13,6 +13,7 @@
     "lint-fix": "npm run lint-js -- --fix; npm run lint-styles -- --fix",
     "lint-js": "eslint \"./components\"",
     "lint-styles": "stylelint \"./components/**/*.scss\"",
+    "postinstall": "npx patch-package",
     "prepare": "husky install",
     "prettier": "prettier \"./components\" --ignore-unknown",
     "prettier-fix": "prettier \"./components\" --write --ignore-unknown",
@@ -60,6 +61,7 @@
     "sass": "^1.42.1",
     "sass-loader": "^10.1.0",
     "style-loader": "^2.0.0",
+    "twig": "^1.15.4",
     "twig-drupal-filters": "^3.1.0",
     "twig-loader": "https://github.com/fourkitchens/twig-loader"
   },
