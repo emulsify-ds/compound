@@ -13,6 +13,7 @@
     "lint-fix": "npm run lint-js -- --fix; npm run lint-styles -- --fix",
     "lint-js": "eslint \"./components\"",
     "lint-styles": "stylelint \"./components/**/*.scss\"",
+    "postinstall": "npx patch-package",
     "prepare": "husky install",
     "prettier": "prettier \"./components\" --ignore-unknown",
     "prettier-fix": "prettier \"./components\" --write --ignore-unknown",
