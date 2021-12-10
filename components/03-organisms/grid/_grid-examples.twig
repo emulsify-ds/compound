@@ -1,4 +1,6 @@
-{% if item_type == 'card' %}
+{# Since the card and cta components aren't required, we can't expect them to be here by default #}
+
+{# {% if item_type == 'card' %}
   {% include "@molecules/card/card.twig" with {
     card__extra_classes: ['grid__item'],
     card__blockname: item.card__blockname,
@@ -18,6 +20,6 @@
     cta__heading: item.cta__heading,
     cta__button_text: item.cta__button_text,
   } %}
-{% else %}
+{% else %} #}
   <div class="grid__item grid__item--example"></div>
-{% endif %}
+{# {% endif %} #}
