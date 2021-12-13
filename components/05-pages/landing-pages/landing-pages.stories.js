@@ -1,4 +1,4 @@
-import '../../03-organisms/menus/main-menu/main-menu';
+import '../../02-molecules/menu/menu';
 
 import home from './home.twig';
 

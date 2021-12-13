@@ -6,7 +6,7 @@ import footerMenu from '../menus/footer/footer-menu.yml';
 import breadcrumbData from '../menus/breadcrumbs/breadcrumbs.yml';
 import mainMenuData from '../menus/main-menu/main-menu.yml';
 
-import '../menus/main-menu/main-menu';
+import '../../02-molecules/menu/menu';
 
 /**
  * Storybook Definition.
