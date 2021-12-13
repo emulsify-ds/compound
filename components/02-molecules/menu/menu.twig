@@ -39,8 +39,6 @@
 {% set menu__attributes = menu__attributes|merge({
   'id': menu__base_class,
   'class': bem(menu__base_class, menu__blockname, menu__modifiers, menu__additional_classes),
-  'data-component-layout': menu__layout|default('inline'),
-  'data-component-alignment': menu__alignment|default('left'),
   'role': 'navigation',
   'aria-label': menu__label,
 }) %}
@@ -64,6 +62,7 @@
 {% import _self as menus %}
 
 <nav {{ add_attributes(menu__attributes) }}>
+  <h2 {{ bem('visually-hidden') }}>{{ menu__label|t }}</h2>
   {% block menu_prefix %}
   {% endblock %}
   {{ menus.menu_links(items, attributes, 0, menu__base_class, menu__modifiers, menu__blockname, menu__toggle, item__base_class, item__modifiers, item__blockname) }}

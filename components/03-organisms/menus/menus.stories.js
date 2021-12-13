@@ -8,7 +8,7 @@ import footerMenuData from './footer/footer-menu.yml';
 import mainMenuData from './main-menu/main-menu.yml';
 import socialMenuData from './social/social-menu.yml';
 
-import './main-menu/main-menu';
+import '../../02-molecules/menu/menu';
 
 /**
  * Storybook Definition.

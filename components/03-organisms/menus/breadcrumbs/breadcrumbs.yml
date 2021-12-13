@@ -1,6 +1,8 @@
-breadcrumb:
-  - url: '#'
-    text: 'Home'
-  - url: '#'
-    text: 'Parent Page'
-  - text: 'Current Page'
+breadcrumb: true
+items:
+  - title: 'Home'
+    url: '#'
+  - title: 'Parent Page'
+    url: '#'
+  - title: 'Current Page'
+    url: '#'

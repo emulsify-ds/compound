@@ -16,18 +16,15 @@ Drupal.behaviors.menuToggle = {
       // Toggle aria or class for menu lists.
       if (el.parentElement.hasAttribute('aria-label')) {
         toggleAria(el.parentElement);
+      }
+      // Toggle open menu if expand/back button is clicked.
+      else if (
+        el.nextElementSibling &&
+        el.nextElementSibling.classList.contains(`${menuName}__menu-list--sub`)
+      ) {
+        el.nextElementSibling.classList.toggle('sub--open');
       } else {
-        // Toggle open menu if expand/back button is clicked.
-        if (
-          el.nextElementSibling &&
-          el.nextElementSibling.classList.contains(
-            `${menuName}__menu-list--sub`,
-          )
-        ) {
-          el.nextElementSibling.classList.toggle('sub--open');
-        } else {
-          el.parentElement.parentElement.classList.toggle('sub--open');
-        }
+        el.parentElement.parentElement.classList.toggle('sub--open');
       }
     }
 
@@ -35,7 +32,7 @@ Drupal.behaviors.menuToggle = {
     if (menu) {
       const toggleExpand = menu.getElementsByClassName(`${menu.id}__toggle`);
 
-      toggleExpand.forEach((item) => {
+      Array.prototype.forEach.call(toggleExpand, (item) => {
         item.addEventListener('click', () => {
           toggleAria(item);
           toggleMenu(item, menu.id);
