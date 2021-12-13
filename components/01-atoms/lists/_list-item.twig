@@ -13,7 +13,6 @@
  */
 #}
 {% set li_base_class = li_base_class|default('list-item') %}
-{% set li_modifiers = li_modifiers|default([]) %}
 
 <li {{ bem(li_base_class, li_modifiers, li_blockname) }}>
   {% block list_item_content %}
