@@ -1,0 +1,8 @@
+/* LI */
+.footer-menu__menu-item {
+  flex: 1 1 100%;
+
+  &--with-sub {
+    margin-bottom: $space;
+  }
+}

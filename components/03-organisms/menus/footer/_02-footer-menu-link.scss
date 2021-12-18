@@ -1,0 +1,23 @@
+.footer-menu__link {
+  @include link;
+
+  display: block;
+  padding: $space-one-half $space;
+
+  &.active,
+  &:active,
+  &:hover,
+  &:focus,
+  &:focus-within,
+  .active > &,
+  :active > &,
+  :hover > &,
+  :focus > &,
+  :focus-within > & {
+    color: clr(highlight-high);
+  }
+
+  &--with-sub {
+    text-transform: uppercase;
+  }
+}

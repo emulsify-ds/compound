@@ -1,31 +1,15 @@
-$color-breadcrumb: clr(accent);
-$color-breadcrumb-hover: clr(accent-high);
-$color-breadcrumb-active: clr(text);
-
-.breadcrumb {
-  &__item,
-  &__link,
-  &__link:link,
-  &__link:visited,
-  &__link:focus {
-    color: $color-breadcrumb;
-    text-decoration: none;
-  }
-
-  &__link:hover {
-    color: $color-breadcrumb-hover;
-  }
-
-  &__item {
+.breadcrumb-menu {
+  &__menu-item {
     display: inline-block;
     font-size: 0.75rem;
+    margin: 0 $space-one-half 0 0;
 
     &::after {
       content: '/';
     }
 
     &:last-child {
-      color: $color-breadcrumb-active;
+      color: clr(text);
 
       &::after {
         content: '';
@@ -33,7 +17,22 @@ $color-breadcrumb-active: clr(text);
     }
   }
 
-  &_link:active {
-    color: $color-breadcrumb-active;
+  &__link {
+    @include link;
+
+    padding: 0 $space-one-half 0 0;
+
+    &.active,
+    &:active,
+    &:hover,
+    &:focus,
+    &:focus-within,
+    .active > &,
+    :active > &,
+    :hover > &,
+    :focus > &,
+    :focus-within > & {
+      color: clr(highlight-high);
+    }
   }
 }
