@@ -20,7 +20,7 @@
     }
   }
 
-  [class*='--sub']:not(.sub--open) {
+  [class*='menu-list--sub']:not(.sub--open) {
     display: none;
 
     @include large {

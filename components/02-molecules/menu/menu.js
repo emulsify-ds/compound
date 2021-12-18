@@ -2,6 +2,7 @@ Drupal.behaviors.menuToggle = {
   attach(context) {
     const menu = context.querySelector('.menu-with-toggle');
 
+    // Toggle aria-expanded attribute.
     function toggleAria(el) {
       let x = el.getAttribute('aria-expanded');
       if (x === 'true') {

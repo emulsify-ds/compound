@@ -1,30 +1,31 @@
 {#
-/**
- * @file
- * Theme override to display a menu.
- *
- * Available variables:
- * - menu_name: The machine name of the menu.
- * - items: A nested list of menu items. Each menu item contains:
- *   - attributes: HTML attributes for the menu item.
- *   - below: The menu item child items.
- *   - title: The menu link title.
- *   - url: The menu link url, instance of \Drupal\Core\Url
- *   - localized_options: Menu link localized options.
- *   - is_expanded: TRUE if the link has visible children within the current
+ # Available variables:
+ # - menu__base_class - base classname of the wrapper.
+ # - menu__blockname - blockname prepended to the base classname of the wrapper(s) and each component.
+ # - menu__modifiers - array of modifiers to add to the base classname of the wrapper.
+ # - menu__name - .
+ # - menu__attributes - .
+ # - menu__additional_classes - .
+ # - menu__level - .
+ # - menu__toggle - .
+ # - menu__level_toggle - .
+ # - items: A nested list of menu items. Each menu item contains:
+ #   - attributes: HTML attributes for the menu item.
+ #   - below: The menu item child items.
+ #   - title: The menu link title.
+ #   - url: The menu link url, instance of \Drupal\Core\Url
+ #   - localized_options: Menu link localized options.
+ #   - is_expanded: TRUE if the link has visible children within the current
  *     menu tree.
- *   - is_collapsed: TRUE if the link has children within the current menu tree
+ #   - is_collapsed: TRUE if the link has children within the current menu tree
  *     that are not currently visible.
- *   - in_active_trail: TRUE if the link is in the active trail.
- */
-#}
-
-{# Set classes #}
+ #   - in_active_trail: TRUE if the link is in the active trail.
+ #}
 {% set menu__base_class = menu__base_class|default('menu') %}
 {% set menu__blockname = menu__blockname|default('menu') %}
 {% set menu__modifiers = menu__modifiers|default([]) %}
 {% set menu__attributes = menu__attributes|default([]) %}
-{% set menu__label = menu__label|default([]) %}
+{% set menu__name = menu__name|default([]) %}
 {% set menu__additional_classes = menu__additional_classes|default([]) %}
 
 {% if menu__base_class != 'menu'%}
@@ -40,14 +41,14 @@
   'id': menu__base_class,
   'class': bem(menu__base_class, menu__blockname, menu__modifiers, menu__additional_classes),
   'role': 'navigation',
-  'aria-label': menu__label,
+  'aria-label': menu__name,
 }) %}
 
 {#
   We call a macro which calls itself to render the full tree.
   @see http://twig.sensiolabs.org/doc/tags/macro.html
 #}
-{% macro menu_links(items, attributes, menu_level, menu__base_class, menu__modifiers, menu__blockname, menu__toggle, item__base_class, item__modifiers, item__blockname) %}
+{% macro menu_links(items, attributes, menu_level, menu__base_class, menu__modifiers, menu__blockname, menu__toggle, menu__level_toggle, item__base_class, item__modifiers, item__blockname) %}
   {% import _self as menus %}
   {% if items %}
 
@@ -62,14 +63,14 @@
 {% import _self as menus %}
 
 <nav {{ add_attributes(menu__attributes) }}>
-  <h2 {{ bem('visually-hidden') }}>{{ menu__label|t }}</h2>
+  <h2 {{ bem('visually-hidden') }}>{{ menu__name|trans }}</h2>
   {% block menu_prefix %}
   {% endblock %}
-  {{ menus.menu_links(items, attributes, 0, menu__base_class, menu__modifiers, menu__blockname, menu__toggle, item__base_class, item__modifiers, item__blockname) }}
+  {{ menus.menu_links(items, attributes, 0, menu__base_class, menu__modifiers, menu__blockname, menu__toggle, menu__level_toggle, item__base_class, item__modifiers, item__blockname) }}
   {# Mobile nav toggle #}
   {% if menu__toggle %}
     {% include "@atoms/buttons/button.twig" with {
-      button_content: 'Menu Open'|t,
+      button_content: 'Menu Open'|trans,
       button_base_class: 'toggle',
       button_blockname: menu__base_class,
       additional_attributes: toggle__attributes|default({'aria-expanded': 'false'}),

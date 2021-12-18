@@ -41,7 +41,7 @@
   {% if item.below %}
     {% if menu__level_toggle %}
       {% include "@atoms/buttons/button.twig" with {
-        button_content: 'Expand Menu'|t,
+        button_content: 'Expand Menu'|trans,
         button_base_class: 'toggle',
         button_blockname: menu__base_class,
         additional_attributes: toggle__attributes|default({'aria-expanded': 'false'}),

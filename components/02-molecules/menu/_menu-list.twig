@@ -18,7 +18,7 @@
     }%}
     {% block list_item_content_block %}
       {% include "@atoms/buttons/button.twig" with {
-        button_content: 'Back'|t,
+        button_content: 'Back'|trans,
         button_base_class: 'toggle',
         button_blockname: menu__base_class,
       } %}
