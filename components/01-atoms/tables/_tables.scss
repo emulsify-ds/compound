@@ -7,8 +7,7 @@
   width: 100%;
 }
 
-.table__heading-cell,
-.table__cell {
+@mixin table-cell-base {
   border: none;
   border-bottom: 1px solid clr(highlight-high);
   border-right: 1px solid clr(highlight-high);
@@ -17,6 +16,11 @@
   &:last-child {
     border-right: none;
   }
+}
+
+.table__heading-cell,
+.table__cell {
+  @include table-cell-base;
 }
 
 .table__heading-cell {
@@ -46,13 +50,6 @@
 
   /* Bottom Row - Non-BEM but always contained */
   &:last-child {
-    tbody & {
-      th,
-      td {
-        border-bottom: none;
-      }
-    }
-
     td:first-child {
       border-radius: 0 0 0 5px;
     }
@@ -66,11 +63,10 @@
 .table__footer-cell,
 .table__footer-cell:first-child {
   border-bottom: none;
-  border-top: 1px solid clr(highlight-high);
 }
 
 /* TODO: BEM selectors should be applied to wysiwyg-created content */
-
+/* stylelint-disable no-descending-specificity */
 .text-long {
   table {
     @extend .table;
@@ -92,3 +88,4 @@
     @extend .table__footer-cell;
   }
 }
+/* stylelint-enable no-descending-specificity */
