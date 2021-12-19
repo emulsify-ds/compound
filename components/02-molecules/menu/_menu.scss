@@ -9,7 +9,7 @@
     @include list-reset;
   }
 
-  &[aria-expanded='false'] {
+  &:not([aria-expanded='true']) {
     // Set flex for only top level.
     [class$='__menu-list'] {
       display: none;

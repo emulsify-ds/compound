@@ -15,7 +15,7 @@ Drupal.behaviors.menuToggle = {
 
     function toggleMenu(el, menuName) {
       // Toggle aria or class for menu lists.
-      if (el.parentElement.hasAttribute('aria-label')) {
+      if (el.parentElement.hasAttribute('aria-labelledby')) {
         toggleAria(el.parentElement);
       }
       // Toggle open menu if expand/back button is clicked.
