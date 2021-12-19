@@ -1,0 +1,112 @@
+{# List #}
+{% embed "@molecules/menu/_menu-list.twig" %}
+  {% block menu_item__content %}
+  {# Print first item. #}
+  {% if items.first %}
+    {% embed "@molecules/menu/_menu-item.twig" with {
+      item__modifiers: 'first',
+    }%}
+      {% block list_item_content_block %}
+        {% include "@atoms/links/link/link.twig" with {
+          link_content: items.first.text|default('« First'|trans),
+          link_url: items.first.href,
+          link_base_class: 'link',
+          link_blockname: pager__base_class,
+          link_modifiers: 'first',
+          link_attributes: items.first.attributes|without('href', 'title', 'rel')
+        } %}
+      {% endblock %}
+    {% endembed %}
+  {% endif %}
+  {# Print previous item if we are not on the first page. #}
+  {% if items.previous %}
+    {% embed "@molecules/menu/_menu-item.twig" with {
+      item__modifiers: 'prev',
+    }%}
+      {% block list_item_content_block %}
+        {% include "@atoms/links/link/link.twig" with {
+          link_content: items.previous.text|default('‹ Previous'|trans),
+          link_url: items.previous.href,
+          link_base_class: 'link',
+          link_blockname: pager__base_class,
+          link_modifiers: 'prev',
+          link_attributes: items.previous.attributes|without('href', 'title', 'rel')
+        } %}
+      {% endblock %}
+    {% endembed %}
+  {% endif %}
+  {# Add an ellipsis if there are further previous pages. #}
+  {% if ellipses.previous %}
+    {% embed "@molecules/menu/_menu-item.twig" with {
+      item__modifiers: 'ellipsis',
+    }%}
+      {% block list_item_content_block %}
+        &hellip;
+      {% endblock %}
+    {% endembed %}
+  {% endif %}
+  {# Now generate the actual pager piece. #}
+  {% for key, item in items.pages %}
+    {% set current_class = current == key ? ' is-active' : '' %}
+
+    {% embed "@molecules/menu/_menu-item.twig" with {
+      item__modifiers: 'prev',
+    }%}
+      {% block list_item_content_block %}
+        {% include "@atoms/links/link/link.twig" with {
+          link_content: key + 1,
+          link_url: item.href,
+          link_base_class: 'link',
+          link_blockname: pager__base_class,
+          link_modifiers: current_class,
+          link_attributes:item.attributes|without('href')
+        } %}
+      {% endblock %}
+    {% endembed %}
+  {% endfor %}
+  {# Add an ellipsis if there are further next pages. #}
+  {% if ellipses.next %}
+    {% embed "@molecules/menu/_menu-item.twig" with {
+      item__modifiers: 'ellipsis',
+    }%}
+      {% block list_item_content_block %}
+        &hellip;
+      {% endblock %}
+    {% endembed %}
+  {% endif %}
+  {# Print next item if we are not on the last page. #}
+  {% if items.next %}
+    {% embed "@molecules/menu/_menu-item.twig" with {
+      item__modifiers: 'next',
+    }%}
+      {% block list_item_content_block %}
+        {% include "@atoms/links/link/link.twig" with {
+          link_content: items.next.text|default('Next ›'|trans),
+          link_url: items.next.href,
+          link_base_class: 'link',
+          link_blockname: pager__base_class,
+          link_modifiers: 'next',
+          link_attributes: items.next.attributes|without('href', 'title', 'rel')
+        } %}
+      {% endblock %}
+    {% endembed %}
+  {% endif %}
+  {# Print last item. #}
+  {% if items.last %}
+    {% embed "@molecules/menu/_menu-item.twig" with {
+      item__modifiers: 'last',
+    }%}
+      {% block list_item_content_block %}
+        {% include "@atoms/links/link/link.twig" with {
+          link_content: items.last.text|default('Last »'|trans),
+          link_url: items.last.href,
+          link_base_class: 'link',
+          link_blockname: pager__base_class,
+          link_modifiers: 'last',
+          link_attributes: items.last.attributes|without('href', 'title', 'rel')
+        } %}
+      {% endblock %}
+    {% endembed %}
+  {% endif %}
+{% endblock %}
+{% endembed %}

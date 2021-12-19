@@ -1,6 +1,28 @@
 {% set item__blockname = menu__base_class %}
 {% set item__base_class = 'menu-item' %}
 
+{% set menu_item %}
+  {% block menu_item__content %}
+    {% for item in items %}
+      {% include "@molecules/menu/_menu-item.twig" %}
+    {% endfor %}
+    {# Menu level navigation #}
+    {% if menu_level > 0 and menu__level_toggle %}
+      {% embed "@molecules/menu/_menu-item.twig" with {
+        item__modifiers: 'sub-' ~ menu_level,
+      }%}
+      {% block list_item_content_block %}
+        {% include "@atoms/buttons/button.twig" with {
+          button_content: 'Back'|trans,
+          button_base_class: 'toggle',
+          button_blockname: menu__base_class,
+        } %}
+      {% endblock %}
+      {% endembed %}
+    {% endif %}
+  {% endblock %}
+{% endset %}
+
 {# List #}
 {% embed "@atoms/lists/ul.twig" with {
   ul_base_class: 'menu-list',
@@ -8,22 +30,6 @@
   ul_modifiers: menu__modifiers,
 }%}
 {% block list_content %}
-  {% for item in items %}
-    {% include "@molecules/menu/_menu-item.twig" %}
-  {% endfor %}
-  {# Menu level navigation #}
-  {% if menu_level > 0 and menu__level_toggle %}
-    {% embed "@molecules/menu/_menu-item.twig" with {
-      item__modifiers: 'sub-' ~ menu_level,
-    }%}
-    {% block list_item_content_block %}
-      {% include "@atoms/buttons/button.twig" with {
-        button_content: 'Back'|trans,
-        button_base_class: 'toggle',
-        button_blockname: menu__base_class,
-      } %}
-    {% endblock %}
-    {% endembed %}
-  {% endif %}
+  {{ menu_item }}
 {% endblock %}
 {% endembed %}

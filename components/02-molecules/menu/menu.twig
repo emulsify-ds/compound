@@ -56,7 +56,9 @@
       {% set menu__modifiers = ['sub', 'sub-' ~ menu_level] %}
     {% endif %}
 
-    {% include "@molecules/menu/_menu-list.twig" %}
+    {% block menu_list__content %}
+      {% include "@molecules/menu/_menu-list.twig" %}
+    {% endblock %}
   {% endif %}
 {% endmacro %}
 
