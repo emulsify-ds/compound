@@ -1,0 +1,11 @@
+/* NAV */
+.pager-menu {
+  margin: $space-double 0;
+
+  /* UL */
+  &__menu-list {
+    @include list-reset;
+
+    text-align: center;
+  }
+}

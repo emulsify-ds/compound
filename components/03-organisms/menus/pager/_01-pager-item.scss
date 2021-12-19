@@ -1,0 +1,8 @@
+.pager-menu__menu-item {
+  display: inline-block;
+  margin: 0 $space-one-half;
+
+  @include large {
+    margin: 0 $space;
+  }
+}
