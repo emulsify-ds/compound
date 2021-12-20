@@ -1,4 +1,5 @@
 module.exports = {
+  tagFormat: '${version}',
   branches: ['main'],
   repositoryUrl: 'git@github.com:emulsify-ds/compound.git',
   plugins: [
