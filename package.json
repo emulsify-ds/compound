@@ -1,6 +1,6 @@
 {
   "name": "compound",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "Compound is the default Emulsify system, and includes variants for the platforms that Emulsify supports.",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "visreg": "percy storybook http://localhost:6006",
     "visreg-ci": "percy storybook .out",
-    "webpack": "webpack --watch --config ./webpack/webpack.dev.js"
+    "webpack": "webpack --watch --config ./webpack/webpack.dev.js",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
@@ -70,6 +71,7 @@
     "@commitlint/config-conventional": "^13.2.0",
     "@percy/cli": "^1.0.0-beta.70",
     "@percy/storybook": "^4.1.0",
+    "@semantic-release/github": "^8.0.2",
     "@storybook/addon-a11y": "^6.1.18",
     "@storybook/addon-actions": "^6.3.8",
     "@storybook/addon-essentials": "^6.3.8",
@@ -95,6 +97,7 @@
     "postcss": "^8.1.7",
     "postcss-loader": "^4.0.4",
     "prettier": "^2.4.1",
+    "semantic-release": "^18.0.0",
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^22.0.0",
