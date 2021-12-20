@@ -17,4 +17,4 @@ jobs:
       - name: Install
         run: npm install
       - name: Release
-        run: npm run semantic-release
+        run: npm run semantic-release --tag-format '${version}'
