@@ -3,7 +3,7 @@ on:
   push:
     branches: [main]
 jobs:
-  build:
+  release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -17,4 +17,4 @@ jobs:
       - name: Install
         run: npm install
       - name: Release
-        run: npm run semantic-release --tag-format '${version}'
+        run: npm run semantic-release
