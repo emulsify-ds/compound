@@ -1,3 +1,26 @@
+{#
+/**
+ * Available variables:
+ * - disclosure_summary - label that is always visible
+ * - disclosure_content - what is revealed upon click
+ *
+ * Available blocks:
+ * - disclosure__summary: replace the displayed label
+ * - disclosure__content: replace what is revealed upon click
+ */
+#}
+
+{#
+ # Available variables:
+ # - accordion__base_class - base classname of the wrapper.
+ # - accordion__blockname - blockname prepended to the base classname of the wrapper(s) and each component.
+ # - accordion__modifiers - array of modifiers to add to the base classname of the wrapper.
+ # - accordion__focus - All or Single. Disclosure's opening behavior within a group.
+ # - items: A list of disclosure items. Each menu item contains:
+ #   - summary: shown to the user when closed.
+ #   - content: revealed upon clicking an individual disclosure.
+ #}
+
 {% set accordion__base_class = accordion__base_class|default('accordion') %}
 {% set accordion__blockname = accordion__blockname|default('accordion') %}
 {% set accordion__modifiers = accordion__modifiers|default([]) %}
