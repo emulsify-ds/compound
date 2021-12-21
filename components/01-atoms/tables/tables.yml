@@ -1,0 +1,36 @@
+header:
+  - tag: th
+  - tag: th
+    content: SC-WAN
+  - tag: th
+    content: APP ACCELERATION
+  - tag: th
+    content: SECURITY
+rows:
+  - cells:
+      - tag: td
+        content: <h3>Riverbed</h3><p>Powerful SD-WAN integrates enterprise- class routing, industry-leading application acceleration, and advanced native security in a unified software platform.</p>
+      - tag: td
+        content: CHECK
+      - tag: td
+        content: CHECK
+      - tag: td
+        content: CHECK
+  - cells:
+      - tag: td
+        content: <h3>Cisco Viptela</h3><p>A fragmented, unstable, and backward-looking offering attempts to add Viptela software to conventional ISR routers.</p>
+      - tag: td
+        content: Limited
+      - tag: td
+        content: Limited
+      - tag: td
+        content: CHECK
+  - cells:
+      - tag: td
+        content: <h3>VMWare Velocloud</h3><p>Pure-play SD-WAN with limited routing and app acceleration capabilities also relies on 3rd parties for security.</p>
+      - tag: td
+        content: Limited
+      - tag: td
+        content: NOCHECK
+      - tag: td
+        content: NOCHECK
