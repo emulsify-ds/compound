@@ -36,4 +36,4 @@ jobs:
       - name: Install system
         run: |
           cd awesome_theme
-          emulsify system install --repository https://github.com/emulsify-ds/compound.git --checkout ${GITHUB_REF##*/}
+          emulsify system install --repository https://github.com/emulsify-ds/compound.git --checkout ${GITHUB_REF#refs/heads/}
