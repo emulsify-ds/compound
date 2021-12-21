@@ -38,10 +38,10 @@ Drupal.behaviors.accordionToggle = {
 
       Array.prototype.forEach.call(toggleExpand, (item) => {
         item.addEventListener('click', () => {
+          toggleAria(item);
           if (
             item.parentNode.getAttribute('data-accordion-focus') === 'single'
           ) {
-            toggleAria(item);
             getSiblings(item).forEach((sibling) => {
               sibling.removeAttribute('open');
               sibling.setAttribute('aria-expanded', 'false');
