@@ -39,7 +39,7 @@
  */
 #}
 {% set table__base_class = table__base_class|default('table') %}
-{% set table__blockname = table__blockname|default('table') %}
+{% set table__blockname = table__blockname|default([]) %}
 {% set table__modifiers = table__modifiers|default([]) %}
 {% set table__attributes = table__attributes|default([]) %}
 
@@ -48,7 +48,6 @@
 {% endif %}
 
 {% set table__attributes = table__attributes|merge({
-  'id': table__base_class,
   'class': bem(table__base_class, table__modifiers, table__blockname),
 }) %}
 

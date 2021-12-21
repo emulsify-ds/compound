@@ -6,4 +6,4 @@ import tableData from './tables.yml';
  */
 export default { title: 'Atoms/Tables' };
 
-export const table = () => tableTwig(tableData);
+export const tables = () => tableTwig(tableData);
