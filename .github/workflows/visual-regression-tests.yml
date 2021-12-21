@@ -33,7 +33,11 @@ jobs:
         run: npm install -g @emulsify/cli
       - name: Install starter
         run: emulsify init --checkout cli-no-components "Awesome Theme" . --platform drupal
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
       - name: Install system
         run: |
           cd awesome_theme
-          emulsify system install --repository https://github.com/emulsify-ds/compound.git --checkout ${GITHUB_REF#refs/heads/}
+          emulsify system install --repository https://github.com/emulsify-ds/compound.git --checkout ${{ steps.extract_branch.outputs.branch }}
