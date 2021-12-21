@@ -3,3 +3,5 @@ items:
     content: <p>What up?</p>
   - summary: Second that
     content: <p>Second thing to see</p>
+  - summary: Last item in the accordion
+    content: <p>This is the last item in the accordion that can be displayed</p>

@@ -1,100 +1,18 @@
 .disclosure {
   position: relative;
 
-  &[data-component-layout='stacked'] {
-    display: flex;
-    flex-flow: column nowrap;
-
-    &[data-alignment='center'] {
-      text-align: center;
-    }
-
-    &[data-alignment='right'] {
-      text-align: right;
-    }
-  }
-
-  &[data-component-layout='tooltip'] {
-    display: inline;
-    transform: scale(1);
-  }
-
-  &__summary {
+  [class$='__summary'] {
     cursor: pointer;
-
-    [data-component-layout='tooltip'] & {
-      list-style: none;
-
-      &::-webkit-details-marker {
-        display: none;
-      }
-    }
-
-    [data-component-layout='stacked'] & {
-      padding: $space;
-    }
   }
 
-  &__content {
+  [class$='__content'] {
     opacity: 0;
     transition: transform 300ms, opacity 300ms;
+  }
 
-    [open] & {
+  &[open] {
+    [class$='__content'] {
       opacity: 1;
-    }
-
-    [data-component-layout='stacked'] & {
-      padding: $space;
-    }
-
-    [data-component-layout='tooltip'] & {
-      display: table;
-      position: fixed;
-      transform: translateY(0%) translateX(0%);
-      width: auto;
-      min-width: $space * 20;
-      max-width: 100vw;
-      padding: $space;
-      border-radius: 0.5rem;
-      background: clr(background-section);
-      color: clr(text);
-    }
-
-    [data-component-layout='tooltip'][data-position='top'] & {
-      bottom: calc(100% + #{$space});
-    }
-
-    [data-component-layout='tooltip'][data-position='bottom'] & {
-      top: calc(100% + #{$space});
-    }
-
-    [data-component-layout='tooltip'][data-alignment='left'][open] & {
-      transform: translateY(-10%) translateX(0%);
-    }
-
-    [data-component-layout='tooltip'][data-alignment='center'] & {
-      transform: translateY(0%) translateX(-25%);
-    }
-
-    [data-component-layout='tooltip'][data-alignment='center'][open] & {
-      transform: translateY(-10%) translateX(-25%);
-    }
-
-    [data-component-layout='tooltip'][data-alignment='right'][open] & {
-      right: 0;
-      transform: translateY(-10%) translateX(0%);
-    }
-
-    [data-component-layout='stacked'][data-alignment='center'] & {
-      text-align: center;
-    }
-
-    [data-component-layout='stacked'][data-alignment='right'] & {
-      text-align: right;
-    }
-
-    [data-component-layout='stacked'][data-position='top'] & {
-      order: -1;
     }
   }
 }

@@ -2,44 +2,26 @@ import accordionTwig from './accordion.twig';
 
 import accordionData from './accordion.yml';
 
+import './accordion';
+
 /**
  * Storybook Definition.
  */
 export default {
   title: 'Molecules/Accordion',
   argTypes: {
-    accordionLayout: {
+    accordionFocus: {
       control: {
         type: 'select',
-        options: ['stacked', 'tooltip'],
+        options: ['all', 'single'],
       },
-      defaultValue: 'stacked',
-    },
-    accordionPosition: {
-      control: {
-        type: 'select',
-        options: ['top', 'bottom'],
-      },
-      defaultValue: 'top',
-    },
-    accordionAlignment: {
-      control: {
-        type: 'select',
-        options: ['left', 'center', 'right'],
-      },
-      defaultValue: 'left',
+      defaultValue: 'single',
     },
   },
 };
 
-export const accordion = ({
-  accordionLayout,
-  accordionPosition,
-  accordionAlignment,
-}) =>
+export const accordion = ({ accordionFocus }) =>
   accordionTwig({
     ...accordionData,
-    accordion__layout: accordionLayout,
-    accordion__position: accordionPosition,
-    accordion__alignment: accordionAlignment,
+    accordion__focus: accordionFocus,
   });

@@ -14,12 +14,15 @@
 {% set disclosure__base_class = disclosure__base_class|default('disclosure') %}
 {% set disclosure__blockname = disclosure__blockname|default('disclosure') %}
 {% set disclosure__modifiers = disclosure__modifiers|default([]) %}
+{% set disclosure__additional_classes = disclosure__additional_classes|default([]) %}
+
+{% if disclosure__base_class != 'disclosure'%}
+  {% set disclosure__additional_classes = disclosure__additional_classes|merge(['disclosure']) %}
+{% endif %}
 
 {% set disclosure__attributes = disclosure__attributes|default({
-  'class': bem(disclosure__base_class, disclosure__blockname, disclosure__modifiers),
-  'data-position': disclosure__position|default('bottom'),
-  'data-alignment': disclosure__alignment|default('left'),
-  'data-component-layout': disclosure__layout|default('stacked'),
+  'class': bem(disclosure__base_class, disclosure__blockname, disclosure__modifiers, disclosure__additional_classes),
+  'aria-expanded': 'false',
 }) %}
 
 <details {{ add_attributes(disclosure__attributes) }}>

@@ -1,20 +1,20 @@
 {% set accordion__base_class = accordion__base_class|default('accordion') %}
 {% set accordion__blockname = accordion__blockname|default('accordion') %}
 {% set accordion__modifiers = accordion__modifiers|default([]) %}
-{% set accordion__layout = accordion__layout|default(['expand']) %}
+{% set accordion__focus = accordion__focus|default(['all']) %}
 
 {% set accordion__attributes = accordion__attributes|default({
   'class': bem(accordion__base_class, accordion__blockname, accordion__modifiers),
+  'data-accordion-focus': accordion__focus,
 }) %}
 
 <div {{ add_attributes(accordion__attributes) }}>
   {% for item in items %}
     {% include "@atoms/disclosure/disclosure.twig" with {
+      disclosure__base_class: accordion__base_class,
+      disclosure__blockname: accordion__blockname,
       disclosure_summary: item.summary,
       disclosure_content: item.content,
-      disclosure__layout: accordion__layout,
-      disclosure__position: accordion__position,
-      disclosure__alignment: accordion__alignment,
     } %}
   {% endfor %}
 </div>
