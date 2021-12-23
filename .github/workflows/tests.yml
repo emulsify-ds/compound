@@ -44,8 +44,8 @@ jobs:
       - name: Install CLI
         run: npm install -g @emulsify/cli
       - name: Install starter
-        run: emulsify init --checkout cli-no-components "Awesome Theme" . --platform drupal
+        run: emulsify init --checkout cli-no-components "Emulsify Drupal Starter" . --platform drupal
       - name: Install system
         run: |
-          cd awesome_theme
+          cd emulsify_drupal_starter
           emulsify system install --repository https://github.com/emulsify-ds/compound.git --checkout ${{ github.head_ref }}
