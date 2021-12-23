@@ -18,14 +18,14 @@
     "prettier": "prettier \"./components\" --ignore-unknown",
     "prettier-fix": "prettier \"./components\" --write --ignore-unknown",
     "sass": "sass",
+    "semantic-release": "semantic-release",
     "storybook": "start-storybook --ci -s images,dist -p 6006",
     "storybook:build": "npm run build && build-storybook -s images,dist -o .out",
     "storybook:deploy": "storybook-to-ghpages -o .out",
     "test": "echo \"Error: no test specified\" && exit 1",
     "visreg": "percy storybook http://localhost:6006",
     "visreg-ci": "percy storybook .out",
-    "webpack": "webpack --watch --config ./webpack/webpack.dev.js",
-    "semantic-release": "semantic-release"
+    "webpack": "webpack --watch --config ./webpack/webpack.dev.js"
   },
   "repository": {
     "type": "git",
