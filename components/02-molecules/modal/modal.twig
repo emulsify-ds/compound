@@ -1,0 +1,84 @@
+{% set modal__base_class = 'modal' %}
+{% set modal__id = modal__id|default() %}
+{% set modal__modifiers = modal__modifiers|default([]) %}
+
+{% if modal__id is empty %}
+	{% set modal__id = random(100000) %}
+{% endif %}
+
+{% set modal_attributes = modal_attributes|default({
+  'class': bem(modal__base_class, modal__modifiers, modal__blockname),
+  'aria-modal': 'true',
+  'aria-expanded': 'false',
+}) %}
+
+{% set modal__pane_attributes = modal__pane_attributes|default({
+  'class': bem('pane', modal__modifiers, modal__base_class),
+  'tabindex': '-1',
+  'aria-hidden': 'true',
+  'aria-labelledby': modal__base_class ~ '-' ~ modal__id ~ '-label',
+  'aria-describedby': modal__base_class ~ '-' ~ modal__id ~ '-heading',
+  'role': 'dialog',
+}) %}
+
+{% set modal__heading_attributes = modal__heading_attributes|default({
+  'class': bem('title', [], modal__base_class),
+  'id': modal__base_class ~ '-' ~ modal__id ~ '-heading',
+}) %}
+
+{% set modal__toggle_attributes = modal__toggle_attributes|default({
+  'class': bem('toggle', [], modal__base_class),
+  'id': modal__base_class ~ '-' ~ modal__id ~ '-label',
+}) %}
+
+{% set modal__close_attributes = modal__close_attributes|default({
+  'class': bem('toggle', [], modal__base_class),
+  'aria-label': 'Close Modal',
+}) %}
+
+<div {{ add_attributes(modal_attributes) }}>
+  <div {{ add_attributes(modal__toggle_attributes) }}>
+    {% block modal__toggle %}
+      {% if modal__toggle is empty %}
+        {% include "@atoms/buttons/button.twig" with {
+          button_content: modal__toggle__content,
+        } %}
+        {% else %}
+          {{ modal__toggle }}
+      {% endif %}
+    {% endblock %}
+  </div>
+
+  <div {{ add_attributes(modal__pane_attributes) }}>
+
+    <div {{ bem('modal-heading', modal__modifiers, modal__base_class) }}>
+      {% include "@atoms/text/headings/_heading.twig" with {
+        heading_base_class: 'title',
+        heading_modifiers: modal__heading_modifiers,
+        heading_blockname: modal__base_class,
+        heading_level: 2,
+        heading: modal__heading,
+        heading_attributes: modal__heading_attributes,
+      } %}
+
+      {% embed "@atoms/buttons/button.twig" with {
+        button_attributes: modal__close_attributes,
+      } %}
+        {% block button_content %}
+          {% include "@atoms/images/icons/_icon.twig" with {
+            icon_name: 'close',
+          } %}
+        {% endblock %}
+      {% endembed %}
+    </div>
+
+    <div {{ bem('content', modal__modifiers, modal__base_class) }}>
+      {% block modal__content %}
+        {% include "@atoms/text/text/01-paragraph.twig" with {
+          paragraph_content: modal_content,
+        } %}
+      {% endblock %}
+    </div>
+  </div>
+  <div {{ bem('overlay', modal__modifiers, modal__base_class) }}></div>
+</div>
