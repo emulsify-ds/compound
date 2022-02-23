@@ -47,6 +47,26 @@
     "xl": {
       "value": 32,
       "type": "spacing"
+    },
+    "xs": {
+      "value": 2,
+      "type": "spacing"
+    }
+  },
+  "size": {
+    "xs": {
+      "value": 2,
+      "type": "sizing"
+    },
+    "sm": {
+      "value": 4,
+      "type": "sizing"
+    }
+  },
+  "breakpoint": {
+    "sm": {
+      "value": 576,
+      "type": "other"
     }
   }
 }
