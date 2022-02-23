@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 23 Feb 2022 21:24:51 GMT
+ * Generated on Wed, 23 Feb 2022 23:16:42 GMT
  */
 
 :root {
@@ -11,17 +11,24 @@
   --colors-white: #ffffff;
   --colors-green: #35aa4e;
   --colors-primary: #B91C1C;
-  --spacing-xs: 2;
-  --spacing-sm: 4;
-  --spacing-md: 8;
-  --spacing-lg: 16;
-  --spacing-xl: 32;
-  --spacing-xxl: 64;
-  --size-xs: 2rem;
+  --spacing-xs: 4 px/2;
+  --spacing-sm: 4 px;
+  --spacing-md: 4 px * 2;
+  --spacing-lg: 4 px * 4;
+  --spacing-xl: 4 px * 8;
+  --spacing-xxl: 4 px*16;
+  --size-xs: 4rem;
   --size-sm: 4rem;
-  --size-md: 8rem;
-  --size-lg: 16rem;
-  --size-xl: 32rem;
-  --size-xxl: 64rem;
-  --breakpoint-sm: 576;
+  --size-md: 4rem;
+  --size-lg: 4rem;
+  --size-xl: 4rem;
+  --size-xxl: 4rem;
+  --breakpoint-sm: 576 px;
+  --breakpoint-md: 768 px;
+  --breakpoint-lg: 992 px;
+  --breakpoint-xl: 1200 px;
+  --breakpoint-xxl: 1400 px;
+  --radius-sm: 4 px;
+  --radius-md: 10 px;
+  --radius-lg: 20 px;
 }
