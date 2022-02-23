@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 23 Feb 2022 20:59:24 GMT
+ * Generated on Wed, 23 Feb 2022 21:24:51 GMT
  */
 
 :root {
@@ -11,12 +11,17 @@
   --colors-white: #ffffff;
   --colors-green: #35aa4e;
   --colors-primary: #B91C1C;
+  --spacing-xs: 2;
   --spacing-sm: 4;
   --spacing-md: 8;
   --spacing-lg: 16;
   --spacing-xl: 32;
-  --spacing-xs: 2;
+  --spacing-xxl: 64;
   --size-xs: 2rem;
   --size-sm: 4rem;
+  --size-md: 8rem;
+  --size-lg: 16rem;
+  --size-xl: 32rem;
+  --size-xxl: 64rem;
   --breakpoint-sm: 576;
 }
