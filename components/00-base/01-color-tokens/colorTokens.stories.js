@@ -1,11 +1,11 @@
-import colors from './color-tokens.twig';
+import template from './color-tokens.twig';
 
-import colorsTokens from '../../../tokens/input.json';
+import tokens from '../../../tokens/input.json';
 
-const colorsData = { colors: colorsTokens.colors };
+const data = { colors: tokens.colors };
 
 export default {
   title: 'Tokens/Colors',
 };
 
-export const Colors = () => colors(colorsData);
+export const Colors = () => template(data);

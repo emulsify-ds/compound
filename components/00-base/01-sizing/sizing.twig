@@ -1,0 +1,14 @@
+<div {{ bem('spacing') }}>
+  <ul {{ bem('list', ['card'], "spacing") }}>
+    {% for spacing, value in _context.spacing %}
+      <li {{ bem("item", [], "spacing") }}>
+        {{spacing}}
+        <div class="spacing__wrapper" style="gap: calc(1px * var(--spacing-{{spacing}}))">
+          {% for v in 1..4 %}
+            <span class="spacing__box"></span>
+          {% endfor %}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
