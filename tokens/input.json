@@ -33,89 +33,89 @@
   },
   "spacing": {
     "xs": {
-      "value": "4 px/2",
+      "value": 2,
       "type": "spacing"
     },
     "sm": {
-      "value": "4 px",
+      "value": 4,
       "type": "spacing"
     },
     "md": {
-      "value": "4 px * 2",
+      "value": 8,
       "type": "spacing"
     },
     "lg": {
-      "value": "4 px * 4",
+      "value": 16,
       "type": "spacing"
     },
     "xl": {
-      "value": "4 px * 8",
+      "value": 32,
       "type": "spacing"
     },
     "xxl": {
-      "value": "4 px*16",
+      "value": 64,
       "type": "spacing"
     }
   },
   "size": {
     "xs": {
-      "value": "4 px/2",
+      "value": 2,
       "type": "sizing"
     },
     "sm": {
-      "value": "4 px",
+      "value": 4,
       "type": "sizing"
     },
     "md": {
-      "value": "4 px * 2",
+      "value": 8,
       "type": "sizing"
     },
     "lg": {
-      "value": "4 px * 4",
+      "value": 16,
       "type": "sizing"
     },
     "xl": {
-      "value": "4 px * 8",
+      "value": 32,
       "type": "sizing"
     },
     "xxl": {
-      "value": "4 px*16",
+      "value": 64,
       "type": "sizing"
     }
   },
   "breakpoint": {
     "sm": {
-      "value": "576 px",
+      "value": 576,
       "type": "other"
     },
     "md": {
-      "value": "768 px",
+      "value": 768,
       "type": "other"
     },
     "lg": {
-      "value": "992 px",
+      "value": 992,
       "type": "other"
     },
     "xl": {
-      "value": "1200 px",
+      "value": 1200,
       "type": "other"
     },
     "xxl": {
-      "value": "1400 px",
+      "value": 1400,
       "type": "other"
     }
   },
   "radius": {
     "sm": {
-      "value": "4 px",
+      "value": 4,
       "type": "borderRadius"
     },
     "md": {
-      "value": "10 px",
+      "value": 10,
       "type": "borderRadius"
     },
     "lg": {
-      "value": "20 px",
+      "value": 20,
       "type": "borderRadius"
     }
   },
