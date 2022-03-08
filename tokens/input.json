@@ -35,7 +35,7 @@
     "xs": {
       "value": 2,
       "type": "spacing",
-      "description": "A very small spacer. Don't use often."
+      "description": ""
     },
     "sm": {
       "value": 4,
