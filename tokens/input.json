@@ -1,4 +1,38 @@
 {
+  "button": {
+    "color": {
+      "bkg": {
+        "value": "#35aa4e",
+        "type": "color"
+      },
+      "label": {
+        "value": "#ffffff",
+        "type": "color"
+      },
+      "bkg-hover": {
+        "value": "red",
+        "type": "color"
+      },
+      "label-hover": {
+        "value": "#ffffff",
+        "type": "color"
+      }
+    },
+    "padding": {
+      "x": {
+        "value": 32,
+        "type": "spacing"
+      },
+      "y": {
+        "value": 8,
+        "type": "spacing"
+      }
+    },
+    "radius": {
+      "value": 10,
+      "type": "borderRadius"
+    }
+  },
   "colors": {
     "red": {
       "300": {
