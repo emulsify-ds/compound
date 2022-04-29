@@ -49,3 +49,4 @@ jobs:
         run: |
           cd emulsify_drupal_starter
           emulsify system install --repository https://github.com/emulsify-ds/compound.git --checkout ${{ github.head_ref }}
+          emulsify component install --all
