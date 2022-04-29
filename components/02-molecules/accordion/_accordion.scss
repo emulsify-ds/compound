@@ -1,26 +1,26 @@
 // The accordion group.
 .accordion {
-  padding-block: var(--size-spacing-6);
+  padding-block: $space;
 }
 
 .accordion__controls {
   display: flex;
-  margin-bottom: var(--size-spacing-5);
+  margin-bottom: $space;
 
   > *:not(:last-child) {
-    padding-right: var(--size-spacing-5);
-    margin-right: var(--size-spacing-5);
-    border-right: var(--border-thickness-1) solid;
+    padding-right: $space;
+    margin-right: $space;
+    border-right: 1px solid;
   }
 }
 
 .accordion__toggle-all {
   display: flex;
-  gap: var(--size-spacing-3);
+  gap: $space;
   align-items: center;
 
   &:hover {
-    color: var(--color-link);
+    color: clr(link);
   }
 }
 
@@ -35,25 +35,25 @@
 
 // Individual accordion items.
 .accordion-item {
-  border-bottom: var(--border-thickness-1) solid;
-  padding-top: var(--size-spacing-5);
+  border-bottom: 1px solid;
+  padding-top: $space;
 }
 
 .accordion-item__heading {
-  margin-bottom: var(--size-spacing-5);
+  display: flex;
+  margin-bottom: $space;
 }
 
 .accordion-item__toggle {
   display: flex;
-  gap: var(--size-spacing-5);
+  gap: $space;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  padding-right: var(--size-spacing-4);
+  padding: 0;
   text-align: left;
 
   &:hover {
-    color: var(--color-link);
+    color: clr(link);
   }
 }
 
@@ -67,11 +67,10 @@
 }
 
 .accordion-item__content {
-  max-height: var(--accordion-item-height);
   overflow: hidden;
 
   [data-accordion-expanded='true'] & {
-    margin-bottom: var(--size-spacing-6);
+    margin-bottom: $space;
   }
 
   [data-accordion-expanded='false'] & {
