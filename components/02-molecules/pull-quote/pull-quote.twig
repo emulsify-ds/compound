@@ -22,9 +22,10 @@
 <div {{ add_attributes(pull_quote__attributes) }}>
   <div {{ bem('inner', [], pull_quote__base_class) }}>
     <figure {{ bem('figure', [], pull_quote__base_class) }}>
-      <blockquote {{ bem('quote', [], pull_quote__base_class) }}>
-        {{ pull_quote__quote }}
-      </blockquote>
+      {% include "@atoms/text/text/02-blockquote.twig" with {
+        blockquote_base_class: pull_quote__base_class,
+        blockquote_content: pull_quote__quote
+      } %}
       {% if pull_quote__attribution %}
         <figcaption {{ bem('attribution', [], pull_quote__base_class) }}>—{{ pull_quote__attribution }}</figcaption>
       {% endif %}
