@@ -105,9 +105,9 @@
     {# Button #}
     {% if card__button__url %}
       {% include "@atoms/buttons/button.twig" with {
-        button_base_class: card__button__base_class|default('button'),
-        button_modifiers: card__button__modifiers,
-        button_blockname: card__base_class,
+        button__base_class: card__button__base_class|default('button'),
+        button__modifiers: card__button__modifiers,
+        button__blockname: card__base_class,
         button_attributes: card__button__attributes,
         button_content: card__button__content,
         button_url: card__button__url,
