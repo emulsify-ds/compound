@@ -1,36 +1,51 @@
 header:
   - tag: th
+    content: Heading item 1
   - tag: th
-    content: SC-WAN
+    content: Heading item 2
   - tag: th
-    content: APP ACCELERATION
+    content: Heading item 3
+    attributes: { data-cell-highlight: '' }
   - tag: th
-    content: SECURITY
+    content: Heading item 4
 rows:
   - cells:
       - tag: td
-        content: <h3>Riverbed</h3><p>Powerful SD-WAN integrates enterprise- class routing, industry-leading application acceleration, and advanced native security in a unified software platform.</p>
+        content: <h3>Lorem ipsum dolor sit amet</h3><p>Massa erat, eu tempus magna aliquet at. Cras tincidunt nulla sit amet urna maximus, at auctor felis pretium. Nam dignissim fringilla egestas..</p>
       - tag: td
         content: CHECK
       - tag: td
         content: CHECK
-      - tag: td
-        content: CHECK
-  - cells:
-      - tag: td
-        content: <h3>Cisco Viptela</h3><p>A fragmented, unstable, and backward-looking offering attempts to add Viptela software to conventional ISR routers.</p>
-      - tag: td
-        content: Limited
-      - tag: td
-        content: Limited
+        attributes: { data-cell-highlight: '' }
       - tag: td
         content: CHECK
   - cells:
       - tag: td
-        content: <h3>VMWare Velocloud</h3><p>Pure-play SD-WAN with limited routing and app acceleration capabilities also relies on 3rd parties for security.</p>
+        content: <h3>Nullam a nibh tempor justo suscipit</h3><p>Roin luctus maximus auctor. Praesent bibendum pharetra convallis. Suspendisse consectetur tempor dignissim. Aliquam erat volutpat.</p>
+      - tag: td
+        content: Limited
+      - tag: td
+        content: Limited
+        attributes: { data-cell-highlight: '' }
+      - tag: td
+        content: CHECK
+  - cells:
+      - tag: td
+        content: <h3>Pellentesque habitant morbi tristique senectus</h3><p>Paecenas tincidunt orci non erat congue bibendum. Donec at accumsan risus. Maecenas tristique gravida elit, non molestie felis hendrerit posuere.</p>
       - tag: td
         content: Limited
       - tag: td
         content: NOCHECK
+        attributes: { data-cell-highlight: '' }
       - tag: td
         content: NOCHECK
+footer:
+  - tag: td
+    content: Footer item 1
+  - tag: td
+    content: Footer item 2
+  - tag: td
+    content: Footer item 3
+    attributes: { data-cell-highlight: '' }
+  - tag: td
+    content: Footer item 4

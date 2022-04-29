@@ -41,17 +41,15 @@
 {% set table__base_class = table__base_class|default('table') %}
 {% set table__blockname = table__blockname|default([]) %}
 {% set table__modifiers = table__modifiers|default([]) %}
-{% set table__attributes = table__attributes|default([]) %}
+{% set table__attributes = table__attributes|default({
+  'class': bem(table__base_class, table__modifiers, table__blockname),
+}) %}
 
 {% if attributes %}
   {% set table__attributes = table__attributes|merge(attributes) %}
 {% endif %}
 
-{% set table__attributes = table__attributes|merge({
-  'class': bem(table__base_class, table__modifiers, table__blockname),
-}) %}
-
-<table {{ bem(table__base_class, table__modifiers, table__blockname) }} {{ add_attributes(table__attributes) }}>
+<table {{ add_attributes(table__attributes) }}>
   {% if caption %}
     <caption>{{ caption }}</caption>
   {% endif %}
@@ -72,9 +70,15 @@
     <thead {{ bem('header', [], table__base_class) }}>
       <tr>
         {% for cell in header %}
-          <{{ cell.tag }} {{ bem('heading-cell', [], table__base_class) }}>
+          {% set table__header_cell__attributes = {
+            'class': bem('header_cell', [], table__base_class),
+          } %}
+          {% if cell.attributes %}
+            {% set table__header_cell__attributes = table__header_cell__attributes|merge(cell.attributes) %}
+          {% endif %}
+          <{{cell.tag}} {{ add_attributes(table__header_cell__attributes) }}>
             {{- cell.content -}}
-          </{{ cell.tag }}>
+          </{{cell.tag}}>
         {% endfor %}
       </tr>
     </thead>
@@ -85,9 +89,15 @@
       {% for row in rows %}
         <tr {{ bem('row', [], table__base_class) }}>
           {% for cell in row.cells %}
-            <{{ cell.tag }} {{ bem('cell', [], table__base_class) }}>
+            {% set table__cell__attributes = {
+              'class': bem('cell', [], table__base_class),
+            } %}
+            {% if cell.attributes %}
+              {% set table__cell__attributes = table__cell__attributes|merge(cell.attributes) %}
+            {% endif %}
+            <{{cell.tag}} {{ add_attributes(table__cell__attributes) }}>
               {{- cell.content -}}
-            </{{ cell.tag }}>
+            </{{cell.tag}}>
           {% endfor %}
         </tr>
       {% endfor %}
@@ -99,17 +109,22 @@
       </tr>
     </tbody>
   {% endif %}
+
   {% if footer %}
-    <tfoot>
-      {% for row in footer %}
-        <tr {{ row.attributes }}>
-          {% for cell in row.cells %}
-            <{{ cell.tag }} {{ bem('table__heading-cell table__footer-cell') }}>
-              {{- cell.content -}}
-            </{{ cell.tag }}>
-          {% endfor %}
-        </tr>
-      {% endfor %}
+    <tfoot {{ bem('footer', [], table__base_class) }}>
+      <tr>
+        {% for cell in footer %}
+          {% set table__footer_cell__attributes = {
+            'class': bem('footer_cell', [], table__base_class),
+          } %}
+          {% if cell.attributes %}
+            {% set table__footer_cell__attributes = table__footer_cell__attributes|merge(cell.attributes) %}
+          {% endif %}
+          <{{cell.tag}} {{ add_attributes(table__footer_cell__attributes) }}>
+            {{- cell.content -}}
+          </{{cell.tag}}>
+        {% endfor %}
+      </tr>
     </tfoot>
   {% endif %}
 </table>

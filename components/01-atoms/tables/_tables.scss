@@ -1,50 +1,86 @@
-.table {
-  border: 1px solid clr(highlight-high);
-  border-spacing: 0;
-  background-color: clr(muted);
-  margin: $space 0;
-  width: 100%;
+$table-border-width: 1px;
+
+@mixin table-header-footer {
+  background-color: clr(highlight-high);
+
+  > * {
+    border-color: clr(highlight);
+  }
 }
 
-@mixin table-cell-base {
+@mixin table-cell {
   border: 0;
-  border-bottom: 1px solid clr(highlight-high);
-  border-right: 1px solid clr(highlight-high);
+  border-right-width: $table-border-width;
+  border-bottom-width: $table-border-width;
+  border-style: solid;
+  border-color: inherit;
   padding: $space;
+
+  &:last-child {
+    border-right: 0;
+  }
 
   :last-child > & {
     border-bottom: 0;
   }
-}
 
-.table__heading-cell,
-.table__cell {
-  @include table-cell-base;
-}
-
-.table__heading-cell {
-  color: clr(accent-high);
-  padding: $space;
-}
-
-.table__row {
-  &:nth-child(odd) {
-    background-color: clr(background);
+  &[data-cell-highlight] {
+    background-color: clr(highlight);
   }
 }
 
-.table__footer-cell,
-.table__footer-cell:first-child {
-  border-bottom: 0;
+.table {
+  border: $table-border-width solid clr(highlight-high);
+  border-spacing: 0;
+  margin: $space 0;
+  width: 100%;
 }
 
-.text-long {
+// Table header elements
+.table__header {
+  @include table-header-footer;
+}
+
+.table__header_cell {
+  @include table-cell;
+}
+
+// Table body rows
+.table__row {
+  // Alternate row background/border colors
+  &:nth-child(odd) {
+    background-color: clr(background);
+    border-color: clr(highlight-high);
+  }
+
+  &:nth-child(even) {
+    background-color: clr(highlight-high);
+    border-color: clr(highlight);
+  }
+}
+
+// Table body cells
+.table__cell {
+  @include table-cell;
+}
+
+// Table footer elements
+.table__footer {
+  @include table-header-footer;
+}
+
+.table__footer_cell {
+  @include table-cell;
+}
+
+// WYSIWYG specific styles
+.text-field {
   table {
     @extend .table;
   }
 
   th {
-    @extend .table__heading-cell;
+    @extend .table__header_cell;
   }
 
   td {
@@ -56,6 +92,6 @@
   }
 
   tfoot th {
-    @extend .table__footer-cell;
+    @extend .table__footer_cell;
   }
 }
