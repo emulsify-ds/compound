@@ -142,6 +142,10 @@
           "required": true
         },
         {
+          "name": "accordion",
+          "structure": "molecules"
+        },
+        {
           "name": "card",
           "structure": "molecules"
         },

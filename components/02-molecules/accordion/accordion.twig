@@ -1,0 +1,80 @@
+{#
+ # Available Variables:
+ # - accordion__heading
+ #
+ # Available Blocks:
+ # - accordion__items
+ #}
+
+{% set accordion__base_class = 'accordion' %}
+
+{% set expand_all__content %}
+  Expand All
+  {% include "@atoms/images/icons/_icon.twig" with {
+    icon__name: 'angle-down',
+    icon__blockname: accordion__base_class,
+  } %}
+{% endset %}
+
+{% set collapse_all__content %}
+  Collapse All
+  {% include "@atoms/images/icons/_icon.twig" with {
+    icon__name: 'angle-down',
+    icon__blockname: accordion__base_class,
+  } %}
+{% endset %}
+
+{% set accordion__attibutes = {
+  'data-embedded-components': '',
+  'data-component-width': 'content',
+  'class': bem(accordion__base_class),
+} %}
+
+<div {{ add_attributes(accordion__attibutes) }}>
+  <div {{ bem('inner', [], accordion__base_class) }}>
+    {% if accordion__heading %}
+      {% include "@atoms/typography/headings/heading.twig" with {
+        heading__level: '2',
+        heading__blockname: accordion__base_class,
+        heading: accordion__heading,
+      } %}
+    {% endif %}
+    {% embed "@atoms/lists/list.twig" with {
+      list__base_class: 'controls',
+      list__blockname: accordion__base_class,
+      list__attributes: {'aria-label': 'Section controls'},
+    } %}
+      {% block list__content %}
+        {% embed "@atoms/lists/_list-item.twig" %}
+          {% block list__item__content %}
+            {% include "@atoms/buttons/button.twig" with {
+              button__content: expand_all__content,
+              button__base_class: 'toggle-all',
+              button__modifiers: ['expand'],
+              button__blockname: accordion__base_class,
+            } %}
+          {% endblock %}
+        {% endembed %}
+        {% embed "@atoms/lists/_list-item.twig" %}
+          {% block list__item__content %}
+            {% include "@atoms/controls/cta/cta.twig" with {
+              button__content: collapse_all__content,
+              button__base_class: 'toggle-all',
+              button__modifiers: ['collapse'],
+              button__blockname: accordion__base_class,
+            } %}
+          {% endblock %}
+        {% endembed %}
+      {% endblock %}
+    {% endembed %}
+    {% block accordion__items %}
+      {% for item in accordion__items %}
+        {% include "@molecules/accordion/_accordion-item.twig" with {
+          accordion__item__heading: item.accordion__item__heading,
+          accordion__item__content: item.accordion__item__content,
+          accordion__item__heading__level: accordion__heading ? '3' : '2',
+        } %}
+      {% endfor %}
+    {% endblock %}
+  </div>
+</div>
