@@ -5,19 +5,13 @@ Drupal.behaviors.accordion = {
     const controls = context.querySelectorAll('.accordion__controls');
     // Classes
     const itemToggle = '.accordion-item__toggle';
-    const itemContent = '.accordion-item__content';
     const itemState = 'data-accordion-expanded';
     const buttonState = 'aria-expanded';
 
     // Function to expand an accordion item.
     const expand = (item) => {
       const toggle = item.querySelector(itemToggle);
-      const content = item.querySelector(itemContent);
 
-      content.style.setProperty(
-        '--accordion-item-height',
-        `${content.scrollHeight}px`,
-      );
       item.setAttribute(itemState, 'true');
       toggle.setAttribute(buttonState, 'true');
     };

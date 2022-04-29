@@ -42,7 +42,10 @@
     list__attributes: {'aria-label': 'Section controls'},
   } %}
     {% block list__content %}
-      {% embed "@atoms/lists/_list-item.twig" %}
+      {% embed "@atoms/lists/_list-item.twig" with {
+        list__item__base_class: 'controls__item',
+        list__item__blockname: accordion__base_class,
+      }%}
         {% block list__item__content %}
           {% include "@atoms/buttons/button.twig" with {
             button__content: expand_all__content,
@@ -52,7 +55,10 @@
           } %}
         {% endblock %}
       {% endembed %}
-      {% embed "@atoms/lists/_list-item.twig" %}
+      {% embed "@atoms/lists/_list-item.twig" with {
+        list__item__base_class: 'controls__item',
+        list__item__blockname: accordion__base_class,
+      }%}
         {% block list__item__content %}
           {% include "@atoms/buttons/button.twig" with {
             button__content: collapse_all__content,
