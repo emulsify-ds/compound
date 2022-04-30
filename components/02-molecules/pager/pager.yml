@@ -1,5 +1,8 @@
 pager__uid: 0
 current: 1
+ellipses:
+  next: false
+  prev: false
 items:
   pages:
     - href: '#'
