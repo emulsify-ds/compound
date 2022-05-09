@@ -3,6 +3,8 @@ Drupal.behaviors.modal = {
     // Variables
     const modals = context.querySelector('.modal');
     let activeModal = context.querySelector('.modal--active');
+    const focusableElements =
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
 
     // Check if an element is completely empty.
     function isEmpty(node) {
@@ -18,6 +20,35 @@ Drupal.behaviors.modal = {
         x = 'true';
       }
       el.setAttribute(`aria-${aria}`, x);
+    }
+
+    // Traps keyboard focus when modal is open for ADA compliance
+    function trapKeyboard(modal) {
+      const firstFocusableElement =
+        modal.querySelectorAll(focusableElements)[0];
+      const focusableContent = modal.querySelectorAll(focusableElements);
+      const lastFocusableElement =
+        focusableContent[focusableContent.length - 1];
+
+      modal.addEventListener('keydown', (e) => {
+        const isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+
+        if (!isTabPressed) {
+          return;
+        }
+
+        if (e.shiftKey) {
+          if (document.activeElement === firstFocusableElement) {
+            lastFocusableElement.focus();
+            e.preventDefault();
+          }
+        } else if (document.activeElement === lastFocusableElement) {
+          firstFocusableElement.focus();
+          e.preventDefault();
+        }
+      });
+
+      firstFocusableElement.focus();
     }
 
     // Toggle tabindex focus attribute.
@@ -42,6 +73,7 @@ Drupal.behaviors.modal = {
       activeModal = context.querySelector('.modal--active');
       toggleAria(modalModalPane, 'hidden');
       toggleAria(modal, 'expanded');
+      trapKeyboard(modalModalPane);
       toggletabIndex(modalModalPane);
     }
 
