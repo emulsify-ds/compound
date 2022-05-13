@@ -2,12 +2,20 @@
   --color-gray-light: #{$gray-light};
   --color-gray-lightest: #{$gray-lightest};
   --color-blue-light: #{$blue-light};
+  --color-black: #{$black};
 }
 
 .pull-quote {
   --color-pull-quote-quote: var(--color-gray-lightest);
   --color-pull-quote-attribution: var(--color-gray-lightest);
   --color-pull-quote-accent: var(--color-blue-light);
+
+  background-color: var(--color-black);
+  padding: 3rem 2rem;
+
+  + .pull-quote {
+    margin-top: 2rem;
+  }
 }
 
 .pull-quote__figure {
@@ -39,13 +47,13 @@
 }
 
 .pull-quote__quote {
-  color: var(--color-pull-quote-quote);
-
-  > *:last-child {
-    margin-bottom: 0;
+  p {
+    font-size: 1.2rem;
   }
 }
 
 .pull-quote__attribution {
+  font-size: 1rem;
   color: var(--color-pull-quote-attribution);
+  padding: 0 3rem;
 }
