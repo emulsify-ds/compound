@@ -89,106 +89,150 @@
         {
           "name": "01-colors",
           "structure": "base",
-          "required": true
+          "required": true,
+          "dependency": ["text"],
+          "subtheme": ["starter"]
         },
         {
           "name": "02-motion",
           "structure": "base",
-          "required": true
+          "required": true,
+          "dependency": [],
+          "subtheme": ["starter"]
         },
         {
           "name": "03-site",
           "structure": "base",
-          "required": true
+          "required": true,
+          "dependency": [],
+          "subtheme": ["starter"]
         },
         {
           "name": "buttons",
           "structure": "atoms",
-          "required": true
+          "required": true,
+          "dependency": [],
+          "subtheme": ["starter"]
         },
         {
           "name": "forms",
           "structure": "atoms",
-          "required": true
+          "required": true,
+          "dependency": [],
+          "subtheme": ["starter"]
         },
         {
           "name": "images",
           "structure": "atoms",
-          "required": true
+          "required": true,
+          "dependency": [],
+          "subtheme": ["starter"]
         },
         {
           "name": "links",
           "structure": "atoms",
-          "required": true
+          "required": true,
+          "dependency": [],
+          "subtheme": ["starter"]
         },
         {
           "name": "lists",
           "structure": "atoms",
-          "required": true
+          "required": true,
+          "dependency": [],
+          "subtheme": ["starter"]
         },
         {
           "name": "tables",
           "structure": "atoms",
-          "required": true
+          "required": true,
+          "dependency": [],
+          "subtheme": ["starter"]
         },
         {
           "name": "text",
           "structure": "atoms",
-          "required": true
+          "required": true,
+          "dependency": ["links"],
+          "subtheme": ["starter"]
         },
         {
           "name": "video",
           "structure": "atoms",
-          "required": true
+          "required": true,
+          "dependency": [],
+          "subtheme": ["starter"]
         },
         {
           "name": "card",
-          "structure": "molecules"
+          "structure": "molecules",
+          "dependency": ["images", "text", "links", "buttons"],
+          "subtheme": ["starter"]
         },
         {
           "name": "cta",
-          "structure": "molecules"
+          "structure": "molecules",
+          "dependency": ["buttons"],
+          "subtheme": ["starter"]
         },
         {
           "name": "menus",
           "structure": "molecules",
-          "required": true
+          "required": true,
+          "dependency": ["images", "links", "lists"],
+          "subtheme": ["starter"]
         },
         {
           "name": "pager",
           "structure": "molecules",
-          "required": true
+          "required": true,
+          "dependency": [],
+          "subtheme": ["starter"]
         },
         {
           "name": "status",
           "structure": "molecules",
-          "required": true
+          "required": true,
+          "dependency": [],
+          "subtheme": ["starter"]
         },
         {
           "name": "tabs",
-          "structure": "molecules"
+          "structure": "molecules",
+          "dependency": [],
+          "subtheme": ["starter"]
         },
         {
           "name": "grid",
           "structure": "organisms",
-          "required": true
+          "required": true,
+          "dependency": ["text", "cta", "card"],
+          "subtheme": ["starter"]
         },
         {
           "name": "site",
           "structure": "organisms",
-          "required": true
+          "required": true,
+          "dependency": ["images", "menus"],
+          "subtheme": ["starter"]
         },
         {
           "name": "placeholder",
-          "structure": "templates"
+          "structure": "templates",
+          "dependency": ["site"],
+          "subtheme": ["starter"]
         },
         {
           "name": "content-types",
-          "structure": "pages"
+          "structure": "pages",
+          "dependency": ["text", "grid", "cta"],
+          "subtheme": ["starter", "content"]
         },
         {
           "name": "landing-pages",
-          "structure": "pages"
+          "structure": "pages",
+          "dependency": ["text", "grid", "cta"],
+          "subtheme": ["starter", "landing"]
         }
       ]
     }
