@@ -1,0 +1,20 @@
+ {#
+/**
+ * Available variables:
+ * - code__content - the content of the code (typically text)
+ *
+ * Available blocks:
+ * - - code_content - used to replace the content of the code with something other than text
+ *   for example: A formatted text field in Drupal
+ */
+#}
+
+{% set code_base_class = code_base_class|default('code') %}
+<pre {{ bem(code_base_class, code_modifiers, code_blockname) }}>
+  <code {{ bem('content', [], code_base_class) }}>
+    {% block code_content %}
+      {{- code_content -}}
+    {% endblock %}
+  </code>
+</pre>
+
