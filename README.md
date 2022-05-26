@@ -1,3 +1,5 @@
+[![Emulsify Design System](https://user-images.githubusercontent.com/409903/170579210-327abcdd-2c98-4922-87bb-36446a4cc013.svg)](https://www.emulsify.info/)
+
 ## Compound
 
 <blockquote>Noun: A thing that is composed of two or more separate elements</blockquote>
