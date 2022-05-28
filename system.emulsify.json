@@ -205,7 +205,7 @@
         {
           "name": "content-types",
           "structure": "pages",
-          "dependency": ["text", "grid", "cta"],
+          "dependency": ["grid"],
           "subtheme": ["starter", "content"]
         },
         {
