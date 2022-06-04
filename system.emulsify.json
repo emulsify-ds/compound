@@ -89,106 +89,128 @@
         {
           "name": "01-colors",
           "structure": "base",
-          "required": true
+          "required": true,
+          "dependency": ["text"]
         },
         {
           "name": "02-motion",
           "structure": "base",
-          "required": true
+          "required": true,
+          "dependency": []
         },
         {
           "name": "03-site",
           "structure": "base",
-          "required": true
+          "required": true,
+          "dependency": []
         },
         {
           "name": "buttons",
           "structure": "atoms",
-          "required": true
+          "required": true,
+          "dependency": []
         },
         {
           "name": "forms",
           "structure": "atoms",
-          "required": true
+          "required": true,
+          "dependency": []
         },
         {
           "name": "images",
           "structure": "atoms",
-          "required": true
+          "required": true,
+          "dependency": []
         },
         {
           "name": "links",
           "structure": "atoms",
-          "required": true
+          "required": true,
+          "dependency": []
         },
         {
           "name": "lists",
           "structure": "atoms",
-          "required": true
+          "required": true,
+          "dependency": []
         },
         {
           "name": "tables",
           "structure": "atoms",
-          "required": true
+          "required": true,
+          "dependency": []
         },
         {
           "name": "text",
           "structure": "atoms",
-          "required": true
+          "required": true,
+          "dependency": ["links"]
         },
         {
           "name": "video",
           "structure": "atoms",
-          "required": true
+          "required": true,
+          "dependency": []
         },
         {
           "name": "card",
-          "structure": "molecules"
+          "structure": "molecules",
+          "dependency": ["images", "text", "links", "buttons"]
         },
         {
           "name": "cta",
-          "structure": "molecules"
+          "structure": "molecules",
+          "dependency": ["buttons"]
         },
         {
           "name": "menus",
           "structure": "molecules",
-          "required": true
+          "required": true,
+          "dependency": ["images", "links", "lists"]
         },
         {
           "name": "pager",
           "structure": "molecules",
-          "required": true
+          "required": true,
+          "dependency": []
         },
         {
           "name": "status",
           "structure": "molecules",
-          "required": true
+          "required": true,
+          "dependency": []
         },
         {
           "name": "tabs",
-          "structure": "molecules"
+          "structure": "molecules",
+          "dependency": []
         },
         {
           "name": "grid",
           "structure": "organisms",
-          "required": true
+          "required": true,
+          "dependency": ["text", "cta", "card"]
         },
         {
           "name": "site",
           "structure": "organisms",
-          "required": true
+          "required": true,
+          "dependency": ["images", "menus"]
         },
         {
           "name": "placeholder",
-          "structure": "templates"
+          "structure": "templates",
+          "dependency": ["site"]
         },
         {
           "name": "content-types",
-          "structure": "pages"
+          "structure": "pages",
+          "dependency": ["text", "grid", "cta"]
         },
         {
           "name": "landing-pages",
-          "structure": "pages"
+          "structure": "pages",
+          "dependency": ["text", "grid", "cta"]
         }
       ]
     }
