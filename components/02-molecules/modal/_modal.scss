@@ -1,4 +1,4 @@
-// Base modal styles. Additional classes accomodate for custom app implementations.
+// Base modal styles. Additional classes accommodate for custom app implementations.
 .modal__toggle {
   cursor: pointer;
 }
@@ -7,26 +7,26 @@
   background-color: clr(background-section);
   color: clr(text);
   left: 0;
-  width: 100vw;
   opacity: 0;
+  padding: $space;
   position: fixed;
   top: 50%;
   transform: translate(0%, -50%);
   transition: opacity 300ms;
-  padding: $space;
   visibility: hidden;
+  width: 100vw;
   z-index: 1000;
 
   @include large {
-    width: $small;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: $small;
   }
 
   .modal--active & {
+    max-height: 100vh;
     opacity: 1;
     visibility: visible;
-    max-height: 100vh;
   }
 }
 
@@ -40,8 +40,8 @@
   @include wrapper($container-max-width: $small);
 
   > * {
-    width: 100%;
     margin-bottom: $space;
+    width: 100%;
   }
 
   *:last-child {
@@ -67,13 +67,13 @@
 
   .icon {
     fill: clr(text);
+    height: $space;
+    position: relative;
+    right: 0;
     stroke: clr(text);
     stroke-linecap: round;
-    position: relative;
     top: $space-one-fourth;
-    right: 0;
     width: $space;
-    height: $space;
   }
 }
 
@@ -82,14 +82,14 @@
   color: clr(text);
   display: none;
   left: 0;
+  opacity: 0.45;
   position: fixed;
   top: 0;
-  opacity: 0.45;
 
   &--active {
     display: block;
-    width: 100vw;
     height: 100vh;
+    width: 100vw;
     z-index: 999;
   }
 }

@@ -9,13 +9,13 @@ $button-colors: (
   ),
   primary-dark: (
     text: clr(text),
-    bg: clr(primary),
+    bg: clr(primary-alt),
     text-hover: clr(text),
     bg-hover: clr(highlight-high),
   ),
   secondary: (
     text: clr(text-inverse),
-    bg: clr(secondary),
+    bg: clr(secondary-alt),
     text-hover: clr(secondary),
     bg-hover: clr(highlight),
   ),

@@ -1,3 +1,26 @@
+{#
+ # Available variables:
+ # - modal__id - unique id of the wrapper.
+ # - modal__base_class - base classname of the wrapper.
+ # - modal__modifiers - array of modifiers to add to the base classname of the wrapper.
+ # - modal__blockname - blockname prepended to the base classname of the wrapper(s) and each component.
+ #
+ # - modal__attributes - array of attributes and their values for the wrapper.
+ # - modal__toggle_attributes - array of attributes and their values for the toggle.
+ # - modal__close_attributes - array of attributes and their values for the close button.
+ # - modal__heading_attributes - array of attributes and their values for the heading.
+ #
+ # - modal__toggle__content - button content if block is not replaced.
+ #
+ # - modal__heading_modifiers - array of modifiers to add to the base classname of the modal heading.
+ # - modal__heading - Main heading and label of the modal when open.
+ #
+ # Available blocks:
+ # - modal__toggle - Content that triggers the modal.
+ # - modal__content - Content of the modal when open.
+ # - button_content - Content of the modals close button. Defaults to close icon.
+ #}
+
 {% set modal__base_class = 'modal' %}
 {% set modal__id = modal__id|default() %}
 {% set modal__modifiers = modal__modifiers|default([]) %}
@@ -6,7 +29,7 @@
 	{% set modal__id = random(100000) %}
 {% endif %}
 
-{% set modal_attributes = modal_attributes|default({
+{% set modal__attributes = modal__attributes|default({
   'class': bem(modal__base_class, modal__modifiers, modal__blockname),
   'aria-modal': 'true',
   'aria-expanded': 'false',
@@ -36,7 +59,7 @@
   'aria-label': 'Close Modal',
 }) %}
 
-<div {{ add_attributes(modal_attributes) }}>
+<div {{ add_attributes(modal__attributes) }}>
   <div {{ add_attributes(modal__toggle_attributes) }}>
     {% block modal__toggle %}
       {% if modal__toggle is empty %}
@@ -58,7 +81,7 @@
         heading_blockname: modal__base_class,
         heading_level: 2,
         heading: modal__heading,
-        heading_attributes: modal__heading_attributes,
+        heading__attributes: modal__heading_attributes,
       } %}
 
       {% embed "@atoms/buttons/button.twig" with {

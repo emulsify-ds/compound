@@ -169,6 +169,11 @@
           "dependency": ["images", "links", "lists"]
         },
         {
+          "name": "modal",
+          "structure": "molecules",
+          "dependency": ["buttons", "text", "images"]
+        },
+        {
           "name": "pager",
           "structure": "molecules",
           "required": true,

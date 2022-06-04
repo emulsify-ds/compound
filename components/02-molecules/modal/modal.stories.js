@@ -33,6 +33,7 @@ export const modalText = () => {
 export const modalMedia = () => {
   return modalTwig({
     ...modalData,
-    modal__toggle: '<img src="https://placeimg.com/320/180/any">',
+    modal__toggle:
+      '<img src="https://placeimg.com/320/180/any" alt="Example image to trigger the modal">',
   });
 };
