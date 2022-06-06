@@ -1,0 +1,22 @@
+/* Responsive Video using CSS only */
+.video {
+  iframe {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  video {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.video__wrap {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%; /* 56.25% = 16x9 */
+  position: relative;
+}
