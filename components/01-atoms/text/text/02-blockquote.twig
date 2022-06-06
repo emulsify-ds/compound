@@ -12,11 +12,13 @@
  *   for example: A formatted text field in Drupal
  */
 #}
-{% set blockquote_base_class = blockquote_base_class|default('blockquote') %}
+{% set blockquote__base_class = blockquote__base_class|default('blockquote') %}
 
-<blockquote
-  {{ bem(blockquote_base_class, blockquote_modifiers, blockquote_blockname) }}
->
+{% set blockquote__attributes = {
+  class: bem(blockquote__base_class, blockquote__modifiers, blockquote__blockname),
+} %}
+
+<blockquote {{ add_attributes(blockquote__attributes) }}>
   {% block blockquote_content %}
     {{ blockquote_content }}
   {% endblock %}
