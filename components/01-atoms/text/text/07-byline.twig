@@ -1,0 +1,35 @@
+{#
+/**
+ * Available variables:
+ * - byline_base_class - the base classname
+ * - byline_modifiers - array of modifiers to add to the base classname
+ * - byline_blockname - blockname prepended to the base classname
+ * - byline_content - the content of the byline (typically text)
+ * - byline_author - the author of the byline (typically text)
+ * - byline_pre - prefaces the author of the byline (typically text)
+ *
+ * Available blocks:
+ * - byline_content - used to replace the content of the blockquote with something other than text
+ *   for example: A formatted text field in Drupal
+ */
+#}
+
+{% set byline__base_class = byline__base_class|default('byline') %}
+
+{# {% set date_time__attributes = {
+  datetime: date_time__start|date(format__iso),
+  class: bem('date-time'),
+} %} #}
+
+
+
+  <byline {{ add_attributes(byline__attributes) }}>
+    {% block byline_content %}
+      {{ byline_content }}
+      <div {{ bem('author', byline__modifiers, byline__base_class) }}> <span {{ bem('pre', byline__modifiers, byline__base_class)}}> {{ byline_pre }} </span> {{ byline_author }} </div>
+      <div {{ bem('date', byline__modifiers, byline__base_class) }}> 
+        {% include "@atoms/date-time/date-time.twig"  %} 
+      </div>
+    {% endblock %}
+  </byline>
+
