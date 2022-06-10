@@ -1,38 +1,27 @@
-:root {
-  --color-gray-light: #{$gray-light};
-  --color-gray-lightest: #{$gray-lightest};
-  --color-blue-light: #{$blue-light};
-  --color-black: #{$black};
+.pull-quote {
+  padding: $space-double;
 }
 
-.pull-quote {
-  --color-pull-quote-quote: var(--color-gray-lightest);
-  --color-pull-quote-attribution: var(--color-gray-lightest);
-  --color-pull-quote-accent: var(--color-blue-light);
-
-  background-color: var(--color-black);
-  padding: 3rem 2rem;
-
-  + .pull-quote {
-    margin-top: 2rem;
-  }
+.pull-quote__blockquote {
+  border-left: none;
+  margin: 0;
 }
 
 .pull-quote__figure {
   [data-pull-quote-style='bar-left'] & {
     padding-left: $space;
-    border-left: 0.5rem solid var(--color-pull-quote-accent);
+    border-left: $space-one-half solid clr(accent);
   }
 
   [data-pull-quote-style='bar-right'] & {
     padding-right: $space;
-    border-right: 0.5rem solid var(--color-pull-quote-accent);
+    border-right: $space-one-half solid clr(accent);
     text-align: right;
   }
 
   [data-pull-quote-style='quote-left'] & {
     position: relative;
-    padding-left: $space;
+    padding-left: $space-triple;
 
     &::before {
       content: '“';
@@ -41,7 +30,7 @@
       left: 0;
       font-size: 4em;
       line-height: 0.8;
-      color: var(--color-pull-quote-accent);
+      color: clr(accent);
     }
   }
 }
@@ -54,6 +43,5 @@
 
 .pull-quote__attribution {
   font-size: 1rem;
-  color: var(--color-pull-quote-attribution);
-  padding: 0 3rem;
+  color: clr(text);
 }
