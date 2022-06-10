@@ -1,0 +1,73 @@
+{# Remove white space caused by all of the new lines in this file. #}
+{% apply spaceless %}
+
+{#
+ # Logic Variables:
+ # - date_time__format: 'time', 'date', or null (default. Returns date and time.)
+ #
+ # Available Variables:
+ # - date_time__start
+ # - date_time__end
+ #}
+
+{# Set the end date to the start date, by default, so that Twig doesn't
+ # erroneously use "today" like it does when no date is provided.
+ # In the logic below we filter for "When start and end are the same, which, in
+ # combination with this, accounts for "no end date provided" as well. #}
+{% set date_time__end = date_time__end|default(date_time__start) %}
+
+{# Date/Time formats used in this file #}
+{% set format__iso = 'c' %} {# 2022-04-01T08:34:42+00:00 #}
+{% set format__html_date = 'Y-m-d' %} {# 2022-04-01 #}
+{% set format__date = 'F j, Y' %} {# April 1, 2022 #}
+{# If minutes == ":00" don't show them #}
+{% if date_time__start|date('i') == '00' %}
+  {% set format__time__start = 'g-' %} {# 8- #}
+{% else %}
+  {% set format__time__start = 'g:i-' %} {# 8:30- #}
+{% endif %}
+{% if date_time__end|date('i') == '00' %}
+  {% set format__time = 'g a T' %} {# 11 pm ET #}
+{% else %}
+  {% set format__time = 'g:i a T' %} {# 11 pm ET #}
+{% endif %}
+
+{###########
+ # TIME ONLY
+ ###########}
+{% if date_time__format == 'time' %}
+  {# If start and end times are equal #}
+  {% if date_time__start|date(format__iso) == date_time__end|date(format__iso) %}
+    {% set date_time = date_time__start|date(format__time) %}
+  {# If start and end times are different #}
+  {% else %}
+    {% set date_time = date_time__start|date(format__time__start) ~ date_time__end|date(format__time) %}
+  {% endif %}
+{###########
+ # DATE ONLY
+ ###########}
+{% elseif date_time__format == 'date' %}
+  {# If start and end date/time are equal. #}
+  {% if date_time__start|date(format__html_date) == date_time__end|date(format__html_date) %}
+    {# Specific Date #}
+    {# Expample: April 1, 2022 #}
+    {% set date_time = date_time__start|date(format__date) %}
+  {# If start and end times are different. #}
+  {% else %}
+    {% set date_time = date_time__start|date(format__date) ~ '-' ~ date_time__end|date(format__date) %}
+  {% endif %}
+{###############
+ # DATE AND TIME
+ ###############}
+{% else %}
+  {# @TODO Flesh this out #}
+{% endif %}
+
+{% set date_time__attributes = {
+  datetime: date_time__start|date(format__iso),
+  class: bem('date-time'),
+} %}
+
+<time {{ add_attributes(date_time__attributes) }}>{{ date_time }}</time>
+
+{% endapply %}
