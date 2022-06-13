@@ -1,9 +1,9 @@
-{% set ul_base_class = menu_class %}
-{% set ul_modifiers = menu_modifiers %}
-{% set ul_blockname = menu_blockname %}
+{% set list__base_class = menu_class %}
+{% set list__modifiers = menu_modifiers %}
+{% set list__blockname = menu_blockname %}
 
 {# List #}
-{% extends "@atoms/lists/ul.twig" %}
+{% extends "@atoms/lists/list.twig" %}
   {% block list_content %}
     {% for item in items %}
       {% include "@molecules/menus/_menu-item.twig" with {
