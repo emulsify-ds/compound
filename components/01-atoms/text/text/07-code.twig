@@ -9,9 +9,14 @@
  */
 #}
 
-{% set code_base_class = code_base_class|default('code') %}
-<pre {{ bem(code_base_class, code_modifiers, code_blockname) }}>
-  <code {{ bem('content', [], code_base_class) }}>
+{% set code__base_class = code__base_class|default('code') %}
+{% set code__attributes = code__attributes|default({}) %}
+{% set code__attributes = code__attributes|merge({
+  'class': bem(code__base_class, code__modifiers, code__blockname),
+}) %}
+
+<pre {{ bem(code__base_class, code__modifiers, code__blockname) }}>
+  <code {{ add_attributes(code__attributes) }}>
     {% block code_content %}
       {{- code_content -}}
     {% endblock %}
