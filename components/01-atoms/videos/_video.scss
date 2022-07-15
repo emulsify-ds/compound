@@ -2,9 +2,6 @@
 .video {
   iframe {
     height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
     width: 100%;
   }
 
@@ -15,8 +12,7 @@
 }
 
 .video__wrap {
-  height: 0;
   overflow: hidden;
-  padding-bottom: 56.25%; /* 56.25% = 16x9 */
+  aspect-ratio: 16 / 9;
   position: relative;
 }

@@ -13,10 +13,10 @@ Drupal.behaviors.responsiveEmbeddedVideos = {
         // Get Video Information
         const width = player.getAttribute('width');
         const height = player.getAttribute('height');
-        const aspectRatio = height / width;
+        const aspectRatio = `${width} / ${height}`;
         const parentDiv = player.parentNode;
 
-        parentDiv.style.paddingBottom = `${aspectRatio * 100}%`;
+        parentDiv.style.aspectRatio = aspectRatio;
 
         // Clear height/width from fitVid
         player.removeAttribute('height');
