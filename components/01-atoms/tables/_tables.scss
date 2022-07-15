@@ -1,79 +1,86 @@
+$table-border-width: 1px;
+
+@mixin table-header-footer {
+  background-color: clr(highlight-high);
+
+  > * {
+    border-color: clr(highlight);
+  }
+}
+
+@mixin table-cell {
+  border: 0;
+  border-right-width: $table-border-width;
+  border-bottom-width: $table-border-width;
+  border-style: solid;
+  border-color: inherit;
+  padding: $space;
+
+  &:last-child {
+    border-right: 0;
+  }
+
+  :last-child > & {
+    border-bottom: 0;
+  }
+
+  &[data-cell-highlight] {
+    background-color: clr(highlight);
+  }
+}
+
 .table {
-  border: 1px solid clr(highlight-high);
-  border-radius: 4px;
+  border: $table-border-width solid clr(highlight-high);
   border-spacing: 0;
-  background-color: clr(muted);
-  margin: 1em 0;
+  margin: $space 0;
   width: 100%;
 }
 
-@mixin table-cell-base {
-  border: none;
-  border-bottom: 1px solid clr(highlight-high);
-  border-right: 1px solid clr(highlight-high);
-  padding: 1em;
-
-  &:last-child {
-    border-right: none;
-  }
+// Table header elements
+.table__header {
+  @include table-header-footer;
 }
 
-.table__heading-cell,
-.table__cell {
-  @include table-cell-base;
+.table__header_cell {
+  @include table-cell;
 }
 
-.table__heading-cell {
-  color: clr(accent-high);
-  font-weight: 700;
-  padding: 1.2em;
-  text-align: left;
-}
-
+// Table body rows
 .table__row {
+  // Alternate row background/border colors
   &:nth-child(odd) {
     background-color: clr(background);
+    border-color: clr(highlight-high);
   }
 
-  /* Top Row - Non-BEM but always contained */
-  &:first-child {
-    th:first-child,
-    td:first-child {
-      border-radius: 5px 0 0;
-    }
-
-    th:last-child,
-    td:last-child {
-      border-radius: 0 5px 0 0;
-    }
-  }
-
-  /* Bottom Row - Non-BEM but always contained */
-  &:last-child {
-    td:first-child {
-      border-radius: 0 0 0 5px;
-    }
-
-    td:last-child {
-      border-radius: 0 0 5px;
-    }
+  &:nth-child(even) {
+    background-color: clr(highlight-high);
+    border-color: clr(highlight);
   }
 }
 
-.table__footer-cell,
-.table__footer-cell:first-child {
-  border-bottom: none;
+// Table body cells
+.table__cell {
+  @include table-cell;
 }
 
-/* TODO: BEM selectors should be applied to wysiwyg-created content */
-/* stylelint-disable no-descending-specificity */
-.text-long {
+// Table footer elements
+.table__footer {
+  @include table-header-footer;
+}
+
+.table__footer_cell {
+  @include table-cell;
+}
+
+// WYSIWYG specific styles
+.text-field {
   table {
     @extend .table;
   }
 
   th {
-    @extend .table__heading-cell;
+    @extend .table__header_cell;
   }
 
   td {
@@ -85,7 +92,6 @@
   }
 
   tfoot th {
-    @extend .table__footer-cell;
+    @extend .table__footer_cell;
   }
 }
-/* stylelint-enable no-descending-specificity */
