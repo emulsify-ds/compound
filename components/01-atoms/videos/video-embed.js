@@ -18,7 +18,7 @@ Drupal.behaviors.responsiveEmbeddedVideos = {
 
         parentDiv.style.aspectRatio = aspectRatio;
 
-        // Clear height/width from fitVid
+        // Clear static height/width attributes for responsive styles
         player.removeAttribute('height');
         player.removeAttribute('width');
       });
