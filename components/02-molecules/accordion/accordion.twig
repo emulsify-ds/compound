@@ -39,6 +39,7 @@
   {% embed "@atoms/lists/list.twig" with {
     list__base_class: 'controls',
     list__blockname: accordion__base_class,
+    list__addition_classes: ['js-accordion__controls'],
     list__attributes: {'aria-label': 'Section controls'},
   } %}
     {% block list__content %}
@@ -52,6 +53,7 @@
             button__base_class: 'toggle-all',
             button__modifiers: ['expand'],
             button__blockname: accordion__base_class,
+            button__additional_classes: ['js-accordion__toggle-all--expand'],
           } %}
         {% endblock %}
       {% endembed %}
@@ -65,6 +67,7 @@
             button__base_class: 'toggle-all',
             button__modifiers: ['collapse'],
             button__blockname: accordion__base_class,
+            button__additional_classes: ['js-accordion__toggle-all--collapse'],
           } %}
         {% endblock %}
       {% endembed %}
@@ -72,10 +75,16 @@
   {% endembed %}
   {% block accordion__items %}
     {% for item in accordion__items %}
+      {# Create a unique ID for each accordion item #}
+      {% set unique_id = random('1234567890') ~ random('1234567890') ~ random('1234567890') ~ random('1234567890') %}
+      {% set accordion__item__content__id = 'accordion__item-' ~ unique_id ~ '-' ~ loop.index %}
       {% include "@molecules/accordion/_accordion-item.twig" with {
         accordion__item__heading: item.accordion__item__heading,
         accordion__item__content: item.accordion__item__content,
         accordion__item__heading__level: accordion__heading ? '3' : '2',
+        accordion__item__content__attributes: {
+          'id': accordion__item__content__id,
+        }
       } %}
     {% endfor %}
   {% endblock %}

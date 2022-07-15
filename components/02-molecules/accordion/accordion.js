@@ -1,10 +1,10 @@
 Drupal.behaviors.accordion = {
   attach(context) {
     // Selectors
-    const items = context.querySelectorAll('.accordion-item');
-    const controls = context.querySelectorAll('.accordion__controls');
+    const items = context.querySelectorAll('.js-accordion-item');
+    const controls = context.querySelectorAll('.js-accordion__controls');
     // Classes
-    const itemToggle = '.accordion-item__toggle';
+    const itemToggle = '.js-accordion-item__toggle';
     const itemState = 'data-accordion-expanded';
     const buttonState = 'aria-expanded';
 
@@ -43,13 +43,14 @@ Drupal.behaviors.accordion = {
 
     controls.forEach((control) => {
       // Get all items relevant to the control.
-      const allItems = control.parentNode.querySelectorAll('.accordion-item');
+      const allItems =
+        control.parentNode.querySelectorAll('.js-accordion-item');
       // Add click listener on the parent <ul>
       control.addEventListener('click', (e) => {
         // Determine which control was activated. `action` will re turn a
         // boolean. `true` if the expand control was clicked, otherwise false.
         const action = e.target.classList.contains(
-          'accordion__toggle-all--expand',
+          'js-accordion__toggle-all--expand',
         );
 
         // Iterate over

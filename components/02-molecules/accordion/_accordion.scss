@@ -6,11 +6,13 @@ $accordion_icon_size: 1em;
 }
 
 .accordion__controls {
-  @include reset;
+  @include list-reset;
 
   display: flex;
+}
 
-  > *:not(:last-child) {
+.accordion__controls__item {
+  &:not(:last-child) {
     padding-right: $space;
     margin-right: $space;
     border-right: 1px solid;
