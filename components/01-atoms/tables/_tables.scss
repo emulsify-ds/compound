@@ -73,6 +73,10 @@ $table-border-width: 1px;
   @include table-cell;
 }
 
+caption {
+  caption-side: bottom;
+}
+
 // WYSIWYG specific styles
 .text-field {
   table {
