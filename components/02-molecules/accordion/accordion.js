@@ -26,16 +26,16 @@ Drupal.behaviors.accordion = {
 
     // Toggle accordion content when toggle is activated.
     items.forEach((item) => {
-      const toggle = item.querySelector(itemToggle);
+      const button = item.querySelector(itemToggle);
 
       // Hide all accordion content sections if JavaScript is enabled.
-      collapse(item, toggle);
+      collapse(item, button);
 
-      toggle.addEventListener('click', () => {
+      button.addEventListener('click', () => {
         // Toggle the item's state.
-        return toggle.getAttribute(buttonState) === 'true'
-          ? collapse(item, toggle)
-          : expand(item, toggle);
+        return button.getAttribute(buttonState) === 'true'
+          ? collapse(item, button)
+          : expand(item, button);
       });
     });
 
@@ -53,10 +53,12 @@ Drupal.behaviors.accordion = {
 
         // Iterate over
         allItems.forEach((item) => {
+          const button = item.querySelector(itemToggle);
+
           if (action === false) {
-            collapse(item);
+            collapse(item, button);
           } else {
-            expand(item);
+            expand(item, button);
           }
         });
       });
