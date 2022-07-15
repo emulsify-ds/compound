@@ -9,35 +9,33 @@ Drupal.behaviors.accordion = {
     const buttonState = 'aria-expanded';
 
     // Function to expand an accordion item.
-    const expand = (item) => {
-      const toggle = item.querySelector(itemToggle);
-
+    const expand = (item, button) => {
       item.setAttribute(itemState, 'true');
-      toggle.setAttribute(buttonState, 'true');
+      if (button) {
+        button.setAttribute(buttonState, 'true');
+      }
     };
 
     // Function to collapse an accordion item.
-    const collapse = (item) => {
-      const toggle = item.querySelector(itemToggle);
-
+    const collapse = (item, button) => {
       item.setAttribute(itemState, 'false');
-      toggle.setAttribute(buttonState, 'false');
+      if (button) {
+        button.setAttribute(buttonState, 'false');
+      }
     };
-
-    // Hide all accordion content sections if JavaScript is enabled.
-    items.forEach((item) => {
-      collapse(item);
-    });
 
     // Toggle accordion content when toggle is activated.
     items.forEach((item) => {
       const toggle = item.querySelector(itemToggle);
 
+      // Hide all accordion content sections if JavaScript is enabled.
+      collapse(item, toggle);
+
       toggle.addEventListener('click', () => {
         // Toggle the item's state.
         return toggle.getAttribute(buttonState) === 'true'
-          ? collapse(item)
-          : expand(item);
+          ? collapse(item, toggle)
+          : expand(item, toggle);
       });
     });
 
