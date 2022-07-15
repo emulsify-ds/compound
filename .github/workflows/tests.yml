@@ -44,7 +44,7 @@ jobs:
       - name: Install CLI
         run: npm install -g @emulsify/cli
       - name: Install starter
-        run: emulsify init --checkout cli-no-components "Emulsify Drupal Starter" . --platform drupal
+        run: emulsify init "Emulsify Drupal Starter" . --platform drupal
       - name: Install system and all components
         run: |
           cd emulsify_drupal_starter
