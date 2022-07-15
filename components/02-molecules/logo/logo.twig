@@ -1,6 +1,22 @@
-{% include "@atoms/images/image/responsive-image.twig" with {
-  output_image_tag: true,
-  image_src: directory ? '/' ~ directory ~ '/images/logo.png' : 'logo.png',
-  image_alt: 'Logo',
-  responsive_image_blockname: 'logo',
+{% set logo__base_class = logo__base_class|default('logo') %}
+
+{% set logo__attributes = {
+  class: bem(logo__base_class, logo__modifiers),
 } %}
+
+<div {{ add_attributes(logo__attributes) }}>
+  {% embed "@atoms/links/link/link.twig" with {
+    link_base_class: 'logo__link',
+    link_url: logo__url|default('/'),
+    link_style: ['default'],
+  } %}
+    {% block link_content %}
+      {% include "@atoms/images/image/responsive-image.twig" with {
+        output_image_tag: true,
+        image_src: directory ? '/' ~ directory ~ '/images/logo.png' : 'logo.png',
+        image_alt: 'Logo',
+        responsive_image_blockname: 'logo',
+      } %}
+    {% endblock %}
+  {% endembed %}
+</div>
