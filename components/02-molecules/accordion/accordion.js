@@ -11,17 +11,13 @@ Drupal.behaviors.accordion = {
     // Function to expand an accordion item.
     const expand = (item, button) => {
       item.setAttribute(itemState, 'true');
-      if (button) {
-        button.setAttribute(buttonState, 'true');
-      }
+      button.setAttribute(buttonState, 'true');
     };
 
     // Function to collapse an accordion item.
     const collapse = (item, button) => {
       item.setAttribute(itemState, 'false');
-      if (button) {
-        button.setAttribute(buttonState, 'false');
-      }
+      button.setAttribute(buttonState, 'false');
     };
 
     // Toggle accordion content when toggle is activated.
