@@ -95,7 +95,7 @@
     "imagemin-webpack-plugin": "^2.4.2",
     "lint-staged": "^11.2.6",
     "mini-css-extract-plugin": "^1.6.2",
-    "pa11y": "^5.3.1",
+    "pa11y": "^6",
     "postcss": "^8.1.7",
     "postcss-loader": "^4.0.4",
     "prettier": "^2.4.1",

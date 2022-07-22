@@ -60,30 +60,30 @@ const logReport = ({ issues, pageUrl }) => {
   return hasIssues;
 };
 
-const lintComponent = async (name) =>
+const lintComponent = async (name) => {
   pa11y(`${STORYBOOK_IFRAME}?id=${name}`, {
+    chromeLaunchConfig: {
+      ignoreHTTPSErrors: true,
+      args: ['--no-sandbox', '--disable-web-security'],
+    },
     includeNotices: true,
     includeWarnings: true,
-    runners: ['axe'],
     ...pa11yConfig,
-  });
+  }).then((results) => logReport(results));
+};
 
-const lintReportAndExit = R.pipe(
-  R.map(lintComponent),
-  (p) => Promise.all(p),
-  R.andThen(
-    R.pipe(
-      R.map(logReport),
-      R.reject(R.equals(false)),
-      R.unless(R.isEmpty, () => process.exit(1)),
-    ),
-  ),
-);
+const lintReportAndExit = async () => {
+  try {
+    await Promise.all(components.map((name) => lintComponent(name)));
+  } catch (error) {
+    console.error(error.message);
+  }
+};
 
 // Only perform linting/reporting when instructed.
 /* istanbul ignore next */
 if (R.pathEq(['argv', 2], '-r')(process)) {
-  lintReportAndExit(components);
+  lintReportAndExit();
 }
 
 module.exports = {

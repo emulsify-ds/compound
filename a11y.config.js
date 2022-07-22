@@ -10,7 +10,12 @@ module.exports = {
   // should be ignored. These codes and descriptions allow for those
   // errors to be targeted specifically.
   ignore: {
-    codes: ['landmark-one-main', 'page-has-heading-one'],
+    codes: [
+      'bypass',
+      'frame-tested',
+      'landmark-one-main',
+      'page-has-heading-one',
+    ],
     descriptions: ['Ensures all page content is contained by landmarks'],
     stories: [''],
   },
