@@ -17,3 +17,11 @@ export const OrderedList = () => `
   ${listTwig({ list__items: listData.ordered__list__items, list__type: 'ol' })}
 </div>
 `;
+export const InlineList = () => `
+<div class="text-field">
+  ${listTwig({
+    list__items: listData.inline__list__items,
+    list__type: 'inline',
+  })}
+</div>
+`;
