@@ -37,3 +37,11 @@
     @extend .hr;
   }
 }
+
+.pre {
+  padding: $space;
+}
+
+.code {
+  background-color: clr(background-section);
+}
