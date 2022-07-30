@@ -206,13 +206,13 @@
           "name": "content-types",
           "structure": "pages",
           "dependency": ["grid"],
-          "subtheme": ["starter", "content"]
+          "componentSet": ["starter", "content"]
         },
         {
           "name": "landing-pages",
           "structure": "pages",
           "dependency": ["site"],
-          "subtheme": ["starter", "landing"]
+          "componentSet": ["starter", "landing"]
         }
       ]
     }
