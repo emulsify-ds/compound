@@ -4,7 +4,7 @@
 
 <blockquote>Noun: A thing that is composed of two or more separate elements</blockquote>
 
-Compound is the default Emulsify system, and currently includes a variants for Drupal.
+Compound is the default Emulsify system of components.
 
 ## Development
 
