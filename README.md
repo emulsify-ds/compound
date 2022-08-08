@@ -29,3 +29,5 @@ If the component has dependencies, be sure to identify them, so that the CLI kno
   "dependency": ["images", "text", "links", "buttons"]
 },
 ```
+
+### Contributors
