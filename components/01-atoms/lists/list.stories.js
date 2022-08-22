@@ -22,7 +22,7 @@ export const InlineListUL = () => `
   ${listTwig({
     list__items: listData.inline__list__items,
     list__type: 'ul',
-    list__base_class: 'inline-ul',
+    list__base_class: 'inline',
   })}
 </div>
 `;
@@ -31,7 +31,7 @@ export const InlineListOL = () => `
   ${listTwig({
     list__items: listData.inline__list__items,
     list__type: 'ol',
-    list__base_class: 'inline-ol',
+    list__base_class: 'inline',
   })}
 </div>
 `;

@@ -16,30 +16,10 @@ ol {
   }
 }
 
-.inline-ol {
+.inline {
   list-style-type: none;
-  counter-reset: inline-list-ol;
-
-  .inline-ol__item {
-    display: inline-block;
-    counter-increment: inline-list-ol;
-  }
-
-  .inline-ol__item::before {
-    content: counter(inline-list-ol) '.';
-    display: inline-block;
-  }
 }
 
-.inline-ul {
-  list-style-type: none;
-
-  .inline-ul__item {
-    display: inline-block;
-  }
-
-  .inline-ul__item::before {
-    content: '\ffed';
-    display: inline-block;
-  }
+.inline__item {
+  display: inline-block;
 }
