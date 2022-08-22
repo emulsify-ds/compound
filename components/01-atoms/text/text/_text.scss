@@ -39,9 +39,6 @@
 }
 
 .pre {
-  padding: $space;
-}
-
-.code {
-  background-color: clr(background-section);
+  margin: 0;
+  background-color: var(--c-background-section);
 }
