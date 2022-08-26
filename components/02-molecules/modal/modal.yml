@@ -1,0 +1,4 @@
+modal__toggle__content: 'Show Modal'
+modal__heading: 'This is an example of a modal'
+modal__close__content: 'Close Modal'
+modal_content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur porttitor commodo magna nec iaculis. Duis ullamcorper sed lorem vehicula vulputate. Aenean condimentum augue libero, quis finibus libero hendrerit sit amet. Integer ullamcorper aliquet nisl, in ullamcorper augue ullamcorper sit amet. Quisque interdum nunc at egestas lobortis. Phasellus ante lorem, posuere id tortor eget, venenatis sagittis nunc. Aenean luctus tincidunt consequat. Donec vulputate, elit sit amet molestie pulvinar, eros lectus faucibus metus, id rutrum libero ipsum et leo. Curabitur egestas libero sit amet risus aliquet efficitur. Etiam suscipit posuere tortor. Pellentesque tincidunt justo quis quam aliquet varius. <a href="#" title="test-focus">Example link to test modal focus</a>'

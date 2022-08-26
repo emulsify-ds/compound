@@ -1,0 +1,95 @@
+// Base modal styles. Additional classes accommodate for custom app implementations.
+.modal__toggle {
+  cursor: pointer;
+}
+
+.modal__pane {
+  background-color: clr(background-section);
+  color: clr(text);
+  left: 0;
+  opacity: 0;
+  padding: $space;
+  position: fixed;
+  top: 50%;
+  transform: translate(0%, -50%);
+  transition: opacity 300ms;
+  visibility: hidden;
+  width: 100vw;
+  z-index: 1000;
+
+  @include large {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: $small;
+  }
+
+  .modal--active & {
+    max-height: 100vh;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.modal__title {
+  @include wrapper($container-max-width: $small);
+
+  margin-bottom: $space;
+}
+
+.modal__content {
+  @include wrapper($container-max-width: $small);
+
+  > * {
+    margin-bottom: $space;
+    width: 100%;
+  }
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.modal__modal-heading {
+  display: flex;
+  flex-flow: row nowrap;
+
+  // Close button
+  .modal__toggle {
+    @include button-base;
+    @include button-color-primary;
+    @include button-medium;
+
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .icon {
+    fill: clr(text);
+    height: $space;
+    position: relative;
+    right: 0;
+    stroke: clr(text);
+    stroke-linecap: round;
+    top: $space-one-fourth;
+    width: $space;
+  }
+}
+
+.modal__overlay {
+  background-color: clr(background);
+  color: clr(text);
+  display: none;
+  left: 0;
+  opacity: 0.45;
+  position: fixed;
+  top: 0;
+
+  &--active {
+    display: block;
+    height: 100vh;
+    width: 100vw;
+    z-index: 999;
+  }
+}

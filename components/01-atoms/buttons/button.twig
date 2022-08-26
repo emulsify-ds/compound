@@ -11,11 +11,11 @@
 
 {% set button_base_class = button_base_class|default('button') %}
 
-{% set additional_attributes = {
+{% set button_attributes = button_attributes|default({
   class: bem(button_base_class, button_modifiers, button_blockname),
-} %}
+}) %}
 
-<button {{ add_attributes(additional_attributes) }}>
+<button {{ add_attributes(button_attributes) }}>
   {% block button_content %}
     {{ button_content }}
   {% endblock %}

@@ -1,11 +1,20 @@
 @mixin link {
-  color: clr(accent);
+  color: clr(primary);
 
   &:hover {
-    color: clr(accent-high);
+    color: clr(primary-alt);
   }
 }
 
 .link {
   @include link;
+}
+
+a {
+  @include link;
+
+  /* A elements that don't have a class get default styles */
+  &:not([class]) {
+    text-decoration-skip-ink: auto;
+  }
 }
