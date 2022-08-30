@@ -2,11 +2,6 @@
   padding: $space-double;
 }
 
-.pull-quote__blockquote {
-  border-left: none;
-  margin: 0;
-}
-
 .pull-quote__figure {
   [data-pull-quote-style='bar-left'] & {
     padding-left: $space;
@@ -36,6 +31,9 @@
 }
 
 .pull-quote__quote {
+  border-left: none;
+  margin: 0;
+
   p {
     font-size: 1.2rem;
   }
