@@ -1,0 +1,5 @@
+alert__heading: 'This is the heading for the alert'
+alert__content: 'This is an optional text for more information if needed. In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.'
+alert__link__content: 'Optional link'
+alert__link__url: '#'
+alert__link__style: 'underline-alt'

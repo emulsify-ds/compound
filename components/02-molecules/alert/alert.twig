@@ -1,0 +1,91 @@
+{#
+ # Available Variables:
+ # - alert__id: unique id (must be unique to each site)
+ # - alert__type: emergency, announcement (default), marketing
+ # - alert__heading
+ # - alert__content
+ # - alert__link__content
+ # - alert__link__url
+ #}
+
+{% set alert__base_class = 'alert' %}
+{% set alert__type = alert__type|default('announcement') %}
+
+{# Set crisis icons #}
+{% if alert__type == 'crisis' %}
+  {% set alert__icon = 'emergency' %}
+  {% set alert__button__icon = 'chevron-down' %}
+  {% set alert__toggle__text = 'Hide alert details' %}
+  {% set alert__toggle__aria_expanded = 'false' %}
+  {% set alert__button__type = 'toggle' %}
+  {% set alert__state = 'collapsed' %}
+{# Set announcement icons #}
+{% elseif alert__type == 'announcement' %}
+  {% set alert__icon = 'info-circle' %}
+  {% set alert__button__icon = 'x' %}
+  {% set alert__toggle__text = 'Close alert' %}
+  {% set alert__button__type = 'dismiss' %}
+{# Set today icon #}
+{% else %}
+  {% set alert__button__icon = 'x' %}
+  {% set alert__toggle__text = 'Close alert' %}
+  {% set alert__button__type = 'dismiss' %}
+{% endif %}
+
+{% set alert__attributes = {
+  'data-component-width': 'max',
+  'data-alert-id': 'ys-alert-id-' ~ alert__id,
+  'data-alert-state': alert__state|default('expanded'),
+  'data-alert-type': alert__type,
+  class: bem(alert__base_class),
+} %}
+
+<div {{ add_attributes(alert__attributes) }}>
+  <div {{ bem('inner', [], alert__base_class) }}>
+    {% if alert__icon %}
+      <div {{ bem('icon', ['type'], alert__base_class) }}>
+        {% include "@atoms/images/icons/_icon.twig" with {
+          icon_name: alert__icon,
+          icon_decorative: true,
+        } %}
+      </div>
+    {% endif %}
+    <div {{ bem('content', [], alert__base_class) }}>
+      <div {{ bem('content-inner', [], alert__base_class) }}>
+        {% include "@atoms/text/headings/_heading.twig" with {
+          heading__level: '2',
+          heading__blockname: alert__base_class,
+          heading: alert__heading,
+        } %}
+        {% if alert__content %}
+          {% include "@atoms/text/text/01-paragraph.twig" with {
+            text__element: 'div',
+            text__content: alert__content,
+            text__blockname: alert__base_class,
+          } %}
+        {% endif %}
+      </div>
+      {% if alert__link__content and alert__link__url %}
+        {% include "@atoms/links/link/link.twig" with {
+          link__content: alert__link__content,
+          link__url: alert__link__url,
+          link__blockname: alert__base_class,
+        } %}
+      {% endif %}
+    </div>
+    {% embed "@atoms/buttons/button.twig" with {
+      button__base_class: 'toggle',
+      button__blockname: alert__base_class,
+      aria_expanded: alert__toggle__aria_expanded,
+      button__type: alert__button__type,
+    } %}
+      {% block button__content %}
+        <span {{ bem('visually-hidden') }}>{{ alert__toggle__text }}</span>
+        {% include "@atoms/images/icons/_icon.twig" with {
+          icon_name: alert__button__icon,
+          icon_decorative: true,
+        } %}
+      {% endblock %}
+    {% endembed %}
+  </div>
+</div>
