@@ -24,22 +24,30 @@ export default {
       type: 'select',
       defaultValue: 'bar-left',
     },
+    ariaLabel: {
+      name: 'aria-label attribute',
+      type: 'string',
+      defaultValue: pullQuoteData.pull_quote__aria_label,
+    },
   },
 };
 
-export const pullQuote = ({ style, quote, attribution }) => `
+export const pullQuote = ({ style, quote, attribution, ariaLabel }) => `
   ${pullQuoteTwig({
     pull_quote__quote: pullQuoteData.pull_quote__quote,
     pull_quote__attribution: pullQuoteData.pull_quote__attribution,
+    pull_quote__aria_label: 'Pull Quote with bar graphic to the left',
   })}
   ${pullQuoteTwig({
     pull_quote__quote: pullQuoteData.pull_quote__quote,
     pull_quote__style: 'bar-right',
+    pull_quote__aria_label: 'Pull Quote with bar graphic to the right',
   })}
   ${pullQuoteTwig({
     pull_quote__quote: pullQuoteData.pull_quote__quote,
     pull_quote__attribution: pullQuoteData.pull_quote__attribution,
     pull_quote__style: 'quote-left',
+    pull_quote__aria_label: 'Pull Quote with quote icon to the left',
   })}
   <div>
     <h2>Playground</h2>
@@ -48,6 +56,7 @@ export const pullQuote = ({ style, quote, attribution }) => `
       pull_quote__quote: quote,
       pull_quote__attribution: attribution,
       pull_quote__style: style,
+      pull_quote__aria_label: ariaLabel,
     })}
   </div>
 `;
