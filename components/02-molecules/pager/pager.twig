@@ -33,10 +33,11 @@
 
 {% set pager__attributes = pager__attributes|default({
   'class': bem(pager__base_class, pager__modifiers, pager__blockname),
+  'aria-label': pagination_id|default('Pagination'|t),
 }) %}
 
 {% if items %}
-  <nav {{ add_attributes(pager__attributes) }} aria-label="{{ pagination_id|default('Pagination'|t) }}">
+  <nav {{ add_attributes(pager__attributes) }}>
     <ul {{ bem('items', [], pager__base_class, ['js-pager__items']) }}>
       {# Print first item. #}
       {% if items.first %}
