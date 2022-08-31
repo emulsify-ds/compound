@@ -24,16 +24,10 @@ export default {
       type: 'select',
       defaultValue: 'bar-left',
     },
-    element: {
-      name: 'HTML Element',
-      options: ['div', 'aside'],
-      type: 'select',
-      defaultValue: 'div',
-    },
   },
 };
 
-export const pullQuote = ({ style, quote, attribution, element }) => `
+export const pullQuote = ({ style, quote, attribution }) => `
   ${pullQuoteTwig({
     pull_quote__quote: pullQuoteData.pull_quote__quote,
     pull_quote__attribution: pullQuoteData.pull_quote__attribution,
@@ -54,7 +48,6 @@ export const pullQuote = ({ style, quote, attribution, element }) => `
       pull_quote__quote: quote,
       pull_quote__attribution: attribution,
       pull_quote__style: style,
-      pull_quote__element: element,
     })}
   </div>
 `;

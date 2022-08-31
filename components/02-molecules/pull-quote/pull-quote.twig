@@ -8,29 +8,23 @@
  # - pull_quote__base_class
  # - pull_quote__modifiers
  # - pull_quote__blockname
- # - pull_quote__element (div default, aria role added if aside)
+ # - pull_quote__element (aside default, if div add aria role="complementary" )
  #}
 
-{% set pull_quote__element = pull_quote__element|default('div') %}
 {% set pull_quote__base_class = 'pull-quote' %}
 {% set pull_quote__style = pull_quote__style|default('bar-left') %}
-
+{% set pull_quote__aria_label = pull_quote__aria_label|default('Pullquote Element by Lorem Ipsum') %}
 {# If pull_quote__attributes is not defined, set it to an empty object by default #}
 {% set pull_quote__attributes = pull_quote__attributes|default({}) %}
 
 {% set pull_quote__attributes = pull_quote__attributes|merge({
   'data-component-width': 'content',
   'data-pull-quote-style': pull_quote__style,
+  'aria-label': pull_quote__aria_label,
   class: bem(pull_quote__base_class, pull_quote__modifiers, pull_quote__blockname),
 }) %}
 
-{% if pull_quote__element == 'aside' %}
-  {% set pull_quote__attributes = pull_quote__attributes|merge({
-    'role':'complementary',
-  }) %}
-{% endif %}
-
-<{{pull_quote__element }} {{ add_attributes(pull_quote__attributes) }}>
+<aside {{ add_attributes(pull_quote__attributes) }}>
   <div {{ bem('inner', [], pull_quote__base_class) }}>
     <figure {{ bem('figure', [], pull_quote__base_class) }}>
       {% include "@atoms/text/text/02-blockquote.twig" with {
@@ -43,4 +37,4 @@
       {% endif %}
     </figure>
   </div>
-</{{ pull_quote__element }}>
+</aside>
