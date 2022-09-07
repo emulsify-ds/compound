@@ -30,10 +30,6 @@ $alert-themes: 'crisis', 'announcement', 'today';
   display: flex;
   align-items: flex-start;
   padding: 1rem 0;
-
-  @include breakpoint('medium') {
-    align-items: center;
-  }
 }
 
 .alert__icon {
@@ -45,7 +41,7 @@ $alert-themes: 'crisis', 'announcement', 'today';
     height: var(--size-icon);
     width: var(--size-icon);
 
-    @include breakpoint('medium') {
+    @include medium {
       [data-alert-state='collapsed'] & {
         --size-icon: 2rem;
       }
@@ -69,11 +65,11 @@ $alert-themes: 'crisis', 'announcement', 'today';
   gap: 0.25rem;
   padding: 0 0.5rem 0 0;
 
-  @include breakpoint('medium') {
+  @include medium {
     align-items: flex-start;
   }
 
-  @include breakpoint('large') {
+  @include large {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -90,7 +86,7 @@ $alert-themes: 'crisis', 'announcement', 'today';
   color: inherit;
   margin-bottom: 0;
 
-  @include breakpoint('medium') {
+  @include medium {
     line-height: 1.33;
   }
 }
@@ -130,7 +126,7 @@ $alert-themes: 'crisis', 'announcement', 'today';
     animation-name: fadeInLeft;
     animation-duration: var(--animation-timing);
 
-    @include breakpoint('large') {
+    @include large {
       animation-name: fadeInRight;
       padding-right: 1rem;
       margin-right: 1rem;
@@ -156,7 +152,7 @@ $alert-themes: 'crisis', 'announcement', 'today';
     transition: transform var(--animation-timing);
   }
 
-  @include breakpoint('medium') {
+  @include medium {
     --size-icon: 1.2rem;
   }
 
@@ -168,7 +164,7 @@ $alert-themes: 'crisis', 'announcement', 'today';
   [data-alert-type='crisis'] & {
     --size-icon: 1.2rem;
 
-    @include breakpoint('medium') {
+    @include medium {
       --size-icon: 1.6rem;
     }
   }

@@ -22,12 +22,12 @@
 {# Set announcement icons #}
 {% elseif alert__type == 'announcement' %}
   {% set alert__icon = 'info-circle' %}
-  {% set alert__button__icon = 'x' %}
+  {% set alert__button__icon = 'close' %}
   {% set alert__toggle__text = 'Close alert' %}
   {% set alert__button__type = 'dismiss' %}
 {# Set today icon #}
 {% else %}
-  {% set alert__button__icon = 'x' %}
+  {% set alert__button__icon = 'close' %}
   {% set alert__toggle__text = 'Close alert' %}
   {% set alert__button__type = 'dismiss' %}
 {% endif %}
@@ -37,7 +37,7 @@
   'data-alert-id': 'ys-alert-id-' ~ alert__id,
   'data-alert-state': alert__state|default('expanded'),
   'data-alert-type': alert__type,
-  class: bem(alert__base_class),
+  'class': bem(alert__base_class, alert__modifiers, alert__blockname),
 } %}
 
 <div {{ add_attributes(alert__attributes) }}>
@@ -76,7 +76,9 @@
     {% embed "@atoms/buttons/button.twig" with {
       button__base_class: 'toggle',
       button__blockname: alert__base_class,
-      aria_expanded: alert__toggle__aria_expanded,
+      button__attributes: {
+        'aria-expanded': alert__toggle__aria_expanded,
+      },
       button__type: alert__button__type,
     } %}
       {% block button__content %}

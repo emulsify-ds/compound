@@ -16,9 +16,19 @@ body {
 }
 
 .main {
-  @include wrapper;
-
   display: block; /* Fix for IE weirdness */
+}
+
+[class*='__inner'] {
+  width: var(--component-width);
+  max-width: 100%;
+  margin-inline: auto;
+
+  @each $width, $value in $breakpoints {
+    [data-component-width='#{$width}'] & {
+      --component-width: var(--size-component-layout-width-#{$width});
+    }
+  }
 }
 
 .visually-hidden {
