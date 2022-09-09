@@ -16,7 +16,7 @@
 {% set text_with_media__base_class = 'text-with-media' %}
 
 {% set text_with_media__attributes = {
-  'data-image-position': text_with_media__position|default('image-left'),
+  'data-image-position': text_with_media__position|default('left'),
   'class': bem(text_with_media__base_class, text_with_media__modifiers, text_with_media__blockname)
 } %}
 
@@ -27,7 +27,7 @@
       <div {{ bem('content', [], text_with_media__base_class) }}>
         {# Text #}
         {% include "@atoms/text/text/01-paragraph.twig" with {
-          paragraph__content: text_with_media__content, 
+          paragraph_content: text_with_media__content, 
         } %}
       {# Media #}
         <div {{ bem('media', text_with_media__modifiers, text_with_media__base_class) }}>
