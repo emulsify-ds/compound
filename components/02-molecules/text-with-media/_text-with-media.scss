@@ -1,0 +1,31 @@
+.text-with-media__content {
+  display: flex;
+}
+
+[data-image-position='right'] {
+  .text-with-media__content {
+    flex-direction: row;
+
+    @include large {
+      flex: 1 calc(55% - $space-double);
+    }
+  }
+
+  .text-with-media__media {
+    padding-left: $space-one-half;
+  }
+}
+
+[data-image-position='left'] {
+  .text-with-media__content {
+    flex-direction: row-reverse;
+
+    @include large {
+      flex: 1 calc(55% - $space-double);
+    }
+  }
+
+  .text-with-media__media {
+    padding-right: $space-one-half;
+  }
+}
