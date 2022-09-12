@@ -60,12 +60,12 @@
  # DATE AND TIME
  ###############}
 {% else %}
-  {# @TODO Flesh this out #}
+  {% set date_time = date_time__start|date(format__date) %}
 {% endif %}
 
 {% set date_time__attributes = {
-  datetime: date_time__start|date(format__iso),
-  class: bem('date-time'),
+  'datetime': date_time__start|date(format__iso),
+  'class': bem('date-time'),
 } %}
 
 <time {{ add_attributes(date_time__attributes) }}>{{ date_time }}</time>
