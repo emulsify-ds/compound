@@ -17,21 +17,12 @@ export const OrderedList = () => `
   ${listTwig({ list__items: listData.ordered__list__items, list__type: 'ol' })}
 </div>
 `;
-export const InlineListUL = () => `
+export const DescriptionList = () => `
 <div class="text-field">
   ${listTwig({
-    list__items: listData.inline__list__items,
-    list__type: 'ul',
-    list__base_class: 'inline',
-  })}
-</div>
-`;
-export const InlineListOL = () => `
-<div class="text-field">
-  ${listTwig({
-    list__items: listData.inline__list__items,
-    list__type: 'ol',
-    list__base_class: 'inline',
+    list__items: listData.description__list__items,
+    list__type: 'dl',
+    list__base_class: 'description',
   })}
 </div>
 `;
