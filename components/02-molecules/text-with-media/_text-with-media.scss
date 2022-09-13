@@ -10,10 +10,6 @@
       flex: 1 calc(55% - $space-double);
     }
   }
-
-  .text-with-media__media {
-    padding-left: $space-one-half;
-  }
 }
 
 [data-image-position='left'] {
