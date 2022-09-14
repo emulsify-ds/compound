@@ -25,7 +25,7 @@
 {% import "@molecules/menus/_menu.twig" as menus %}
 
 {% extends "@atoms/lists/_list-item.twig" %}
-  {% block list_item_content %}
+  {% block list__item__content %}
     {# if drupal #}
     {% if directory %}
       {{ link(item.title, item.url, bem(item_base_class|default(menu_class ~ '__link'), item_modifiers)) }}

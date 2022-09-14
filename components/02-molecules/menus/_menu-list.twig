@@ -4,12 +4,12 @@
 
 {# List #}
 {% extends "@atoms/lists/list.twig" %}
-  {% block list_content %}
-    {% for item in items %}
-      {% include "@molecules/menus/_menu-item.twig" with {
-        li_base_class: item_base_class,
-        li_modifiers: item_modifiers,
-        li_blockname: item_blockname,
-      } %}
-    {% endfor %}
-  {% endblock %}
+{% block list__content %}
+  {% for item in items %}
+    {% include "@molecules/menus/_menu-item.twig" with {
+      li_base_class: item_base_class,
+      li_modifiers: item_modifiers,
+      li_blockname: item_blockname,
+    } %}
+  {% endfor %}
+{% endblock %}
