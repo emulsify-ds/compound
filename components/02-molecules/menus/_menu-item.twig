@@ -18,9 +18,9 @@
 {% endfor %}
 
 {% set list_item_label = item_label %}
-{% set li_base_class = item_base_class|default(menu_class ~ '__item') %}
-{% set li_modifiers = item_modifiers %}
-{% set li_blockname = item_blockname %}
+{% set list__item__base_class = item_base_class|default(menu_class ~ '__item') %}
+{% set list__item__modifiers = item_modifiers %}
+{% set list__item__blockname = item_blockname %}
 
 {% import "@molecules/menus/_menu.twig" as menus %}
 
