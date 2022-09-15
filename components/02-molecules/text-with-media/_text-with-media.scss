@@ -1,27 +1,23 @@
 .text-with-media__content {
   display: flex;
-}
 
-[data-image-position='right'] {
-  .text-with-media__content {
+  [data-image-position='right'] & {
     flex-direction: row;
 
     @include large {
       flex: 1 calc(55% - $space-double);
     }
   }
-}
 
-[data-image-position='left'] {
-  .text-with-media__content {
+  [data-image-position='left'] & {
     flex-direction: row-reverse;
 
     @include large {
       flex: 1 calc(55% - $space-double);
     }
   }
+}
 
-  .text-with-media__media {
-    padding-right: $space-one-half;
-  }
+.text-with-media__media {
+  padding-right: $space-one-half;
 }
