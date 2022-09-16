@@ -5,4 +5,4 @@ import logo from './logo.twig';
  */
 export default { title: 'Molecules/Logo' };
 
-export const logoExample = () => logo();
+export const Logo = () => logo();
