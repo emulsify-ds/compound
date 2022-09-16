@@ -2,4 +2,4 @@ templates.placeholder:
   version: 0.1
   css:
     component:
-      dist/css/04-templates/placeholder/_place-holder.scss: {}
+      dist/css/04-templates/placeholder/_place-holder.css: {}

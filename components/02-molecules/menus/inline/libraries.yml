@@ -2,4 +2,4 @@ molecules.menus.inline:
   version: 0.1
   css:
     component:
-      dist/css/02-molecules/menus/inline/_inline-menu.scss: {}
+      dist/css/02-molecules/menus/inline/_inline-menu.css: {}

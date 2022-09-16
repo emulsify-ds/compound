@@ -2,4 +2,4 @@ atoms.text.text:
   version: 0.1
   css:
     component:
-      dist/css/01-atoms/text/text/_text.scss: {}
+      dist/css/01-atoms/text/text/_text.css: {}

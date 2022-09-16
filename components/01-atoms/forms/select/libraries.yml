@@ -2,4 +2,4 @@ atoms.forms.select:
   version: 0.1
   css:
     component:
-      dist/css/01-atoms/forms/select/_select.scss: {}
+      dist/css/01-atoms/forms/select/_select.css: {}

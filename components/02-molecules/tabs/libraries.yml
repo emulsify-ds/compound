@@ -2,13 +2,13 @@ molecules.tabs.tab:
   version: 0.1
   css:
     component:
-      dist/css/02-molecules/tabs/_tab.scss: {}
+      dist/css/02-molecules/tabs/_tab.css: {}
 
 molecules.tabs.tabs:
   version: 0.1
   css:
     component:
-      dist/css/02-molecules/tabs/_tabs.scss: {}
+      dist/css/02-molecules/tabs/_tabs.css: {}
   js:
     dist/js/02-molecules/tabs/tabs.js: {}
   dependencies:

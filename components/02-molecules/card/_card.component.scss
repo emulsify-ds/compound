@@ -1,5 +1,5 @@
 .card__heading {
-  // @include heading-large($font-size: 1.3rem);
+  @include heading-large($font-size: 1.3rem);
   @include no-bottom;
 
   &-link {
@@ -8,7 +8,7 @@
 }
 
 .card__subheading {
-  // @include heading-medium($font-size: 1rem);
+  @include heading-medium($font-size: 1rem);
   @include no-bottom;
 
   color: clr(text);
@@ -23,9 +23,9 @@
 }
 
 .card__button {
-  // @include button-base;
-  // @include button-color-primary;
-  // @include button-medium;
+  @include button-base;
+  @include button-color-primary;
+  @include button-medium;
 }
 
 /* Variations */

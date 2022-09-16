@@ -2,5 +2,5 @@ organisms.grid:
   version: 0.1
   css:
     component:
-      dist/css/03-organisms/grid/_grid.scss: {}
-      dist/css/03-organisms/grid/_grid-item.scss: {}
+      dist/css/03-organisms/grid/_grid.css: {}
+      dist/css/03-organisms/grid/_grid-item.css: {}

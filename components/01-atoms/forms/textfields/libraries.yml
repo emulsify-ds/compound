@@ -2,4 +2,4 @@ atoms.forms.textfields:
   version: 0.1
   css:
     component:
-      dist/css/01-atoms/forms/textfields/_textfields.scss: {}
+      dist/css/01-atoms/forms/textfields/_textfields.css: {}

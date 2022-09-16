@@ -2,4 +2,4 @@ templates.default:
   version: 0.1
   css:
     component:
-      dist/css/04-templates/_default.scss: {}
+      dist/css/04-templates/_default.css: {}

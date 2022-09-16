@@ -2,4 +2,4 @@ molecules.menus.breadcrumbs:
   version: 0.1
   css:
     component:
-      dist/css/02-molecules/menus/breadcrumbs/_breadcrumbs.scss: {}
+      dist/css/02-molecules/menus/breadcrumbs/_breadcrumbs.css: {}

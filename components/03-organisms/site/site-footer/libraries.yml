@@ -2,4 +2,4 @@ organisms.site.site_footer:
   version: 0.1
   css:
     component:
-      dist/css/03-organisms/site/site-footer/_site-footer.scss: {}
+      dist/css/03-organisms/site/site-footer/_site-footer.css: {}

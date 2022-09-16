@@ -2,4 +2,4 @@ molecules.pull_quote:
   version: 0.1
   css:
     component:
-      dist/css/02-molecules/pull-quote/_pull-quote.scss: {}
+      dist/css/02-molecules/pull-quote/_pull-quote.css: {}

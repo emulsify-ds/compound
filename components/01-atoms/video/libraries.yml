@@ -2,4 +2,4 @@ atoms.video:
   version: 0.1
   css:
     component:
-      dist/css/01-atoms/video/_video.scss: {}
+      dist/css/01-atoms/video/_video.css: {}
