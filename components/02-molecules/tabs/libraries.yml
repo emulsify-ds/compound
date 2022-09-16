@@ -9,3 +9,7 @@ molecules.tabs.tabs:
   css:
     component:
       dist/css/02-molecules/tabs/_tabs.scss: {}
+  js:
+    dist/js/02-molecules/tabs/tabs.js: {}
+  dependencies:
+    - core/drupal
