@@ -83,6 +83,12 @@
           "path": "./components/global.scss",
           "destinationPath": "./components/global.scss",
           "description": "Primary global scss file"
+        },
+        {
+          "name": "imports",
+          "path": "./components/_import.scss",
+          "destinationPath": "./components/_import.scss",
+          "description": "Primary global vars and mixings"
         }
       ],
       "components": [
