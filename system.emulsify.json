@@ -79,10 +79,10 @@
       ],
       "files": [
         {
-          "name": "style",
-          "path": "./components/style.scss",
-          "destinationPath": "./components/style.scss",
-          "description": "Primary style scss file"
+          "name": "global",
+          "path": "./components/global.scss",
+          "destinationPath": "./components/global.scss",
+          "description": "Primary global scss file"
         }
       ],
       "components": [
