@@ -1,0 +1,30 @@
+$table-border-width: 1px;
+
+@mixin table-header-footer {
+  background-color: clr(highlight-high);
+
+  > * {
+    border-color: clr(highlight);
+  }
+}
+
+@mixin table-cell {
+  border: 0;
+  border-right-width: $table-border-width;
+  border-bottom-width: $table-border-width;
+  border-style: solid;
+  border-color: inherit;
+  padding: $space;
+
+  &:last-child {
+    border-right: 0;
+  }
+
+  :last-child > & {
+    border-bottom: 0;
+  }
+
+  &[data-cell-highlight] {
+    background-color: clr(highlight);
+  }
+}

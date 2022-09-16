@@ -2,15 +2,6 @@
 $transition-duration-base: 0.3s;
 $transition-timing-function-base: ease-in-out;
 
-@mixin transition(
-  $transition-property: all,
-  $transition-duration: $transition-duration-base,
-  $transition-timing-function: $transition-timing-function-base
-) {
-  transition: $transition-property $transition-duration
-    $transition-timing-function;
-}
-
 // Demo UI
 .motion {
   padding: 0 1rem;

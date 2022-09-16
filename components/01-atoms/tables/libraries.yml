@@ -1,0 +1,5 @@
+atoms.tables:
+  version: 0.1
+  css:
+    component:
+      dist/css/01-atoms/tables/_tables.scss: {}

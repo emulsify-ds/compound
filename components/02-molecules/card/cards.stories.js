@@ -3,6 +3,8 @@ import card from './card.twig';
 import cardData from './card.yml';
 import cardBgData from './card-bg.yml';
 
+import './_card.component.scss';
+
 /**
  * Storybook Definition.
  */

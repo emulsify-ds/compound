@@ -7,6 +7,11 @@ import checkboxData from './checkbox/checkbox.yml';
 import radioData from './radio/radio.yml';
 import selectOptionsData from './select/select.yml';
 
+import './checkbox/_checkbox.component.scss';
+import './radio/_radio.component.scss';
+import './select/_select.component.scss';
+import './textfields/_textfields.component.scss';
+
 /**
  * Storybook Definition.
  */

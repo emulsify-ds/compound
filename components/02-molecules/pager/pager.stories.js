@@ -5,6 +5,8 @@ import pagerEllipsesData from './pager-ellipses.yml';
 import pagerPrevEllipsesData from './pager-prev-ellipses.yml';
 import pagerBothEllipsesData from './pager-both-ellipses.yml';
 
+import './_pager.component.scss';
+
 /**
  * Storybook Definition.
  */

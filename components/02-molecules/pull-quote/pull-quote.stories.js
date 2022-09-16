@@ -2,6 +2,8 @@ import pullQuoteTwig from './pull-quote.twig';
 
 import pullQuoteData from './pull-quote.yml';
 
+import './_pull-quote.component.scss';
+
 /**
  * Storybook Definition.
  */

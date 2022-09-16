@@ -1,0 +1,11 @@
+molecules.tabs.tab:
+  version: 0.1
+  css:
+    component:
+      dist/css/02-molecules/tabs/_tab.scss: {}
+
+molecules.tabs.tabs:
+  version: 0.1
+  css:
+    component:
+      dist/css/02-molecules/tabs/_tabs.scss: {}

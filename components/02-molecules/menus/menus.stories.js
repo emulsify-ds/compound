@@ -10,6 +10,15 @@ import socialMenuData from './social/social-menu.yml';
 
 import './main-menu/main-menu';
 
+import './breadcrumbs/_breadcrumbs.component.scss';
+import './inline/_inline-menu.component.scss';
+
+import './main-menu/_00-main-menu.component.scss';
+import './main-menu/_01-main-menu-item.component.scss';
+import './main-menu/_02-main-menu-link.component.scss';
+import './main-menu/_03-main-menu-toggle.component.scss';
+import './social/_social-menu.component.scss';
+
 /**
  * Storybook Definition.
  */

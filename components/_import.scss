@@ -1,4 +1,9 @@
-// Variables & Mixins
+// Variables
 @import '00-base/00-defaults/01-variables';
 @import '00-base/00-defaults/02-breakpoints';
 @import '00-base/00-defaults/03-mixins';
+@import '00-base/01-colors/colors-vars';
+@import 'breakpoint-sass/stylesheets/breakpoint';
+
+// Mixins
+@import '**/*.mixin.scss';

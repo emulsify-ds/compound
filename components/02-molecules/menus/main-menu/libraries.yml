@@ -1,0 +1,30 @@
+molecules.menus.main_menu:
+  version: 0.1
+  css:
+    component:
+      dist/css/02-molecules/menus/main-menu/_00-main-menu.scss: {}
+  js:
+    dist/js/02-molecules/menus/main-menu/main-menu.js: {}
+  dependencies:
+    - core/drupal
+    - emulsify/molecules.menus.main_menu.main_menu_item
+    - emulsify/molecules.menus.main_menu.main_menu_link
+    - emulsify/molecules.menus.main_menu.main_menu_toggle
+
+molecules.menus.main_menu.main_menu_item:
+  version: 0.1
+  css:
+    component:
+      dist/css/02-molecules/menus/main-menu/_01-main-menu-item.scss: {}
+
+molecules.menus.main_menu.main_menu_link:
+  version: 0.1
+  css:
+    component:
+      dist/css/02-molecules/menus/main-menu/_02-main-menu-link.scss: {}
+
+molecules.menus.main_menu.main_menu_toggle:
+  version: 0.1
+  css:
+    component:
+      dist/css/02-molecules/menus/main-menu/_03-main-menu-toggle.scss: {}

@@ -1,6 +1,8 @@
 import tableTwig from './tables.twig';
 import tableData from './tables.yml';
 
+import './_tables.component.scss';
+
 /**
  * Storybook Definition.
  */

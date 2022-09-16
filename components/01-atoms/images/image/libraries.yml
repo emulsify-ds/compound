@@ -1,0 +1,5 @@
+atoms.images.image:
+  version: 0.1
+  css:
+    component:
+      dist/css/01-atoms/images/image/_image.scss: {}

@@ -1,3 +1,4 @@
+const path = require('path');
 const globImporter = require('node-sass-glob-importer');
 const { namespaces } = require('./setupTwig');
 
@@ -35,6 +36,7 @@ module.exports = async ({ config }) => {
           sassOptions: {
             importer: globImporter(),
           },
+          additionalData: `@import "${path.resolve(__dirname, '../components/_import.scss')}";`,
         },
       },
     ],

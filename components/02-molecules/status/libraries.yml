@@ -1,0 +1,5 @@
+molecules.status:
+  version: 0.1
+  css:
+    component:
+      dist/css/02-molecules/status/_status.scss: {}

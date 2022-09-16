@@ -1,0 +1,5 @@
+organisms.site.site_header:
+  version: 0.1
+  css:
+    component:
+      dist/css/03-organisms/site/site-header/_site-header.scss: {}

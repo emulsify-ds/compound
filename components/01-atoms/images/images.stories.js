@@ -5,6 +5,9 @@ import iconTwig from './icons/icons.twig';
 import imageData from './image/image.yml';
 import figureData from './image/figure.yml';
 
+import './icons/_icons.component.scss';
+import './image/_image.component.scss';
+
 const svgIcons = require.context('../../../images/icons/', true, /\.svg$/);
 const icons = [];
 svgIcons.keys().forEach((key) => {

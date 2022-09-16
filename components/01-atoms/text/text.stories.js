@@ -6,6 +6,9 @@ import paragraph from './text/03-inline-elements.twig';
 import blockquoteData from './text/blockquote.yml';
 import headingData from './headings/headings.yml';
 
+import './headings/_headings.component.scss';
+import './text/_text.component.scss';
+
 /**
  * Storybook Definition.
  */

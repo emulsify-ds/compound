@@ -2,6 +2,8 @@ import listTwig from './list.twig';
 
 import listData from './list.yml';
 
+import './_list.component.scss';
+
 /**
  * Storybook Definition.
  */

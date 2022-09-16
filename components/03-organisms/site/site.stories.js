@@ -8,6 +8,9 @@ import mainMenuData from '../../02-molecules/menus/main-menu/main-menu.yml';
 
 import '../../02-molecules/menus/main-menu/main-menu';
 
+import './site-footer/_site-footer.component.scss';
+import './site-header/_site-header.component.scss';
+
 /**
  * Storybook Definition.
  */

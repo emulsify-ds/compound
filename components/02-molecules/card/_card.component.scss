@@ -1,11 +1,9 @@
-@import '../../import';
-
 .card__heading {
   // @include heading-large($font-size: 1.3rem);
   @include no-bottom;
 
   &-link {
-    // @include link;
+    @include link;
   }
 }
 
@@ -21,7 +19,7 @@
 }
 
 .card__link {
-  // @include link;
+  @include link;
 }
 
 .card__button {

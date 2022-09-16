@@ -1,0 +1,5 @@
+molecules.pager:
+  version: 0.1
+  css:
+    component:
+      dist/css/02-molecules/pager/_pager.scss: {}

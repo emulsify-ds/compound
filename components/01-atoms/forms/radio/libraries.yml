@@ -1,0 +1,5 @@
+atoms.forms.radio:
+  version: 0.1
+  css:
+    component:
+      dist/css/01-atoms/forms/radio/_radio.scss: {}

@@ -1,0 +1,5 @@
+atoms.links.link:
+  version: 0.1
+  css:
+    component:
+      dist/css/01-atoms/links/link/_link.scss: {}

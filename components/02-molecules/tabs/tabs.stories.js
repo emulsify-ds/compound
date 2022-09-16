@@ -4,6 +4,9 @@ import tabData from './tabs.yml';
 
 import './tabs';
 
+import './_tab.component.scss';
+import './_tabs.component.scss';
+
 /**
  * Storybook Definition.
  */

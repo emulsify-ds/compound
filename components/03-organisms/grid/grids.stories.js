@@ -1,8 +1,9 @@
 import grid from './grid.twig';
 
 import gridData from './grid.yml';
-// import gridCardData from './grid-cards.yml';
-// import gridCtaData from './grid-ctas.yml';
+
+import './_grid.component.scss';
+import './_grid-item.component.scss';
 
 /**
  * Storybook Definition.
