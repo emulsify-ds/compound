@@ -7,7 +7,7 @@ const webpackDir = path.resolve(__dirname);
 const rootDir = path.resolve(__dirname, '..');
 const distDir = path.resolve(rootDir, 'dist');
 
-function getEntries(pattern) {
+function getEntries(pattern, patternCss) {
   const entries = {};
 
   glob.sync(pattern).forEach((file) => {
@@ -16,8 +16,14 @@ function getEntries(pattern) {
     entries[newfilePath] = file;
   });
 
+  glob.sync(patternCss).forEach((file) => {
+    const filePath = file.split('components/')[1];
+    const newfilePath = `css/${filePath.replace('.component.scss', '')}`;
+    entries[newfilePath] = file;
+  });
+
   entries.svgSprite = path.resolve(webpackDir, 'svgSprite.js');
-  entries.css = path.resolve(webpackDir, 'css.js');
+  entries.global = path.resolve(webpackDir, 'global.js');
 
   return entries;
 }
@@ -30,6 +36,10 @@ module.exports = {
     path.resolve(
       rootDir,
       'components/**/!(*.stories|*.component|*.min|*.test).js',
+    ),
+    path.resolve(
+      rootDir,
+      'components/**/*.component.scss',
     ),
   ),
   module: {

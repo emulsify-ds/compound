@@ -1,0 +1,5 @@
+molecules.card:
+  version: 0.1
+  css:
+    component:
+      dist/css/02-molecules/card/_card.css: {}
