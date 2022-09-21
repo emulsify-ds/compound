@@ -21,12 +21,5 @@
         list__item__blockname: list__base_class,
       } %}
     {% endfor %}
-    {% for list__item in list__items %}
-      {% include "@atoms/lists/_list-item.twig" with {
-        list__item__type: "dl",
-        list__item__content: list__item.list__item__content,
-        list__item__blockname: list__base_class,
-      } %}
-    {% endfor %}
   {% endblock %}
 </{{ list__type }}>

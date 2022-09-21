@@ -1,6 +1,8 @@
 import listTwig from './list.twig';
+import dlTwig from './dl.twig';
 
 import listData from './list.yml';
+import dlData from './dl.yml';
 
 /**
  * Storybook Definition.
@@ -19,8 +21,8 @@ export const OrderedList = () => `
 `;
 export const DescriptionList = () => `
 <div class="text-field">
-  ${listTwig({
-    list__items: listData.description__list__items,
+  ${dlTwig({
+    dl__items: dlData.dl__items,
     list__type: 'dl',
     list__base_class: 'description',
   })}
