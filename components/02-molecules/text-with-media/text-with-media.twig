@@ -23,20 +23,20 @@
 <div {{ add_attributes(text_with_media__attributes) }}>
   <div {{ bem('inner', [], text_with_media__base_class) }}>
     {# Content #}
-    {% block text_with_media__content %}
-      <div {{ bem('content', [], text_with_media__base_class) }}>
+    <div {{ bem('content', [], text_with_media__base_class) }}>
+      {% block text_with_media__content %}
         {# Text #}
         {% include "@atoms/text/text/01-paragraph.twig" with {
           paragraph_content: text_with_media__content, 
         } %}
-      {# Media #}
-        <div {{ bem('media', text_with_media__modifiers, text_with_media__base_class) }}>
-          {% block text_with_media__group %}
-            {% include "@atoms/images/image/_image.twig" %}
-          {% endblock %}
-        </div>
-      </div>
-    {% endblock %}
+      {% endblock %}
+    </div>
+    {# Media #}
+    <div {{ bem('media', text_with_media__modifiers, text_with_media__base_class) }}>
+      {% block text_with_media__group %}
+        {% include "@atoms/images/image/_image.twig" %}
+      {% endblock %}
+    </div>
   </div>
 </div>
 
