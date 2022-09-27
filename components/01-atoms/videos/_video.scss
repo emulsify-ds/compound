@@ -6,13 +6,13 @@
   }
 
   video {
-    width: 100%;
     height: auto;
+    width: 100%;
   }
 }
 
 .video__wrap {
-  overflow: hidden;
   aspect-ratio: 16 / 9;
+  overflow: hidden;
   position: relative;
 }

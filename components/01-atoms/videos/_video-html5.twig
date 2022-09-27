@@ -15,5 +15,5 @@
   {% for video__url in video__urls %}
     <source src="{{ video__url }}" type="video/mp4">
   {% endfor %}
-  Your browser does not support the video tag.
+  {{ "Your browser does not support the video tag."|t }}
 </video>
