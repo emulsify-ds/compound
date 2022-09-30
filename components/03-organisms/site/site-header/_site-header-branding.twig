@@ -1,6 +1,2 @@
-{% set link_base_class = 'logo-link' %}
-{% set link_url = logo_link__url|default('/') %}
+{% include "@molecules/logo/logo.twig" %}
 
-{% include "@molecules/logo/logo.twig" with {
-  logo__modifiers: ['header'],
-}%}
