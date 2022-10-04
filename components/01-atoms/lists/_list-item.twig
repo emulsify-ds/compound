@@ -8,14 +8,13 @@
  #}
 {% set list__item__base_class = list__item__base_class|default('item') %}
 {% set list__item__attributes = list__item__attributes|default({}) %}
-{% set list__item__type = list__item__type|default('li') %}
 {% set list__item__attributes = list__item__attributes|merge({
   'class': bem(list__item__base_class, list__item__modifiers, list__item__blockname),
 }) %}
 
-<{{ list__item__type }} {{ add_attributes(list__item__attributes) }}>
+<li {{ add_attributes(list__item__attributes) }}>
   {% block list__item__content %}
     {{ list__item__content }}
   {% endblock %}
-</{{ list__item__type }}>
+</li>
 
