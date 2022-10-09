@@ -34,6 +34,7 @@
 {% set pager__attributes = pager__attributes|default({
   'class': bem(pager__base_class, pager__modifiers, pager__blockname),
   'aria-label': pagination_id|default('Pagination'|t),
+  'role': 'navigation'
 }) %}
 
 {% if items %}
@@ -63,10 +64,11 @@
       {% endif %}
       {# Now generate the actual pager piece. #}
       {% for key, item in items.pages %}
-        {% set current_class = current == key ? ' is-active' : '' %}
+        {% set current_class = current == key ? 'is-active' : '' %}
+        {% set aria_current = current == key ? 'aria-current="page"' : '' %}
         <li {{ bem('item', [], pager__base_class, [current_class]) }}>
           {% set title = current == key ? 'Current page'|t : 'Go to page @key'|t({'@key': key}) %}
-          <a {{ bem('link', [], pager__base_class, [current_class]) }} href="{{ item.href }}" title="{{ title }}"{{ item.attributes|without('href', 'title') }}>
+          <a {{ bem('link', [], pager__base_class, [current_class]) }} href="{{ item.href }}" title="{{ title }}"{{ item.attributes|without('href', 'title') }} {{ aria_current }}>
             <span {{ bem('visually-hidden') }}>
               {{ current == key ? 'Current page'|t : 'Page '|t }}
             </span>
