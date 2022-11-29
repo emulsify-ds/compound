@@ -1,7 +1,7 @@
 import footerTwig from './site-footer/site-footer.twig';
 import siteHeader from './site-header/site-header.twig';
 
-import footerSocial from '../../02-molecules/menus/social/social-menu.yml';
+import footerSocial from '../../02-molecules/menus/social-menu/social-menu.yml';
 import footerMenu from '../../02-molecules/menus/inline/inline-menu.yml';
 import breadcrumbData from '../../02-molecules/menus/breadcrumbs/breadcrumbs.yml';
 import mainMenuData from '../../02-molecules/menus/main-menu/main-menu.yml';
