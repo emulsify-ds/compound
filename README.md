@@ -6,6 +6,8 @@
 
 Compound is the default Emulsify system of components.
 
+[View the deployed storybook instance here](https://emulsify-ds.github.io/compound)
+
 ## Development
 
 - Ensure you're using the correct node/npm version `nvm use`
