@@ -24,6 +24,18 @@ When you do, remember to add it to the `system.emulsify.json` file so that it's 
 
 If the component has dependencies, be sure to identify them, so that the CLI knows to install them as well. Here's an example of the card component declaring its dependencies:
 
+### Common Scripts
+
+These are the most common npm scripts you may find yourself using:
+(Each is prefixed with `npm run`)
+
+- `develop`<br>
+Initializes [Webpack](https://webpack.js.org/) to compile existing files and watch for additional changes. It also starts an instance of [storybook](https://storybook.js.org/) that auto-refreshes when file changes are detected.
+
+- `lint`<br>
+Runs [stylelint](https://stylelint.io/) for your sass files and [eslint](https://eslint.org/) for your javascript files. The eslint configuration enforces formatting based on [prettier](https://prettier.io/docs/en/index.html) and javascript comments according to [JSdoc](https://jsdoc.app/).
+
+
 ```
 {
   "name": "card",
@@ -106,6 +118,13 @@ If the component has dependencies, be sure to identify them, so that the CLI kno
             <img src=https://avatars.githubusercontent.com/u/65790558?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Brandon/>
             <br />
             <sub style="font-size:14px"><b>Brandon</b></sub>
+        </a>
+    </td>
+    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
+        <a href=https://github.com/mcortes19>
+            <img src=https://avatars.githubusercontent.com/u/11282049?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Marvin J. Cortés/>
+            <br />
+            <sub style="font-size:14px"><b>Marvin J. Cortés</b></sub>
         </a>
     </td>
 </tr>
