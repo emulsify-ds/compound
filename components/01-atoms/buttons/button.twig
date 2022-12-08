@@ -9,14 +9,15 @@
  */
 #}
 
-{% set button_base_class = button_base_class|default('button') %}
+{% set button__base_class = button__base_class|default('button') %}
+{% set button__attributes = button__attributes|default([]) %}
 
-{% set additional_attributes = {
-  class: bem(button_base_class, button_modifiers, button_blockname),
-} %}
+{% set button__attributes = button__attributes|merge({
+  'class': bem(button__base_class, button__modifiers, button__blockname, button__additional_classes),
+}) %}
 
-<button {{ add_attributes(additional_attributes) }}>
-  {% block button_content %}
-    {{ button_content }}
+<button {{ add_attributes(button__attributes) }}>
+  {% block button__content %}
+    {{ button__content }}
   {% endblock %}
 </button>
