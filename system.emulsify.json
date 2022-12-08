@@ -152,6 +152,10 @@
           "dependency": []
         },
         {
+          "name": "accordion",
+          "structure": "molecules"
+        },
+        {
           "name": "card",
           "structure": "molecules",
           "dependency": ["images", "text", "links", "buttons"]
