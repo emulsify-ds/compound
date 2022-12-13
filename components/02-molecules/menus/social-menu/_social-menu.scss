@@ -1,3 +1,5 @@
+$social-icon-size: 16px;
+
 .social-menu {
   @include list-reset;
 }
@@ -20,8 +22,8 @@
 }
 
 .social-menu__icon {
-  height: 2rem;
-  width: 2rem;
+  height: $social-icon-size;
+  width: $social-icon-size;
   margin-right: $space-one-half;
   fill: currentColor;
 }
