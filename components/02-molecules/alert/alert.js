@@ -39,11 +39,7 @@ Drupal.behaviors.alert = {
 
     // Function to check whether localStorage is both supported and available.
     // See: https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API#testing_for_availability
-    /**
-     *
-     * @param type
-     */
-    function storageAvailable(type) {
+    const storageAvailable = (type) => {
       let storage;
       try {
         storage = window[`${type}`];
@@ -68,7 +64,7 @@ Drupal.behaviors.alert = {
           storage.length !== 0
         );
       }
-    }
+    };
 
     if (storageAvailable('localStorage')) {
       alerts.forEach((alert) => {
