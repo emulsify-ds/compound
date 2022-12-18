@@ -18,12 +18,9 @@
 }
 
 .pager__link {
+  padding: 0.5em;
   color: clr(text);
   text-decoration: none;
-
-  @include large {
-    padding: 0.5em;
-  }
 
   &.is-active,
   &:hover,
