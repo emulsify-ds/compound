@@ -84,14 +84,21 @@ Runs [stylelint](https://stylelint.io/) for your sass files and [eslint](https:/
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
+        <a href=https://github.com/Rain-Hendrix>
+            <img src=https://avatars.githubusercontent.com/u/72449433?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Rain Hendrix/>
+            <br />
+            <sub style="font-size:14px"><b>Rain Hendrix</b></sub>
+        </a>
+    </td>
+</tr>
+<tr>
+    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=https://github.com/mcortes19>
             <img src=https://avatars.githubusercontent.com/u/11282049?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Marvin J. Cortés/>
             <br />
             <sub style="font-size:14px"><b>Marvin J. Cortés</b></sub>
         </a>
     </td>
-</tr>
-<tr>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=https://github.com/KurtTrowbridge>
             <img src=https://avatars.githubusercontent.com/u/848721?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Kurt Trowbridge/>
