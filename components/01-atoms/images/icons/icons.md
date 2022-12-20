@@ -17,7 +17,7 @@ Simple: (no BEM renaming)
 
 ```
 {% include "@atoms/images/icons/_icon.twig" with {
-  icon_name: 'menu',
+  icon__name: 'menu',
 } %}
 ```
 
@@ -36,7 +36,7 @@ Complex (BEM classes):
 {% include "@atoms/04-images/icons/_icon.twig" with {
   icon_base_class: 'toggle',
   icon_blockname: 'main-nav',
-  icon_name: 'menu',
+  icon__name: 'menu',
 } %}
 ```
 

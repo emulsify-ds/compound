@@ -37,3 +37,8 @@
     @extend .hr;
   }
 }
+
+pre {
+  margin: 0;
+  background-color: var(--c-background-section);
+}
