@@ -6,8 +6,8 @@
 {% extends "@atoms/links/link/link.twig" %}
   {% block link_content %}
     {% include "@atoms/images/icons/_icon.twig" with {
-      icon_name: item.icon,
-      icon_blockname: menu_class,
+      icon__name: item.icon,
+      icon__blockname: menu_class,
     } %}
     <span {{ bem('text', [], menu_class) }}>{{ item.title }}</span>
   {% endblock %}
