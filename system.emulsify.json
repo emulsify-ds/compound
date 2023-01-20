@@ -147,6 +147,11 @@
           "dependency": ["links"]
         },
         {
+          "name": "tooltip",
+          "structure": "atoms",
+          "dependency": []
+        },
+        {
           "name": "video",
           "structure": "atoms",
           "required": true,
