@@ -147,10 +147,13 @@
           "dependency": ["links"]
         },
         {
-          "name": "video",
+          "name": "videos",
           "structure": "atoms",
-          "required": true,
           "dependency": []
+        },
+        {
+          "name": "accordion",
+          "structure": "molecules"
         },
         {
           "name": "card",
