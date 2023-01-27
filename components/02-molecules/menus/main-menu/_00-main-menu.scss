@@ -10,14 +10,14 @@ $main-menu-medium: $medium;
   }
 
   &--open {
-    background-color: clr(background);
-    display: block;
-    left: 0;
-    overflow-y: scroll;
     position: absolute;
-    top: 110px;
+    left: 0;
     right: 0;
+    top: 110px;
+    display: block;
+    overflow-y: scroll;
     width: 100%;
+    background-color: clr(background);
 
     @include medium {
       position: relative;
@@ -34,9 +34,9 @@ $main-menu-medium: $medium;
 .main-menu {
   @include list-reset;
 
-  border-bottom: 1px solid;
   position: relative;
   z-index: 10;
+  border-bottom: 1px solid;
 
   @include medium {
     border-bottom: none;
@@ -49,10 +49,10 @@ $main-menu-medium: $medium;
 
 /* UL (Nested) */
 .main-menu--sub {
-  border-bottom: none;
   height: 0;
   overflow: hidden;
   width: 100%;
+  border-bottom: none;
   background-color: clr(muted);
 
   @include medium {
