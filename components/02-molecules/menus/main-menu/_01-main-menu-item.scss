@@ -10,7 +10,7 @@
     display: inline-block;
 
     /* Only top level */
-    &:not(.main-menu__item--sub):focus,
+    &:not(.main-menu__item--sub):focus-within,
     &:not(.main-menu__item--sub):hover {
       background-color: clr(accent-high);
       color: clr(highlight-high);

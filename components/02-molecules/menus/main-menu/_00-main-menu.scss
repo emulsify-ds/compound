@@ -20,12 +20,12 @@ $main-menu-medium: $medium;
     width: 100%;
 
     @include medium {
-      left: auto;
-      overflow-y: visible;
       position: relative;
-      top: auto;
+      left: auto;
       right: auto;
+      top: auto;
       width: auto;
+      overflow-y: visible;
     }
   }
 }
@@ -52,20 +52,20 @@ $main-menu-medium: $medium;
   border-bottom: none;
   height: 0;
   overflow: hidden;
-  background-color: clr(muted);
   width: 100%;
+  background-color: clr(muted);
 
   @include medium {
-    background-color: clr(accent-high);
+    position: absolute;
+    left: 0;
+    top: 55px;
+    z-index: 1;
     display: none;
     height: auto;
-    left: 0;
     overflow: visible;
     padding: $space 0;
-    position: absolute;
-    top: 55px;
     width: 315px;
-    z-index: 1;
+    background-color: clr(accent-high);
     font-size: 0.9rem;
   }
 
@@ -77,8 +77,8 @@ $main-menu-medium: $medium;
         &.active,
         &:active,
         &:hover {
-          color: clr(background);
           background-color: clr(accent-high);
+          color: clr(background);
         }
       }
     }

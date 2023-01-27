@@ -4,12 +4,12 @@
 
   position: absolute;
   display: inline-block;
-  margin-left: -1em;
-  margin-top: -1em;
+  margin-left: -1rem;
+  margin-top: -1rem;
   padding: $space;
   width: 100vw;
   text-decoration: none;
-  top: 1em;
+  top: 1rem;
 
   /* See main-menu.js */
   &--open {
