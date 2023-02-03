@@ -18,7 +18,7 @@
 }
 
 .form-item__textfield {
-  border: 1px solid clr(highlight-high);
+  border: 1px solid clr(accent);
   padding: 0.6em;
   max-width: 100%;
 
@@ -27,7 +27,7 @@
   }
 
   &::placeholder {
-    color: clr(highlight);
+    color: clr(text);
   }
 }
 

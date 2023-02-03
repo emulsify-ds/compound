@@ -9,7 +9,7 @@
 {% set list__type = list__type|default('ul') %}
 {% set list__attributes = list__attributes|default([]) %}
 {% set list__attributes = list__attributes|merge({
-  'class': bem(list__base_class, list__modifiers, list__blockname),
+  'class': bem(list__base_class, list__modifiers, list__blockname, list__addition_classes),
 }) %}
 
 <{{ list__type }} {{ add_attributes(list__attributes) }}>
