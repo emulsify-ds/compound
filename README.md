@@ -22,7 +22,9 @@ Compound is a completely open source set of components that work with each other
 
 When you do, remember to add it to the `system.emulsify.json` file so that it's exposed to the CLI! You can place it wherever is appropriate inside the `variants > components` section.
 
-If the component has dependencies, be sure to identify them, so that the CLI knows to install them as well. Here's an example of the card component declaring its dependencies:
+If the component has dependencies, be sure to identify them, so that the CLI knows to install them as well.
+
+Components with a leading underscore, such as `_tab.twig`, indicate that the twig file is not intended to be used on its own, but rather as part of a higher level component.
 
 ### Common Scripts
 
@@ -34,7 +36,6 @@ Initializes [Webpack](https://webpack.js.org/) to compile existing files and wat
 
 - `lint`<br>
 Runs [stylelint](https://stylelint.io/) for your sass files and [eslint](https://eslint.org/) for your javascript files. The eslint configuration enforces formatting based on [prettier](https://prettier.io/docs/en/index.html) and javascript comments according to [JSdoc](https://jsdoc.app/).
-
 
 ```
 {
