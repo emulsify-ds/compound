@@ -8,13 +8,13 @@
 .cl-colors__list {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 0 2rem;
+  margin: 0 0 $space-double;
   padding: 0;
 }
 
 .cl-colors__item {
   list-style: none;
-  padding: 1rem 2rem;
+  padding: $space $space-double;
   transition: all 0.4s;
   flex: 1 1 20%;
   min-width: 150px;

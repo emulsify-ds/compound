@@ -5,7 +5,7 @@ $color-place-holder: $gray-light;
 .place-holder {
   color: $color-place-holder;
   border: 4px dashed $color-place-holder;
-  padding: 50px;
+  padding: $space-triple + $space-one-eighth;
 
   &__content {
     font-size: 3.2rem;

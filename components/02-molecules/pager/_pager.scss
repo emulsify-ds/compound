@@ -1,5 +1,5 @@
 .pager {
-  margin: 2em 0;
+  margin: $space-double 0;
 }
 
 .pager__items {
@@ -10,10 +10,10 @@
 
 .pager__item {
   display: inline-block;
-  margin: 0 0.7em;
+  margin: 0 $space-one-half + $space-one-fourth;
 
   @include large {
-    margin: 0 1em;
+    margin: 0 $space;
   }
 }
 

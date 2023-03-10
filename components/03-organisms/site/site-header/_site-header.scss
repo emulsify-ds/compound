@@ -1,5 +1,5 @@
 .header {
-  margin-bottom: 4em;
+  margin-bottom: $space-quadruple;
 
   &__inner {
     @include wrapper;
@@ -17,6 +17,6 @@
 
   &__branding {
     margin-right: $space;
-    max-width: 300px;
+    max-width: 18.75rem;
   }
 }
