@@ -4,7 +4,7 @@ import home from './home.twig';
 
 import mainMenuData from '../../02-molecules/menus/main-menu/main-menu.yml';
 import breadcrumbData from '../../02-molecules/menus/breadcrumbs/breadcrumbs.yml';
-import socialMenuData from '../../02-molecules/menus/social/social-menu.yml';
+import socialMenuData from '../../02-molecules/menus/social-menu/social-menu.yml';
 import footerMenuData from '../../02-molecules/menus/inline/inline-menu.yml';
 
 /**
