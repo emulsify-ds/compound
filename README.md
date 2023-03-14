@@ -22,7 +22,9 @@ Compound is a completely open source set of components that work with each other
 
 When you do, remember to add it to the `system.emulsify.json` file so that it's exposed to the CLI! You can place it wherever is appropriate inside the `variants > components` section.
 
-If the component has dependencies, be sure to identify them, so that the CLI knows to install them as well. Here's an example of the card component declaring its dependencies:
+If the component has dependencies, be sure to identify them, so that the CLI knows to install them as well.
+
+Components with a leading underscore, such as `_tab.twig`, indicate that the twig file is not intended to be used on its own, but rather as part of a higher level component.
 
 ### Common Scripts
 
@@ -34,7 +36,6 @@ Initializes [Webpack](https://webpack.js.org/) to compile existing files and wat
 
 - `lint`<br>
 Runs [stylelint](https://stylelint.io/) for your sass files and [eslint](https://eslint.org/) for your javascript files. The eslint configuration enforces formatting based on [prettier](https://prettier.io/docs/en/index.html) and javascript comments according to [JSdoc](https://jsdoc.app/).
-
 
 ```
 {
@@ -63,20 +64,6 @@ Runs [stylelint](https://stylelint.io/) for your sass files and [eslint](https:/
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
-        <a href=https://github.com/patrickocoffeyo>
-            <img src=https://avatars.githubusercontent.com/u/1107871?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Patrick Coffey/>
-            <br />
-            <sub style="font-size:14px"><b>Patrick Coffey</b></sub>
-        </a>
-    </td>
-    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
-        <a href=https://github.com/joetower>
-            <img src=https://avatars.githubusercontent.com/u/366413?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Joe Tower/>
-            <br />
-            <sub style="font-size:14px"><b>Joe Tower</b></sub>
-        </a>
-    </td>
-    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=https://github.com/amazingrando>
             <img src=https://avatars.githubusercontent.com/u/409903?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Randy Oest/>
             <br />
@@ -90,8 +77,29 @@ Runs [stylelint](https://stylelint.io/) for your sass files and [eslint](https:/
             <sub style="font-size:14px"><b>Marvin J. Cortés</b></sub>
         </a>
     </td>
+    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
+        <a href=https://github.com/patrickocoffeyo>
+            <img src=https://avatars.githubusercontent.com/u/1107871?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Patrick Coffey/>
+            <br />
+            <sub style="font-size:14px"><b>Patrick Coffey</b></sub>
+        </a>
+    </td>
+    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
+        <a href=https://github.com/joetower>
+            <img src=https://avatars.githubusercontent.com/u/366413?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Joe Tower/>
+            <br />
+            <sub style="font-size:14px"><b>Joe Tower</b></sub>
+        </a>
+    </td>
 </tr>
 <tr>
+    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
+        <a href=https://github.com/mndonx>
+            <img src=https://avatars.githubusercontent.com/u/2343957?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Amanda Luker/>
+            <br />
+            <sub style="font-size:14px"><b>Amanda Luker</b></sub>
+        </a>
+    </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=https://github.com/KurtTrowbridge>
             <img src=https://avatars.githubusercontent.com/u/848721?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Kurt Trowbridge/>
@@ -107,13 +115,6 @@ Runs [stylelint](https://stylelint.io/) for your sass files and [eslint](https:/
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
-        <a href=https://github.com/mndonx>
-            <img src=https://avatars.githubusercontent.com/u/2343957?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Amanda Luker/>
-            <br />
-            <sub style="font-size:14px"><b>Amanda Luker</b></sub>
-        </a>
-    </td>
-    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=https://github.com/fertant>
             <img src=https://avatars.githubusercontent.com/u/3853492?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Andrii Shutov/>
             <br />
@@ -125,6 +126,22 @@ Runs [stylelint](https://stylelint.io/) for your sass files and [eslint](https:/
             <img src=https://avatars.githubusercontent.com/u/65790558?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Brandon/>
             <br />
             <sub style="font-size:14px"><b>Brandon</b></sub>
+        </a>
+    </td>
+    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
+        <a href=https://github.com/josue2591>
+            <img src=https://avatars.githubusercontent.com/u/9342250?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=josue2591/>
+            <br />
+            <sub style="font-size:14px"><b>josue2591</b></sub>
+        </a>
+    </td>
+</tr>
+<tr>
+    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
+        <a href=https://github.com/marcb4k>
+            <img src=https://avatars.githubusercontent.com/u/107938318?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Marc Berger/>
+            <br />
+            <sub style="font-size:14px"><b>Marc Berger</b></sub>
         </a>
     </td>
 </tr>
