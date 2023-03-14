@@ -78,17 +78,17 @@ Runs [stylelint](https://stylelint.io/) for your sass files and [eslint](https:/
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
-        <a href=https://github.com/joetower>
-            <img src=https://avatars.githubusercontent.com/u/366413?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Joe Tower/>
-            <br />
-            <sub style="font-size:14px"><b>Joe Tower</b></sub>
-        </a>
-    </td>
-    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=https://github.com/patrickocoffeyo>
             <img src=https://avatars.githubusercontent.com/u/1107871?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Patrick Coffey/>
             <br />
             <sub style="font-size:14px"><b>Patrick Coffey</b></sub>
+        </a>
+    </td>
+    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
+        <a href=https://github.com/joetower>
+            <img src=https://avatars.githubusercontent.com/u/366413?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Joe Tower/>
+            <br />
+            <sub style="font-size:14px"><b>Joe Tower</b></sub>
         </a>
     </td>
 </tr>
