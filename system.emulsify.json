@@ -166,6 +166,12 @@
           "dependency": ["buttons"]
         },
         {
+          "name": "logo",
+          "structure": "molecules",
+          "required": true,
+          "dependency": ["links", "images"]
+        },
+        {
           "name": "menus",
           "structure": "molecules",
           "required": true,
