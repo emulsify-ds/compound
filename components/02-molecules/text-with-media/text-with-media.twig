@@ -1,0 +1,40 @@
+{#
+/**
+ * Available variables:
+ * - text_with_media__content - the content of the text_with_media (typically text and media)
+ *
+ * Available blocks:
+ * - text_with_media__content - used to replace the content of the text_with_media with something other than plain text
+ *   for example: A formatted text field in Drupal
+ * - text_with_media__group - used to replace the content of the text_with_media with videos/images/media
+ */
+#}
+
+{% set text_with_media__base_class = 'text-with-media' %}
+
+{% set text_with_media__attributes = {
+  'data-image-position': text_with_media__position|default('left'),
+  'class': bem(text_with_media__base_class, text_with_media__modifiers, text_with_media__blockname)
+} %}
+
+<div {{ add_attributes(text_with_media__attributes) }}>
+  <div {{ bem('inner', [], text_with_media__base_class) }}>
+    {# Content #}
+    <div {{ bem('content', [], text_with_media__base_class) }}>
+      {% block text_with_media__content %}
+        {# Text #}
+        {% include "@atoms/text/text/01-paragraph.twig" with {
+          paragraph_content: text_with_media__content, 
+        } %}
+      {% endblock %}
+    </div>
+    {# Media #}
+    <div {{ bem('media', text_with_media__modifiers, text_with_media__base_class) }}>
+      {% block text_with_media__group %}
+        {% include "@atoms/images/image/_image.twig" %}
+      {% endblock %}
+    </div>
+  </div>
+</div>
+
+        
