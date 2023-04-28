@@ -1,18 +1,17 @@
-pager__uid: 3
+current: 8
 ellipses:
   previous: true
 items:
   previous:
     href: '#'
-    attributes: ''
   pages:
-    - href: '#'
-      attributes: ''
-    - href: '#'
-      attributes: ''
-    - href: '#'
-      attributes: ''
-    - href: '#'
-      attributes: ''
-    - href: '#'
-      attributes: ''
+    5:
+      href: '#'
+    6:
+      href: '#'
+    7:
+      href: '#'
+    8:
+      href: '#'
+    9:
+      href: '#'

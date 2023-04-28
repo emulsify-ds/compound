@@ -8,3 +8,7 @@ social_menu_items:
   - title: 'Instagram'
     url: '#'
     icon: 'instagram'
+  - title: 'LinkedIn'
+    url: '#'
+    icon: 'linkedin'
+
