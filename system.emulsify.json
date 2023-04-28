@@ -189,6 +189,11 @@
           "dependency": []
         },
         {
+          "name": "text-with-media",
+          "structure": "molecules",
+          "dependency": ["images", "text"]
+        },
+        {
           "name": "grid",
           "structure": "organisms",
           "required": true,
