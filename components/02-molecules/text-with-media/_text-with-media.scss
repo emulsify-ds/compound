@@ -3,10 +3,6 @@
   flex-flow: row nowrap;
   gap: $space-one-half;
 
-  @include large {
-    flex: 1 calc(55% - $space-double);
-  }
-
   [data-image-position='left'] & {
     flex-direction: row-reverse;
   }
