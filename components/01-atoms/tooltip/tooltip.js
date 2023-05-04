@@ -4,6 +4,7 @@ Drupal.behaviors.tooltip = {
 
     /**
      * clickOutside
+     *
      * @description Hides tooltip if clicked outside
      * @param {HTMLElement} tooltip The tooltip container
      * @param {HTMLElement} tip The tooltip content to close
@@ -18,6 +19,7 @@ Drupal.behaviors.tooltip = {
 
     /**
      * toggleTip
+     *
      * @description Displays tooltip. Returns nothing.
      * @param {HTMLElement} tooltip The tooltip container
      * @param {HTMLElement} tooltipButton The button controlling display
@@ -39,6 +41,7 @@ Drupal.behaviors.tooltip = {
 
     /**
      * init
+     *
      * @description Initializes the component by attaching event listeners
      *  to each of the tooltips.
      */
@@ -46,6 +49,13 @@ Drupal.behaviors.tooltip = {
       const tipButton = tip.querySelector('.tooltip__icon');
       tipButton.addEventListener('click', () => {
         toggleTip(tip, tipButton);
+      });
+
+      // Keyboard controls for closing the modal
+      tipButton.addEventListener('keyup', (e) => {
+        if (e.key === 'Escape') {
+          toggleTip(tip, tipButton);
+        }
       });
     });
   },

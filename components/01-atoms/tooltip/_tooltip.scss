@@ -24,10 +24,14 @@ $tooltip-arrow-size: 0.5rem;
   background: none;
   color: clr(text);
   cursor: pointer;
+
+  &:focus-visible {
+    outline-offset: 0.5rem;
+  }
 }
 
 .tooltip__content {
-  display: none;
+  visibility: hidden;
   position: absolute;
   padding: 1rem;
   min-width: 12.5rem;
@@ -104,5 +108,5 @@ $tooltip-arrow-size: 0.5rem;
 }
 
 .tooltip__content--visible {
-  display: block;
+  visibility: visible;
 }
