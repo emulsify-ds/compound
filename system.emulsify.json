@@ -171,6 +171,12 @@
           "dependency": ["buttons"]
         },
         {
+          "name": "logo",
+          "structure": "molecules",
+          "required": true,
+          "dependency": ["links", "images"]
+        },
+        {
           "name": "menus",
           "structure": "molecules",
           "required": true,
@@ -192,6 +198,11 @@
           "name": "tabs",
           "structure": "molecules",
           "dependency": []
+        },
+        {
+          "name": "text-with-media",
+          "structure": "molecules",
+          "dependency": ["images", "text"]
         },
         {
           "name": "grid",
