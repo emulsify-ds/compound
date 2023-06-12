@@ -1,5 +1,5 @@
 output_image_tag: true
-image_srcset: 'https://loremflickr.com/320/180 320w, https://loremflickr.com/480/270/ 480w, https://loremflickr.com/640/360/ 640w, https://loremflickr.com/800/450 800w, https://loremflickr.com/960/540 960w, https://loremflickr.com/1120/630 1120w, https://loremflickr.com/1280/720 1280w, https://loremflickr.com/1440/810 1440w, https://loremflickr.com/1600/900 1600w, https://loremflickr.com/1760/990 1760w, https://loremflickr.com/1920/1080 1920w, https://loremflickr.com/2080/1170 2080w, https://loremflickr.com/2240/1260 2240w'
+image_srcset: 'https://picsum.photos/id/57/320/180 320w, https://picsum.photos/id/57/480/270/ 480w, https://picsum.photos/id/57/640/360/ 640w, https://picsum.photos/id/57/800/450 800w, https://picsum.photos/id/57/960/540 960w, https://picsum.photos/id/57/1120/630 1120w, https://picsum.photos/id/57/1280/720 1280w, https://picsum.photos/id/57/1440/810 1440w, https://picsum.photos/id/57/1600/900 1600w, https://picsum.photos/id/57/1760/990 1760w, https://picsum.photos/id/57/1920/1080 1920w, https://picsum.photos/id/57/2080/1170 2080w, https://picsum.photos/id/57/2240/1260 2240w'
 image_sizes: '100vw'
-image_src: 'https://loremflickr.com/320/180'
+image_src: 'https://picsum.photos/id/57/320/180'
 image_alt: 'A 16 by 9 image'
