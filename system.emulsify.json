@@ -147,6 +147,11 @@
           "dependency": ["links"]
         },
         {
+          "name": "tooltip",
+          "structure": "atoms",
+          "dependency": []
+        },
+        {
           "name": "videos",
           "structure": "atoms",
           "dependency": []
@@ -164,6 +169,12 @@
           "name": "cta",
           "structure": "molecules",
           "dependency": ["buttons"]
+        },
+        {
+          "name": "logo",
+          "structure": "molecules",
+          "required": true,
+          "dependency": ["links", "images"]
         },
         {
           "name": "menus",
@@ -187,6 +198,11 @@
           "name": "tabs",
           "structure": "molecules",
           "dependency": []
+        },
+        {
+          "name": "text-with-media",
+          "structure": "molecules",
+          "dependency": ["images", "text"]
         },
         {
           "name": "grid",
