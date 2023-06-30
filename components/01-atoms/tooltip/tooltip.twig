@@ -1,0 +1,23 @@
+{#
+ # Available Props:
+ # - tooltip__direction: top, right, bottom, left
+ #
+ # Available Variables:
+ # - tooltip__icon: the 'i' in the tooltip
+ # - tooltip__content: the content in the popup
+ #}
+
+{% set tooltip__base_class = 'tooltip' %}
+{% set tooltip__direction = tooltip__direction|default('bottom') %}
+
+<div {{ bem(tooltip__base_class, tooltip__modifiers, tooltip__blockname, ['js-tooltip']) }}>
+    <button {{ bem('icon', tooltip__icon__modifiers, tooltip__base_class) }}
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      {{ tooltip__icon }}
+    </button>
+    <div {{ bem('content', tooltip__content__modifiers, tooltip__base_class, ['js-tooltip__content']) }} data-direction={{ tooltip__direction }}>
+      {{ tooltip__content }}
+    </div>
+</div>

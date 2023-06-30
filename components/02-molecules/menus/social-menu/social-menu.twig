@@ -6,8 +6,8 @@
 
 {# List #}
 {% extends "@atoms/lists/list.twig" %}
-  {% block list_content %}
-    {% for item in social_menu_items %}
-      {% include "@molecules/menus/social/_social-menu-item.twig" %}
-    {% endfor %}
-  {% endblock %}
+{% block list__content %}
+  {% for item in social_menu_items %}
+    {% include "@molecules/menus/social-menu/_social-menu-item.twig" %}
+  {% endfor %}
+{% endblock %}

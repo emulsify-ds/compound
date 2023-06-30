@@ -7,8 +7,9 @@ Drupal.behaviors.tabs = {
 
     /**
      * goToTab
+     *
      * @description Goes to a specific tab based on index. Returns nothing.
-     * @param {Number} index The index of the tab to go to
+     * @param {number} index The index of the tab to go to
      */
     function goToTab(index) {
       if (
@@ -26,10 +27,11 @@ Drupal.behaviors.tabs = {
 
     /**
      * handleClick
+     *
      * @description Handles click event listeners on each of the links in the
      *   tab navigation. Returns nothing.
      * @param {HTMLElement} link The link to listen for events on
-     * @param {Number} index The index of that link
+     * @param {number} index The index of that link
      */
     function handleClick(link, index) {
       link.addEventListener('click', (e) => {
@@ -40,6 +42,7 @@ Drupal.behaviors.tabs = {
 
     /**
      * init
+     *
      * @description Initializes the component by removing the no-js class from
      *   the component, and attaching event listeners to each of the nav items.
      *   Returns nothing.
