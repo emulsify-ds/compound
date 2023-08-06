@@ -1,0 +1,5 @@
+{% set dl__term_base_class = dl__term_base_class|default('dl-term') %}
+{% set dl__def_base_class = dl__def_base_class|default('dl-def') %}
+
+<dt {{ bem(dl__term_base_class, dl__term_modifiers, dl__term_blockname) }}>{{ dl__term }}</dt>
+<dd {{ bem(dl__def_base_class, dl__def_modifiers, dl__def_blockname) }}>{{ dl__def }}</dd>

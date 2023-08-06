@@ -11,7 +11,12 @@ import '../../02-molecules/menus/main-menu/main-menu';
 /**
  * Storybook Definition.
  */
-export default { title: 'Organisms/Site' };
+export default {
+  title: 'Organisms/Site',
+  parameters: {
+    layout: 'fullscreen',
+  },
+};
 
 export const footer = () => footerTwig({ ...footerSocial, ...footerMenu });
 
