@@ -1,6 +1,7 @@
 name: Add to projects
 
 on:
+  workflow_dispatch:
   issues:
     types:
       - opened
