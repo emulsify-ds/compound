@@ -122,12 +122,21 @@ Runs [stylelint](https://stylelint.io/) for your sass files and [eslint](https:/
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
+        <a href=https://github.com/jlandrum>
+            <img src=https://avatars.githubusercontent.com/u/2953123?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=James Landrum/>
+            <br />
+            <sub style="font-size:14px"><b>James Landrum</b></sub>
+        </a>
+    </td>
+    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=https://github.com/josue2591>
             <img src=https://avatars.githubusercontent.com/u/9342250?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=josue2591/>
             <br />
             <sub style="font-size:14px"><b>josue2591</b></sub>
         </a>
     </td>
+</tr>
+<tr>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=https://github.com/codechefmarc>
             <img src=https://avatars.githubusercontent.com/u/107938318?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Marc Berger/>
@@ -135,8 +144,6 @@ Runs [stylelint](https://stylelint.io/) for your sass files and [eslint](https:/
             <sub style="font-size:14px"><b>Marc Berger</b></sub>
         </a>
     </td>
-</tr>
-<tr>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=https://github.com/mariannuar>
             <img src=https://avatars.githubusercontent.com/u/48533432?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Mariana Núñez/>
