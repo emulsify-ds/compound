@@ -145,10 +145,10 @@ Runs [stylelint](https://stylelint.io/) for your sass files and [eslint](https:/
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
-        <a href=https://github.com/robherba>
-            <img src=https://avatars.githubusercontent.com/u/9342274?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Roberto Henández Badilla/>
+        <a href=https://github.com/robert-arias>
+            <img src=https://avatars.githubusercontent.com/u/37127345?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Robert/>
             <br />
-            <sub style="font-size:14px"><b>Roberto Henández Badilla</b></sub>
+            <sub style="font-size:14px"><b>Robert</b></sub>
         </a>
     </td>
 </tr>
