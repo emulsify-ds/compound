@@ -197,6 +197,7 @@
         {
           "name": "tabs",
           "structure": "molecules",
+          "required": true,
           "dependency": []
         },
         {
