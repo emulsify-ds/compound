@@ -26,26 +26,6 @@
         ]
       }
     ],
-    "at-rule-empty-line-before": [
-      "always",
-      {
-        "ignoreAtRules": [
-          "content",
-          "each",
-          "else",
-          "extend",
-          "forward",
-          "function",
-          "if",
-          "import",
-          "include",
-          "mixin",
-          "return",
-          "use",
-          "media"
-        ]
-      }
-    ],
     "number-leading-zero": "always",
     "number-no-trailing-zeros": true,
     "prettier/prettier": true
