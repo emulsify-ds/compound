@@ -3,14 +3,11 @@ import blockquote from './text/02-blockquote.twig';
 import pre from './text/05-pre.twig';
 import paragraph from './text/03-inline-elements.twig';
 import byline from './text/07-byline.twig';
-
-import blockquoteData from './text/blockquote.yml';
-import headingData from './headings/headings.yml';
-import bylineData from './text/byline.yml';
 import code from './text/07-code.twig';
 
 import blockquoteData from './text/blockquote.yml';
 import headingData from './headings/headings.yml';
+import bylineData from './text/byline.yml';
 import codeData from './text/code.yml';
 
 /**
