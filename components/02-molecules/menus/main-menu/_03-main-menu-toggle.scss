@@ -2,18 +2,22 @@
 .toggle-expand {
   @include link;
 
-  @include medium {
-    display: none;
-  }
-
+  position: absolute;
+  top: 1rem;
   display: inline-block;
+  margin-left: -1rem;
+  margin-top: -1rem;
   padding: $space;
+  width: 100vw;
   text-decoration: none;
-  width: 100%;
 
   /* See main-menu.js */
   &--open {
     background-color: clr(accent);
+  }
+
+  @include medium {
+    display: none;
   }
 }
 
@@ -36,26 +40,28 @@
 
 .toggle-expand__open {
   display: inline-block;
+  float: right;
   text-align: center;
 
   .toggle-expand--open & {
     display: none;
   }
+
+  svg {
+    fill: clr(text);
+  }
 }
 
 .toggle-expand__close {
   display: none;
+  float: right;
   text-align: center;
-
-  &::before {
-    color: clr(background);
-    content: 'X';
-    display: block;
-    font-size: 2.5rem;
-    line-height: 2;
-  }
 
   .toggle-expand--open & {
     display: inline-block;
+  }
+
+  svg {
+    fill: clr(text-inverse);
   }
 }

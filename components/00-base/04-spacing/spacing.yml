@@ -1,0 +1,50 @@
+spacing_heading: Spacing
+spacing_list:
+  - name: Spacing
+    items:
+      - name: $space
+        rem: 1rem
+        px: 16px
+  - name: Times
+    items:
+      - name: $space-double
+        rem: 2rem
+        px: 32px
+      - name: $space-triple
+        rem: 3rem
+        px: 48px
+      - name: $space-quadruple
+        rem: 4rem
+        px: 64px
+      - name: $space-quintuple
+        rem: 5rem
+        px: 80px
+      - name: $space-sextuple
+        rem: 6rem
+        px: 96px
+      - name: $space-septuple
+        rem: 7rem
+        px: 112px
+  - name: Divided
+    items:
+      - name: $space-one-half
+        rem: 0.5rem
+        px: 8px
+      - name: $space-one-third
+        rem: 0.33rem
+        px: 5.33px
+      - name: $space-one-fourth
+        rem: 0.25rem
+        px: 4px
+      - name: $space-one-fifth
+        rem: 0.2rem
+        px: 3.2px
+      - name: $space-one-sixth
+        rem: 0.16rem
+        px: 2.66px
+      - name: $space-one-seventh
+        rem: 0.14rem
+        px: 2.28px
+      - name: $space-one-eighth
+        rem: 0.12rem
+        px: 2px

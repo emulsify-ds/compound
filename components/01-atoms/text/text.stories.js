@@ -7,6 +7,11 @@ import byline from './text/07-byline.twig';
 import blockquoteData from './text/blockquote.yml';
 import headingData from './headings/headings.yml';
 import bylineData from './text/byline.yml';
+import code from './text/07-code.twig';
+
+import blockquoteData from './text/blockquote.yml';
+import headingData from './headings/headings.yml';
+import codeData from './text/code.yml';
 
 /**
  * Storybook Definition.
@@ -25,3 +30,4 @@ export const preformatted = () => pre();
 export const random = () => paragraph();
 
 export const bylineExample = () => byline(bylineData);
+export const codeExample = () => code(codeData);
