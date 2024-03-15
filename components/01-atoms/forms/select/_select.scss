@@ -16,7 +16,7 @@
     content: ' ';
     position: absolute;
     top: 42%;
-    right: 1em;
+    right: $space;
     z-index: 2;
 
     /* These hacks make the select behind the arrow clickable in some browsers */
@@ -35,7 +35,7 @@
   font-size: 16px;
   margin: 0;
   outline: none;
-  padding: 0.6em 0.8em 0.5em;
+  padding: 0.6rem $space-one-half + $space-one-fourth $space-one-half;
   width: 100%;
 
   :focus {
@@ -53,7 +53,7 @@
 
   /* Remove select styling */
   .form-item__select {
-    padding-right: 2em; /* Match-01 */
+    padding-right: $space-double; /* Match-01 */
 
     /* inside @supports so that iOS <= 8 display the native arrow */
     background: none; /* Match-04 */

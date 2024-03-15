@@ -1,16 +1,20 @@
 Drupal.behaviors.displayColorDefinitions = {
   attach() {
     /**
+     * Converts a number to a two-digit hexadecimal string.
      *
-     * @param x
+     * @param {number} x The number to convert.
+     * @returns {string} Two-digit hexadecimal representation of the number.
      */
     function hex(x) {
       return `0${parseInt(x, 10).toString(16)}`.slice(-2);
     }
 
     /**
+     * Converts an rgb color string to a hex color string.
      *
-     * @param color
+     * @param {string} color The RGB color string (e.g., 'rgb(255, 255, 255)').
+     * @returns {string} The hexadecimal color string (e.g., '#ffffff').
      */
     function rgb2hex(color) {
       const rgb = color.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);

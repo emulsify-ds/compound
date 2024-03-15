@@ -34,7 +34,7 @@
     &::after {
       display: inline-block;
       content: '>';
-      margin-left: 0.5rem;
+      margin-left: $space-one-half;
     }
 
     &--sub::after {
