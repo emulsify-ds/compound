@@ -1,0 +1,19 @@
+.spacing {
+  td:not(:last-child) {
+    width: 14rem;
+  }
+}
+
+.spacing-visualization__wrapper {
+  display: inline-flex;
+  flex-flow: row nowrap;
+}
+
+.spacing-visualization {
+  width: 3rem;
+  height: 3rem;
+  display: block;
+  border-radius: 4px;
+  background-color: clr(text);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}

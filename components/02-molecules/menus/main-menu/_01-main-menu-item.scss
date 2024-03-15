@@ -1,40 +1,44 @@
 /* LI */
 .main-menu__item {
-  border-top: 1px solid;
+  position: relative;
   display: flex;
   flex-wrap: wrap;
-  position: relative;
+  border-top: 1px solid;
 
   @include medium {
-    border-top: none;
     display: inline-block;
+    border-top: none;
 
     /* Only top level */
+    &:not(.main-menu__item--sub):focus-within,
     &:not(.main-menu__item--sub):hover {
       background-color: clr(accent-high);
-      transition: all 0.2s;
+      color: clr(highlight-high);
+
+      > .main-menu__link {
+        color: clr(highlight);
+
+        &:hover,
+        &:focus {
+          color: clr(highlight-high);
+        }
+      }
 
       & > .main-menu--sub {
         display: block;
       }
     }
   }
-
-  &:hover {
-    .main-menu__link::after {
-      color: clr(text);
-    }
-  }
 }
 
 /* Expand Button */
 .expand-sub {
-  background-color: clr(accent-high);
-  cursor: pointer;
+  position: relative;
   display: block;
   width: 20%;
+  background-color: clr(accent-high);
   color: clr(text-inverse);
-  position: relative;
+  cursor: pointer;
 
   @include medium {
     display: none;
@@ -42,18 +46,18 @@
 
   /* Down triangle */
   &::after {
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    content: '';
+    display: block;
+    margin-right: -12px;
+    margin-top: -6px;
+    width: 0;
     border: 15px solid;
     border-bottom-color: transparent;
     border-left: 12px solid transparent;
     border-right: 12px solid transparent;
-    content: '';
-    display: block;
-    margin-right: -0.75rem;
-    margin-top: -0.375rem;
-    position: absolute;
-    right: 50%;
-    top: 50%;
-    width: 0;
   }
 
   /* See main-menu.js */
@@ -62,9 +66,9 @@
     color: clr(muted);
 
     &::after {
+      margin-top: -20px;
       border-top-color: transparent;
       border-bottom: 15px solid;
-      margin-top: -1.25rem;
     }
   }
 }

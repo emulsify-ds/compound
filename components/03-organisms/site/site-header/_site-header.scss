@@ -9,14 +9,22 @@
   }
 
   &__primary {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    padding: $space 0;
+    @include medium {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      padding: $space 0;
+    }
   }
 
   &__branding {
-    margin-right: $space;
-    max-width: 18.75rem;
+    max-width: 190px;
+    padding: 1rem 0;
+
+    @include medium {
+      margin-right: $space;
+      max-width: 300px;
+      padding: 0;
+    }
   }
 }

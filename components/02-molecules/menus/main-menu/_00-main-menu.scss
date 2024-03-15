@@ -10,14 +10,23 @@ $main-menu-medium: $medium;
   }
 
   &--open {
-    background-color: clr(background);
-    display: block;
-    left: 0;
-    overflow-y: scroll;
     position: absolute;
-    top: 8.375rem;
+    left: 0;
     right: 0;
+    top: 110px;
+    display: block;
+    overflow-y: scroll;
     width: 100%;
+    background-color: clr(background);
+
+    @include medium {
+      position: relative;
+      left: auto;
+      right: auto;
+      top: auto;
+      width: auto;
+      overflow-y: visible;
+    }
   }
 }
 
@@ -25,9 +34,9 @@ $main-menu-medium: $medium;
 .main-menu {
   @include list-reset;
 
-  border-bottom: 1px solid;
   position: relative;
   z-index: 10;
+  border-bottom: 1px solid;
 
   @include medium {
     border-bottom: none;
@@ -40,41 +49,36 @@ $main-menu-medium: $medium;
 
 /* UL (Nested) */
 .main-menu--sub {
-  border-bottom: none;
   height: 0;
   overflow: hidden;
-  background-color: clr(muted);
   width: 100%;
+  border-bottom: none;
+  background-color: clr(muted);
 
   @include medium {
-    background-color: clr(highlight-high);
+    position: absolute;
+    left: 0;
+    top: 55px;
+    z-index: 1;
     display: none;
     height: auto;
-    left: 0;
     overflow: visible;
     padding: $space 0;
-    position: absolute;
-    top: 3.438rem;
-    width: 19.688rem;
-    z-index: 1;
+    width: 315px;
+    background-color: clr(accent-high);
     font-size: 0.9rem;
-    opacity: 0.6;
   }
 
   &:hover {
-    @include medium {
-      opacity: 1;
-      background-color: clr(accent-high);
-      transition: all 0.2s;
-
-      .main-menu__link--sub {
+    .main-menu__link--sub {
+      @include medium {
         color: clr(highlight);
 
         &.active,
         &:active,
         &:hover {
-          color: clr(background);
           background-color: clr(accent-high);
+          color: clr(background);
         }
       }
     }

@@ -1,34 +1,37 @@
 /* A */
 .main-menu__link {
-  color: clr(accent);
   display: block;
-  font-size: 1.2rem;
-  line-height: 1.5;
   padding: $space $space-triple $space $space-double;
-  text-decoration: none;
+  color: clr(accent);
+  font-size: 1.2rem;
   font-weight: bold;
+  line-height: 1.5;
+  text-decoration: none;
 
   &--with-sub {
     width: 80%;
   }
 
-  @include medium {
-    border-bottom: none;
-    display: inline-block;
-    font-size: 1.1rem;
-    padding: $space;
-    text-transform: none;
-    position: relative;
-    width: auto;
+  &:focus,
+  &:hover {
+    color: clr(text);
 
-    &.active,
-    &:active,
-    &:hover {
+    @include medium {
+      background-color: clr(accent-high);
       color: clr(highlight-high);
     }
+  }
+
+  @include medium {
+    position: relative;
+    display: inline-block;
+    padding: $space;
+    width: auto;
+    border-bottom: none;
+    font-size: 1.1rem;
+    text-transform: none;
 
     &::after {
-      color: clr(text-inverse);
       display: inline-block;
       content: '>';
       margin-left: $space-one-half;
@@ -36,14 +39,6 @@
 
     &--sub::after {
       display: none;
-    }
-
-    &:hover {
-      color: clr(background);
-
-      &::after {
-        color: clr(highlight);
-      }
     }
   }
 }
@@ -54,14 +49,14 @@
 
 /* A (Nested) */
 .main-menu__link--sub {
-  color: clr(accent);
   padding-left: $space-triple;
+  color: clr(accent);
   font-weight: normal;
 
   @include medium {
-    color: clr(highlight);
     display: block;
     padding: $space-one-third $space;
+    color: clr(highlight);
   }
 }
 

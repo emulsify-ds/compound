@@ -71,7 +71,7 @@
       <tr>
         {% for cell in header %}
           {% set table__header_cell__attributes = {
-            'class': bem('header_cell', [], table__base_class),
+            'class': bem('heading-cell', [], table__base_class),
           } %}
           {% if cell.attributes %}
             {% set table__header_cell__attributes = table__header_cell__attributes|merge(cell.attributes) %}
@@ -115,7 +115,7 @@
       <tr>
         {% for cell in footer %}
           {% set table__footer_cell__attributes = {
-            'class': bem('footer_cell', [], table__base_class),
+            'class': bem('footer-cell', [], table__base_class),
           } %}
           {% if cell.attributes %}
             {% set table__footer_cell__attributes = table__footer_cell__attributes|merge(cell.attributes) %}
