@@ -1,0 +1,9 @@
+.text-with-media__inner {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: $space-one-half;
+
+  [data-image-position='left'] & {
+    flex-direction: row-reverse;
+  }
+}

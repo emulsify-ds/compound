@@ -1,0 +1,38 @@
+{% set table__base_class = 'table' %}
+{% set spacing__base_class = 'spacing' %}
+
+<div {{ bem(spacing__base_class) }}>
+  {% for spacing in spacing_list %}
+    {% include "@atoms/text/headings/_heading.twig" with {
+      heading_level: 1,
+      heading: spacing.name,
+      heading_base_class: spacing__base_class,
+    } %}
+    <table {{ bem(table__base_class) }}>
+      <thead {{ bem('header', [], table__base_class) }}>
+        <tr>
+          <th {{ bem('header_cell', [], table__base_class) }}>Token name</th>
+          <th {{ bem('header_cell', [], table__base_class) }}>REM</th>
+          <th {{ bem('header_cell', [], table__base_class) }}>PX</th>
+          <th {{ bem('header_cell', [], table__base_class) }}>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for space in spacing.items %}
+          <tr {{ bem('row', [], table__base_class) }}>
+            <td {{ bem('cell', [], table__base_class) }}>{{ space.name}}</td>
+            <td {{ bem('cell', [], table__base_class) }}>{{ space.rem }}</td>
+            <td {{ bem('cell', [], table__base_class) }}>{{ space.px }}</td>
+            <td {{ bem('cell', [], table__base_class) }}>
+              <span class="spacing-visualization__wrapper"  style="gap: {{space.px}}">
+                <span class="spacing-visualization"></span>
+                <span class="spacing-visualization"></span>
+                <span class="spacing-visualization"></span>
+              </span>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% endfor %}
+</div>
