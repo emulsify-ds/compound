@@ -7,7 +7,7 @@
   display: block;
   font-size: 1.1rem;
   font-weight: 600;
-  padding: 1em 2.4em;
+  padding: $space $space-double + $space-one-third;
   text-align: center;
   text-decoration: none;
   transition: color 0.3s;
@@ -17,7 +17,7 @@
     border-left: none;
     display: inline-block;
     font-size: 1rem;
-    padding: 0.6em 1.7em;
+    padding: 0.6rem $space + $space-one-half;
     position: relative;
     top: 1px;
     width: auto;
