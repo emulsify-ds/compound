@@ -26,6 +26,8 @@
   display: block;
   width: 11rem;
   height: 6rem;
+  border: 2px solid;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.27);
 }
 
 // Dynamically set swatch text color based on the lightness of the background color

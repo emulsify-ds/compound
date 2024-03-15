@@ -25,7 +25,6 @@ Drupal.behaviors.displayColorDefinitions = {
           .getPropertyValue('background-color');
 
         const definition = swatch.querySelector('.cl-colors__definition');
-        console.log(swatch);
         definition.textContent = rgb2hex(color);
       });
     }
