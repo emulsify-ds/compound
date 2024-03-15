@@ -1,4 +1,4 @@
-card__image__src: 'https://placeimg.com/1280/720/nature'
+card__image__src: 'https://picsum.photos/1280/720'
 card__image__alt: "This is the card image's alt text"
 card__image__output_image_tag: true
 card__heading: 'This is the card heading'

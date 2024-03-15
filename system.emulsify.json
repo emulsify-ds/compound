@@ -147,6 +147,11 @@
           "dependency": ["links"]
         },
         {
+          "name": "tooltip",
+          "structure": "atoms",
+          "dependency": []
+        },
+        {
           "name": "videos",
           "structure": "atoms",
           "dependency": []
@@ -192,6 +197,7 @@
         {
           "name": "tabs",
           "structure": "molecules",
+          "required": true,
           "dependency": []
         },
         {

@@ -64,17 +64,17 @@ Runs [stylelint](https://stylelint.io/) for your sass files and [eslint](https:/
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
-        <a href=https://github.com/amazingrando>
-            <img src=https://avatars.githubusercontent.com/u/409903?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Randy Oest/>
-            <br />
-            <sub style="font-size:14px"><b>Randy Oest</b></sub>
-        </a>
-    </td>
-    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=https://github.com/mcortes19>
             <img src=https://avatars.githubusercontent.com/u/11282049?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Marvin J. Cortés/>
             <br />
             <sub style="font-size:14px"><b>Marvin J. Cortés</b></sub>
+        </a>
+    </td>
+    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
+        <a href=https://github.com/amazingrando>
+            <img src=https://avatars.githubusercontent.com/u/409903?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Randy Oest/>
+            <br />
+            <sub style="font-size:14px"><b>Randy Oest</b></sub>
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
@@ -85,19 +85,19 @@ Runs [stylelint](https://stylelint.io/) for your sass files and [eslint](https:/
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
-        <a href=https://github.com/patrickocoffeyo>
-            <img src=https://avatars.githubusercontent.com/u/1107871?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Patrick Coffey/>
+        <a href=https://github.com/mndonx>
+            <img src=https://avatars.githubusercontent.com/u/2343957?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Amanda Luker/>
             <br />
-            <sub style="font-size:14px"><b>Patrick Coffey</b></sub>
+            <sub style="font-size:14px"><b>Amanda Luker</b></sub>
         </a>
     </td>
 </tr>
 <tr>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
-        <a href=https://github.com/mndonx>
-            <img src=https://avatars.githubusercontent.com/u/2343957?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Amanda Luker/>
+        <a href=https://github.com/patrickocoffeyo>
+            <img src=https://avatars.githubusercontent.com/u/1107871?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Patrick Coffey/>
             <br />
-            <sub style="font-size:14px"><b>Amanda Luker</b></sub>
+            <sub style="font-size:14px"><b>Patrick Coffey</b></sub>
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
@@ -105,13 +105,6 @@ Runs [stylelint](https://stylelint.io/) for your sass files and [eslint](https:/
             <img src=https://avatars.githubusercontent.com/u/848721?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Kurt Trowbridge/>
             <br />
             <sub style="font-size:14px"><b>Kurt Trowbridge</b></sub>
-        </a>
-    </td>
-    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
-        <a href=https://github.com/ryanhagerty>
-            <img src=https://avatars.githubusercontent.com/u/8405274?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Ryan Hagerty/>
-            <br />
-            <sub style="font-size:14px"><b>Ryan Hagerty</b></sub>
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
@@ -126,6 +119,13 @@ Runs [stylelint](https://stylelint.io/) for your sass files and [eslint](https:/
             <img src=https://avatars.githubusercontent.com/u/65790558?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Brandon Akers/>
             <br />
             <sub style="font-size:14px"><b>Brandon Akers</b></sub>
+        </a>
+    </td>
+    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
+        <a href=https://github.com/jlandrum>
+            <img src=https://avatars.githubusercontent.com/u/2953123?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=James Landrum/>
+            <br />
+            <sub style="font-size:14px"><b>James Landrum</b></sub>
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
@@ -149,6 +149,13 @@ Runs [stylelint](https://stylelint.io/) for your sass files and [eslint](https:/
             <img src=https://avatars.githubusercontent.com/u/48533432?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Mariana Núñez/>
             <br />
             <sub style="font-size:14px"><b>Mariana Núñez</b></sub>
+        </a>
+    </td>
+    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
+        <a href=https://github.com/robert-arias>
+            <img src=https://avatars.githubusercontent.com/u/37127345?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Robert/>
+            <br />
+            <sub style="font-size:14px"><b>Robert</b></sub>
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
