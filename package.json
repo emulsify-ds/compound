@@ -60,5 +60,5 @@
     "components/**/*.{js,scss}": [
       "npm run prettier-fix"
     ]
-  },
+  }
 }
