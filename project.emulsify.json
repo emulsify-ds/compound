@@ -1,11 +1,11 @@
 {
   "project": {
     "platform": "drupal",
-    "name": "smith",
-    "machineName": "smith"
+    "name": "compound",
+    "machineName": "compound"
   },
   "starter": {
-    "repository": "https://github.com/emulsify-ds/emulsify-drupal.git"
+    "repository": "https://github.com/emulsify-ds/compound.git"
   },
   "system": {
     "repository": "https://github.com/emulsify-ds/compound.git",
