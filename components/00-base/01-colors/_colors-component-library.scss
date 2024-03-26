@@ -28,7 +28,7 @@
   width: 11rem;
   height: 6rem;
   border: 2px solid;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.27);
+  box-shadow: 0 4px 10px rgb(0 0 0 / 27%);
 }
 
 // Dynamically set swatch text color based on the lightness of the background color
@@ -37,7 +37,7 @@
   $text-primary: accent-high,
   $text-secondary: muted
 ) {
-  @if (lightness($color) > 50) {
+  @if lightness($color) > 50 {
     @return clr($text-primary);
   } @else {
     @return clr($text-secondary);
