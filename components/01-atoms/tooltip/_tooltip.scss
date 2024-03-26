@@ -18,7 +18,7 @@ $tooltip-arrow-size: 0.5rem;
   height: $tooltip-icon-size;
   border: 1px solid clr(text);
   border-radius: 50%;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   font-size: 0.8rem;
   text-indent: 1px;
   background: none;
@@ -45,14 +45,14 @@ $tooltip-arrow-size: 0.5rem;
   z-index: 11;
 
   &::before {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     width: 0;
     height: 0;
   }
 
-  &[data-direction='top'] {
+  &[data-direction="top"] {
     transform: translateY(calc(-100% - 1rem));
 
     &::before {
@@ -64,7 +64,7 @@ $tooltip-arrow-size: 0.5rem;
     }
   }
 
-  &[data-direction='right'] {
+  &[data-direction="right"] {
     transform: translate(
       calc((#{$tooltip-content-maxwidth} / 2) + ($tooltip-icon-size * 1.5)),
       -50%
@@ -79,7 +79,7 @@ $tooltip-arrow-size: 0.5rem;
     }
   }
 
-  &[data-direction='bottom'] {
+  &[data-direction="bottom"] {
     margin-top: 2.2rem;
 
     &::before {
@@ -91,7 +91,7 @@ $tooltip-arrow-size: 0.5rem;
     }
   }
 
-  &[data-direction='left'] {
+  &[data-direction="left"] {
     transform: translate(
       calc((#{-$tooltip-content-maxwidth} / 2) - ($tooltip-icon-size * 1.5)),
       -50%
