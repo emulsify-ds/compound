@@ -1,3 +1,5 @@
+@use "../00-defaults/03-mixins" as *;
+
 html {
   box-sizing: border-box;
 }

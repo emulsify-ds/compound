@@ -1,8 +1,11 @@
+@use "../../00-base/00-defaults/01-variables" as *;
+@use "../../00-base/00-defaults/02-breakpoints" as *;
+
 @mixin grid-item {
   flex: 1 1 100%;
   margin-bottom: $space-double;
 
-  @include large {
+  @include breakpoint("large") {
     margin: 0 $space-double 0 0;
     flex-basis: 30%;
   }

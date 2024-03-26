@@ -1,3 +1,7 @@
+@use "../../../00-base/00-defaults/01-variables" as *;
+@use "../../../00-base/00-defaults/02-breakpoints" as *;
+@use "../../../01-atoms/links/link/link" as *;
+
 /* Toggle */
 .toggle-expand {
   @include link;
@@ -16,7 +20,7 @@
     background-color: clr(accent);
   }
 
-  @include medium {
+  @include breakpoint("medium") {
     display: none;
   }
 }

@@ -1,3 +1,6 @@
+@use "01-variables" as *;
+@use "02-breakpoints" as *;
+
 /*
  * General Mixins (put specific ones in component files where applicable)
 */
@@ -16,18 +19,16 @@
 @mixin clearfix {
   &::after {
     clear: both;
-    content: '';
+    content: "";
     display: table;
   }
 }
 
-$outer-container-break: $small;
-
 /// Mixin - Wrapper
 /// Outer container mixin for large screens
 @mixin wrapper(
-  $container-max-width: $max-width,
-  $outer-container-break: $small,
+  $container-max-width: "xlarge",
+  $outer-container-break: "small",
   $v-margin: 0,
   $v-padding: 0,
   $h-padding: $space,

@@ -1,4 +1,5 @@
-@use 'colors-used' as *;
+@use "colors-used" as *;
+@use "../00-defaults/01-variables" as *;
 
 // These styles only affect the colors "Usage" page in the component library
 .cl-colors__list {
@@ -44,7 +45,7 @@
 }
 
 // Style default color swatches
-@each $name, $color in $defaultColors {
+@each $name, $color in $default-colors {
   .cl-colors__item--default {
     &-#{$name} .cl-colors__swatch {
       background-color: clr($name);
@@ -53,7 +54,7 @@
 }
 
 // Style dark color swatches
-@each $name, $color in $darkColors {
+@each $name, $color in $dark-colors {
   .cl-colors__item--dark {
     &-#{$name} .cl-colors__swatch {
       background-color: clr($name);

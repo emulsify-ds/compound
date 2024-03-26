@@ -1,3 +1,7 @@
+@use "../../00-base/00-defaults/01-variables" as *;
+@use "../../00-base/00-defaults/02-breakpoints" as *;
+@use "../../00-base/00-defaults/03-mixins" as *;
+
 .pager {
   margin: $space-double 0;
 }
@@ -12,7 +16,7 @@
   display: inline-block;
   margin: 0 0.2em;
 
-  @include large {
+  @include breakpoint("large") {
     margin: 0 $space-one-half;
   }
 }

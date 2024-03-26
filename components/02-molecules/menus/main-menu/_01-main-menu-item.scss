@@ -1,3 +1,5 @@
+@use "../../../00-base/00-defaults/02-breakpoints" as *;
+
 /* LI */
 .main-menu__item {
   position: relative;
@@ -5,7 +7,7 @@
   flex-wrap: wrap;
   border-top: 1px solid;
 
-  @include medium {
+  @include breakpoint("medium") {
     display: inline-block;
     border-top: none;
 
@@ -40,7 +42,7 @@
   color: clr(text-inverse);
   cursor: pointer;
 
-  @include medium {
+  @include breakpoint("medium") {
     display: none;
   }
 
@@ -49,7 +51,7 @@
     position: absolute;
     right: 50%;
     top: 50%;
-    content: '';
+    content: "";
     display: block;
     margin-right: -12px;
     margin-top: -6px;
@@ -79,7 +81,7 @@
 
 /* LI (Nested) */
 .main-menu__item--sub {
-  @include medium {
+  @include breakpoint("medium") {
     display: block;
 
     &:not(:first-child) {
