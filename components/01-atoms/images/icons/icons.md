@@ -4,7 +4,7 @@ title: Icons
 
 ### How to use icons
 
-We are using an SVG sprite generator (details [here](https://www.npmjs.com/package/svg-sprite-loader)), which automatically takes individual SVGs from `/images/icons` and generates `/dist/icons.svg`. Webpack will automatically add your individual SVGs to this sprite.
+We are using an SVG sprite generator (details [here](https://www.npmjs.com/package/svg-sprite-loader)), which automatically takes individual SVGs from `/assets/icons` and generates `/dist/icons.svg`. Webpack will automatically add your individual SVGs to this sprite.
 
 **Usage**
 

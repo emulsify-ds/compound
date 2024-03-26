@@ -3,11 +3,11 @@
 }
 
 .inline-menu__item {
-  margin: 0 1em 0.5em 0;
+  margin: 0 $space $space-one-half 0;
 
   @include large {
     display: inline;
-    margin-bottom: 1em;
+    margin-bottom: $space;
   }
 
   &:last-child {

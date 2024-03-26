@@ -15,7 +15,7 @@
 }
 
 .card__body {
-  margin: 0.7em 0 1em;
+  margin: 0.7rem 0 $space;
 }
 
 .card__link {
@@ -31,5 +31,5 @@
 /* Variations */
 .card--bg {
   background-color: clr(highlight-high);
-  padding: 1em;
+  padding: $space;
 }

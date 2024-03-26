@@ -13,7 +13,7 @@ $transition-timing-function-base: ease-in-out;
 
 // Demo UI
 .motion {
-  padding: 0 1rem;
+  padding: 0 $space;
 }
 
 .motion__grid {
@@ -25,8 +25,8 @@ $transition-timing-function-base: ease-in-out;
 
 .motion__grid-item {
   @media (min-width: 920px) {
-    margin-bottom: 1rem;
-    margin-right: 1rem;
+    margin-bottom: $space;
+    margin-right: $space;
     width: 49%;
 
     &:nth-child(2n) {
@@ -39,7 +39,7 @@ $transition-timing-function-base: ease-in-out;
   background-color: clr(highlight-high);
   border-radius: 2px;
   cursor: pointer;
-  padding: 3rem;
+  padding: $space-triple;
   text-align: center;
 
   &::before {

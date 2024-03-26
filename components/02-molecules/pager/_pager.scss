@@ -1,5 +1,5 @@
 .pager {
-  margin: 2em 0;
+  margin: $space-double 0;
 }
 
 .pager__items {
@@ -13,12 +13,12 @@
   margin: 0 0.2em;
 
   @include large {
-    margin: 0 0.5em;
+    margin: 0 $space-one-half;
   }
 }
 
 .pager__link {
-  padding: 0.5em;
+  padding: $space-one-half;
   color: clr(text);
   text-decoration: none;
 

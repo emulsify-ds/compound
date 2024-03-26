@@ -32,10 +32,10 @@
 
 /* Drupal Local Tasks variant */
 .tabs__nav--local-tasks {
-  margin: 1em 0 0.5em;
+  margin: $space 0 $space-one-half;
   padding: 0;
 }
 
 .tabs__link--local-tasks {
-  padding: 0.3em 1.5em;
+  padding: $space-one-third $space + $space-one-half;
 }

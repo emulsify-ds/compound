@@ -12,8 +12,8 @@
 .blockquote {
   font-style: italic;
   border-left: solid 3px clr(accent);
-  margin-left: 1em;
-  padding-left: 1em;
+  margin-left: $space;
+  padding-left: $space;
 }
 
 .hr {

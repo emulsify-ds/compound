@@ -13,7 +13,7 @@ $color-heading: clr(accent);
   $color-link: inherit,
   $color-link-hover: inherit,
   $font-weight: 700,
-  $margin: 0 0 0.5em
+  $margin: 0 0 $space-one-half
 ) {
   color: $color;
   font-family: $font-family;
@@ -41,7 +41,7 @@ $color-heading: clr(accent);
   $color-link: inherit,
   $color-link-hover: inherit,
   $font-weight: 700,
-  $margin: 0 0 0.5em
+  $margin: 0 0 $space-one-half
 ) {
   color: $color;
   font-family: $font-family;
@@ -69,7 +69,7 @@ $color-heading: clr(accent);
   $color-link: inherit,
   $color-link-hover: inherit,
   $font-weight: 700,
-  $margin: 0 0 0.5em
+  $margin: 0 0 $space-one-half
 ) {
   color: $color;
   font-family: $font-family;
@@ -97,7 +97,7 @@ $color-heading: clr(accent);
   $color-link: inherit,
   $color-link-hover: inherit,
   $font-weight: 600,
-  $margin: 0 0 0.5em
+  $margin: 0 0 $space-one-half
 ) {
   color: $color;
   font-family: $font-family;
@@ -125,7 +125,7 @@ $color-heading: clr(accent);
   $color-link: inherit,
   $color-link-hover: inherit,
   $font-weight: 600,
-  $margin: 0 0 0.5em
+  $margin: 0 0 $space-one-half
 ) {
   color: $color;
   font-family: $font-family;
