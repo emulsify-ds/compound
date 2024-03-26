@@ -1,3 +1,7 @@
+@use "../../../00-base/00-defaults/01-variables" as *;
+@use "../../../00-base/00-defaults/02-breakpoints" as *;
+@use "../../../00-base/00-defaults/03-mixins" as *;
+
 /* Menu media */
 $main-menu-medium: $medium;
 
@@ -5,7 +9,7 @@ $main-menu-medium: $medium;
 .main-nav {
   display: none;
 
-  @include medium {
+  @include breakpoint("medium") {
     display: block;
   }
 
@@ -19,7 +23,7 @@ $main-menu-medium: $medium;
     width: 100%;
     background-color: clr(background);
 
-    @include medium {
+    @include breakpoint("medium") {
       position: relative;
       left: auto;
       right: auto;
@@ -38,7 +42,7 @@ $main-menu-medium: $medium;
   z-index: 10;
   border-bottom: 1px solid;
 
-  @include medium {
+  @include breakpoint("medium") {
     border-bottom: none;
   }
 }
@@ -55,7 +59,7 @@ $main-menu-medium: $medium;
   border-bottom: none;
   background-color: clr(muted);
 
-  @include medium {
+  @include breakpoint("medium") {
     position: absolute;
     left: 0;
     top: 55px;
@@ -71,7 +75,7 @@ $main-menu-medium: $medium;
 
   &:hover {
     .main-menu__link--sub {
-      @include medium {
+      @include breakpoint("medium") {
         color: clr(highlight);
 
         &.active,
@@ -91,7 +95,7 @@ $main-menu-medium: $medium;
 }
 
 .main-menu--sub-2 {
-  @include medium {
+  @include breakpoint("medium") {
     display: none; /* Never shown on large screens */
   }
 }

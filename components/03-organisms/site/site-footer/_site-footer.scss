@@ -1,3 +1,7 @@
+@use "../../../00-base/00-defaults/01-variables" as *;
+@use "../../../00-base/00-defaults/02-breakpoints" as *;
+@use "../../../00-base/00-defaults/03-mixins" as *;
+
 .footer {
   background-color: clr(highlight-high);
   padding: $space 0;
@@ -9,7 +13,7 @@
     flex-flow: column nowrap;
     gap: 1rem;
 
-    @include large {
+    @include breakpoint("large") {
       flex-direction: row;
     }
   }
@@ -18,7 +22,7 @@
 .footer__social {
   margin-bottom: $space;
 
-  @include large {
+  @include breakpoint("large") {
     flex: 0 1 30%;
     margin-bottom: 0;
     margin-right: $space;
@@ -26,7 +30,7 @@
 }
 
 .footer__menu {
-  @include large {
+  @include breakpoint("large") {
     flex: 1 1 100%;
     margin-left: auto;
     text-align: right;

@@ -1,4 +1,5 @@
-$accordion_icon_size: $space;
+@use "../../00-base/00-defaults/01-variables" as *;
+@use "../../00-base/00-defaults/03-mixins" as *;
 
 // The accordion group.
 .accordion {
@@ -40,8 +41,8 @@ $accordion_icon_size: $space;
 }
 
 .accordion__icon {
-  height: $accordion_icon_size;
-  width: $accordion_icon_size;
+  height: $space;
+  width: $space;
   pointer-events: none;
 
   .accordion__toggle-all--collapse & {
@@ -61,10 +62,10 @@ $accordion_icon_size: $space;
 }
 
 .accordion-item__icon {
-  height: $accordion_icon_size;
-  width: $accordion_icon_size;
+  height: $space;
+  width: $space;
 
-  [aria-expanded='true'] > & {
+  [aria-expanded="true"] > & {
     transform: rotate(180deg);
   }
 }
@@ -72,11 +73,11 @@ $accordion_icon_size: $space;
 .accordion-item__content {
   overflow: hidden;
 
-  [data-accordion-expanded='true'] & {
+  [data-accordion-expanded="true"] & {
     margin-bottom: $space;
   }
 
-  [data-accordion-expanded='false'] & {
+  [data-accordion-expanded="false"] & {
     max-height: 0;
   }
 }

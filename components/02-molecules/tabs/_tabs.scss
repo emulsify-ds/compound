@@ -1,10 +1,14 @@
+@use "../../00-base/00-defaults/01-variables" as *;
+@use "../../00-base/00-defaults/02-breakpoints" as *;
+@use "../../00-base/00-defaults/03-mixins" as *;
+
 /* Tab Navigation */
 .tabs__nav {
   @include list-reset;
 
   border-bottom: 1px solid clr(highlight-high);
 
-  @include large {
+  @include breakpoint("large") {
     border-left: 1px solid clr(highlight-high);
     display: flex;
   }

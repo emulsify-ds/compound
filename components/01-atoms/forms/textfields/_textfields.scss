@@ -1,3 +1,6 @@
+@use "../../../00-base/00-defaults/01-variables" as *;
+@use "../../../00-base/00-defaults/03-mixins" as *;
+
 .form-item {
   color: clr(text);
   margin-bottom: $space;
@@ -9,12 +12,7 @@
 .form-item__label {
   display: block;
   font-weight: 600;
-
-  @include xs {
-    display: block;
-    margin-right: 2%;
-    padding: 0.6rem 0;
-  }
+  padding: 0.6rem 0;
 }
 
 .form-item__textfield {

@@ -1,24 +1,26 @@
+@use "../../00-base/00-defaults/01-variables" as *;
+
 .alert {
-  background-color: $yellow-light;
+  background-color: clr(warning);
   padding: $space;
-  color: $black;
+  color: clr(text);
 
-  &[data-alert-type='emergency'] {
-    background-color: $red-light;
+  &[data-alert-type="emergency"] {
+    background-color: clr(error);
   }
 
-  &[data-alert-type='marketing'] {
-    background-color: $green-light;
+  &[data-alert-type="marketing"] {
+    background-color: clr(message);
   }
 
-  &[data-alert-state='dismissed'] {
+  &[data-alert-state="dismissed"] {
     display: none;
   }
 }
 
 .alert__paragraph,
 .alert__link {
-  [data-alert-state='collapsed'] & {
+  [data-alert-state="collapsed"] & {
     display: none;
   }
 }
@@ -45,7 +47,7 @@
   border: none;
   background: none;
 
-  [data-alert-state='collapsed'] & {
+  [data-alert-state="collapsed"] & {
     transform: rotate(0deg);
   }
 
