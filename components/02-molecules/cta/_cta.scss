@@ -1,4 +1,5 @@
 @use "../../00-base/00-defaults/01-variables" as *;
+@use "../../00-base/01-colors/colors-used" as *;
 
 .cta {
   background-color: clr(background-section);

@@ -1,5 +1,6 @@
 @use "sass:map";
 @use "../../00-base/00-defaults/01-variables" as *;
+@use "../../00-base/01-colors/colors-used" as *;
 
 // Sass map to define colors. Each set should have a "Dark" variation when required.
 // e.g. `default` and `default-dark`. Or `purple` and `purple-dark`.

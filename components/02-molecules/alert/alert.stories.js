@@ -5,7 +5,7 @@ import buttonTwig from '../../01-atoms/buttons/button.twig';
 import alertData from './alert.yml';
 
 import './alert';
-
+console.log(alertData);
 /**
  * Storybook Definition.
  */
@@ -18,17 +18,17 @@ export default {
     heading: {
       name: 'Alert Heading',
       type: 'string',
-      defaultValue: alertData.alert_heading,
+      defaultValue: alertData.alert__heading,
     },
     content: {
       name: 'Alert Content',
       type: 'string',
-      defaultValue: alertData.alert_content,
+      defaultValue: alertData.alert__content,
     },
     linkContent: {
       name: 'Alert Link Text',
       type: 'string',
-      defaultValue: alertData.alert_link__content,
+      defaultValue: alertData.alert__link__content,
     },
   },
 };
@@ -55,10 +55,10 @@ export const Alert = ({ type, heading, content, linkContent }) => `
 </script>
 ${alertTwig({
   alert_type: type,
-  alert_heading: heading,
-  alert_content: content,
-  alert_link__content: linkContent,
-  alert_link__url: alertData.alert_link__url,
+  alert__heading: heading,
+  alert__content: content,
+  alert__link__content: linkContent,
+  alert__link__url: alertData.alert__link__url,
   alert_id: '123',
 })}<br />
 ${paragraphTwig({

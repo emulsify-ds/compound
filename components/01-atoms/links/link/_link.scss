@@ -1,3 +1,5 @@
+@use "../../../00-base/01-colors/colors-used" as *;
+
 @mixin link {
   color: clr(accent);
 
