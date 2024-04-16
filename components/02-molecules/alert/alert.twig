@@ -2,10 +2,10 @@
  # Available Variables:
  # - alert_id: unique id (must be unique to each site)
  # - alert_type: emergency, announcement (default), marketing
- # - alert_heading
- # - alert_content
- # - alert_link__content
- # - alert_link__url
+ # - alert__heading
+ # - alert__content
+ # - alert__link__content
+ # - alert__link__url
  #}
 
 {% set alert_base_class = 'alert' %}
@@ -35,7 +35,7 @@
   'data-alert-id': 'alert-id-' ~ alert_id,
   'data-alert-state': alert_state|default('expanded'),
   'data-alert-type': alert_type,
-  class: bem(alert_base_class),
+  'class': bem(alert_base_class),
 } %}
 
 <div {{ add_attributes(alert_attributes) }}>

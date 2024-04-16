@@ -6,7 +6,6 @@ import alertData from "./alert.yml";
 
 import "./alert";
 
-console.log(alertData);
 /**
  * Storybook Definition.
  */
@@ -18,18 +17,24 @@ export default {
   argTypes: {
     heading: {
       name: "Alert Heading",
-      type: "string",
-      defaultValue: alertData.alert__heading,
+      control: {
+        type: "text",
+        value: alertData.alert__heading,
+      },
     },
     content: {
       name: "Alert Content",
-      type: "string",
-      defaultValue: alertData.alert__content,
+      control: {
+        type: "text",
+        value: alertData.alert__content,
+      },
     },
     linkContent: {
       name: "Alert Link Text",
-      type: "string",
-      defaultValue: alertData.alert__link__content,
+      control: {
+        type: "text",
+        value: alertData.alert__link__content,
+      },
     },
   },
 };
@@ -55,6 +60,7 @@ export const Alert = ({ type, heading, content, linkContent }) => `
   };
 </script>
 ${alertTwig({
+  ...alertData,
   alert_type: type,
   alert__heading: heading,
   alert__content: content,
@@ -75,39 +81,31 @@ Alert.argTypes = {
 };
 
 export const AlertExamples = ({ heading, content, linkContent }) => `
-<script>
-  const resetAlerts = () => {
-    Object.keys(localStorage).forEach((key) => {
-      if (key.includes('alert-id-')) {
-        localStorage.removeItem(key);
-      }
-    });
-
-    location.reload();
-  };
-</script>
 ${alertTwig({
+  ...alertData,
   alert_type: "emergency",
-  alert_heading: heading,
-  alert_content: content,
-  alert_link__content: linkContent,
-  alert_link__url: alertData.alert_link__url,
+  alert__heading: heading,
+  alert__content: content,
+  alert__link__content: linkContent,
+  alert__link__url: alertData.alert__link__url,
   alert_id: "234",
 })}
 ${alertTwig({
+  ...alertData,
   alert_type: "announcement",
-  alert_heading: heading,
-  alert_content: content,
-  alert_link__content: linkContent,
-  alert_link__url: alertData.alert_link__url,
+  alert__heading: heading,
+  alert__content: content,
+  alert__link__content: linkContent,
+  alert__link__url: alertData.alert__link__url,
   alert_id: "345",
 })}
 ${alertTwig({
+  ...alertData,
   alert_type: "marketing",
-  alert_heading: heading,
-  alert_content: content,
-  alert_link__content: linkContent,
-  alert_link__url: alertData.alert_link__url,
+  alert__heading: heading,
+  alert__content: content,
+  alert__link__content: linkContent,
+  alert__link__url: alertData.alert__link__url,
   alert_id: "456",
 })}<br />
 ${paragraphTwig({
