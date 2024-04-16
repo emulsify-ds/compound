@@ -1,4 +1,5 @@
 @use "../../../00-base/00-defaults/01-variables" as *;
+@use "../../../00-base/01-colors/colors" as *;
 
 .form-item__dropdown {
   border: 1px solid clr(accent);
@@ -6,7 +7,7 @@
   position: relative;
 
   @media (prefers-color-scheme: dark) {
-    background-color: clr(background-inverse);
+    background-color: clr(background, inverse);
   }
 
   &::after {
@@ -25,7 +26,7 @@
   }
 
   &:hover {
-    border-color: clr(accent-high);
+    border-color: clr(accent, bright);
   }
 }
 

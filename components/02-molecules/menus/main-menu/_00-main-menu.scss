@@ -1,6 +1,7 @@
 @use "../../../00-base/00-defaults/01-variables" as *;
 @use "../../../00-base/00-defaults/02-breakpoints" as *;
 @use "../../../00-base/00-defaults/03-mixins" as *;
+@use "../../../00-base/01-colors/colors" as *;
 
 /* Menu media */
 $main-menu-medium: $medium;
@@ -57,7 +58,7 @@ $main-menu-medium: $medium;
   overflow: hidden;
   width: 100%;
   border-bottom: none;
-  background-color: clr(muted);
+  background-color: clr(neutral);
 
   @include breakpoint("medium") {
     position: absolute;
@@ -69,7 +70,7 @@ $main-menu-medium: $medium;
     overflow: visible;
     padding: $space 0;
     width: 315px;
-    background-color: clr(accent-high);
+    background-color: clr(accent, bright);
     font-size: 0.9rem;
   }
 
@@ -81,7 +82,7 @@ $main-menu-medium: $medium;
         &.active,
         &:active,
         &:hover {
-          background-color: clr(accent-high);
+          background-color: clr(accent, bright);
           color: clr(background);
         }
       }

@@ -1,4 +1,5 @@
 @use "../../../00-base/00-defaults/02-breakpoints" as *;
+@use "../../../00-base/01-colors/colors" as *;
 
 /* LI */
 .main-menu__item {
@@ -14,15 +15,15 @@
     /* Only top level */
     &:not(.main-menu__item--sub):focus-within,
     &:not(.main-menu__item--sub):hover {
-      background-color: clr(accent-high);
-      color: clr(highlight-high);
+      background-color: clr(accent, bright);
+      color: clr(highlight, bright);
 
       > .main-menu__link {
         color: clr(highlight);
 
         &:hover,
         &:focus {
-          color: clr(highlight-high);
+          color: clr(highlight, bright);
         }
       }
 
@@ -38,8 +39,8 @@
   position: relative;
   display: block;
   width: 20%;
-  background-color: clr(accent-high);
-  color: clr(text-inverse);
+  background-color: clr(accent, bright);
+  color: clr(text, inverse);
   cursor: pointer;
 
   @include breakpoint("medium") {
@@ -64,8 +65,8 @@
 
   /* See main-menu.js */
   &--open {
-    background-color: clr(accent-high);
-    color: clr(muted);
+    background-color: clr(accent, bright);
+    color: clr(neutral);
 
     &::after {
       margin-top: -20px;

@@ -1,0 +1,106 @@
+// - Color Palette Definitions : Use these via the `clr` function.
+// - Colors can be defined using any valid color value. (name, hex, rgb, rgba, hsl, hsla)
+// - Map structure should follow [theme_name] : [color_name] : [variant_name]
+// - [variant_name] is optional.
+// - If [variant_name] is present a 'base' definition is expected.
+// - Themes and colors should not have matching names.
+// - The default theme should contain all possible colors. Needed for fallback purposes.
+// - Additional themes can override default theme definitions or fallback
+// to the default theme's color definition.
+
+$color-palette: (
+  default: (
+    primary: (
+      base: #117d62,
+      dark: #00472f,
+      bright: #3ae4b9,
+      light: #c0f6e9,
+    ),
+    accent: (
+      base: #6f439a,
+      dark: #553375,
+      bright: #ab86c2,
+      light: #e1d4ec,
+    ),
+    highlight: (
+      base: #ffeb0a,
+      dark: #e4c902,
+      bright: #fff675,
+      light: #fffdbd,
+    ),
+    background: (
+      base: #fff,
+      inverse: #18191b,
+    ),
+    text: (
+      base: #18191b,
+      inverse: #fff,
+    ),
+    neutral: (
+      base: #919292,
+      cold: #f3f1ed,
+      warm: #ffeecdff,
+      n50: #f3f3f3,
+      n75: #ccc,
+      n100: #d0d0d0,
+      n200: #b1b1b1,
+      n300: #919292,
+      n400: #727273,
+      n500: #535353,
+      n600: #333434,
+      n700: #18191bff,
+    ),
+    message: #117d62ff,
+    warning: #ffeb0aff,
+    error: #b91d42ff,
+    full-white: #fff,
+    full-black: #000,
+  ),
+  dark: (
+    primary: (
+      base: #117d62,
+      dark: #00472f,
+      bright: #3ae4b9,
+      light: #c0f6e9,
+    ),
+    accent: (
+      base: #6f439a,
+      dark: #553375,
+      bright: #ab86c2,
+      light: #e1d4ec,
+    ),
+    highlight: (
+      base: #ffeb0a,
+      dark: #e4c902,
+      bright: #fff675,
+      light: #fffdbd,
+    ),
+    background: (
+      base: #18191b,
+      inverse: #fff,
+    ),
+    text: (
+      base: #fff,
+      inverse: #18191b,
+    ),
+    neutral: (
+      base: #919292,
+      cold: #f3f1ed,
+      warm: #ffeecdff,
+      n50: #f3f3f3,
+      n75: #ccc,
+      n100: #d0d0d0,
+      n200: #b1b1b1,
+      n300: #919292,
+      n400: #727273,
+      n500: #535353,
+      n600: #333434,
+      n700: #18191bff,
+    ),
+    message: #117d62ff,
+    warning: #ffeb0aff,
+    error: #b91d42ff,
+    full-white: #fff,
+    full-black: #000,
+  ),
+);

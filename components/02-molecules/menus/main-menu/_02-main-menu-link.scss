@@ -1,5 +1,6 @@
 @use "../../../00-base/00-defaults/01-variables" as *;
 @use "../../../00-base/00-defaults/02-breakpoints" as *;
+@use "../../../00-base/01-colors/colors" as *;
 
 /* A */
 .main-menu__link {
@@ -20,8 +21,8 @@
     color: clr(text);
 
     @include breakpoint("medium") {
-      background-color: clr(accent-high);
-      color: clr(highlight-high);
+      background-color: clr(accent, bright);
+      color: clr(highlight, bright);
     }
   }
 
@@ -64,7 +65,7 @@
 }
 
 .main-menu--sub-2 {
-  background-color: clr(highlight-high);
+  background-color: clr(highlight, bright);
 }
 
 .main-menu__link--sub-2 {

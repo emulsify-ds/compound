@@ -1,3 +1,55 @@
+@use "sass:map";
+@use "../01-colors/colors" as *;
+
+$space: 1rem;
+
+// Larger than 1 space
+$space-and-half: calc(calc(#{$space} / 2) + $space);
+$space-double: calc(#{$space} * 2);
+$space-triple: calc(#{$space} * 3);
+$space-quadruple: calc(#{$space} * 4);
+$space-quintuple: calc(#{$space} * 5);
+$space-sextuple: calc(#{$space} * 6);
+$space-octuple: calc(#{$space} * 8);
+$space-dectuple: calc(#{$space} * 10);
+
+// Smaller than 1 space
+$space-three-fourth: calc(calc(#{$space} / 4) * 3);
+$space-one-half: calc(#{$space} / 2);
+$space-one-third: calc(#{$space} / 3);
+$space-one-fourth: calc(#{$space} / 4);
+$space-one-fifth: calc(#{$space} / 5);
+$space-one-sixth: calc(#{$space} / 6);
+$space-one-seventh: calc(#{$space} / 7);
+$space-one-eighth: calc(#{$space} / 8);
+$spacings: (
+  10: $space-dectuple,
+  8: $space-octuple,
+  6: $space-sextuple,
+  5: $space-quintuple,
+  4: $space-quadruple,
+  3: $space-triple,
+  2: $space-double,
+  1.5: $space-and-half,
+  1: $space,
+  0.75: $space-three-fourth,
+  0.5: $space-one-half,
+  0.33: $space-one-third,
+  0.25: $space-one-fourth,
+  0.125: $space-one-eighth,
+  0: 0,
+);
+
+@function space($item) {
+  @if map-has-key($map: $spacings, $key: $item) {
+    @return map.get($spacings, $item);
+  } @else {
+    /* stylelint-disable-next-line at-rule-no-unknown */
+
+    @error 'space(#{$item}); does not exist in the $spacings map. See _spacing.scss for available parameters.';
+  }
+}
+
 .spacing {
   td:not(:last-child) {
     width: 14rem;

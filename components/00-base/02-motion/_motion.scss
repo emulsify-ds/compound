@@ -1,4 +1,5 @@
 @use "../00-defaults/01-variables" as *;
+@use "../01-colors/colors" as *;
 
 /* Mixin - Transition */
 $transition-duration-base: 0.3s;
@@ -38,7 +39,7 @@ $transition-timing-function-base: ease-in-out;
 }
 
 .demo-motion {
-  background-color: clr(highlight-high);
+  background-color: clr(highlight, bright);
   border-radius: 2px;
   cursor: pointer;
   padding: $space-triple;
@@ -63,8 +64,8 @@ $transition-timing-function-base: ease-in-out;
   @include transition;
 
   &:hover {
-    background-color: clr(accent-high);
-    color: clr(muted);
+    background-color: clr(accent, bright);
+    color: clr(neutral);
   }
 }
 

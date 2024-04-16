@@ -1,11 +1,12 @@
 @use "sass:map";
 @use "../../00-base/00-defaults/01-variables" as *;
+@use "../../00-base/01-colors/colors" as *;
 
 // Sass map to define colors. Each set should have a "Dark" variation when required.
 // e.g. `default` and `default-dark`. Or `purple` and `purple-dark`.
 $button-colors: (
   primary: (
-    text: clr(text-inverse),
+    text: clr(text, inverse),
     bg: clr(primary),
     text-hover: clr(primary),
     bg-hover: clr(highlight),
@@ -14,10 +15,10 @@ $button-colors: (
     text: clr(text),
     bg: clr(primary),
     text-hover: clr(text),
-    bg-hover: clr(highlight-high),
+    bg-hover: clr(highlight, bright),
   ),
   secondary: (
-    text: clr(text-inverse),
+    text: clr(text, inverse),
     bg: clr(secondary),
     text-hover: clr(secondary),
     bg-hover: clr(highlight),
@@ -26,7 +27,7 @@ $button-colors: (
     text: clr(text),
     bg: clr(secondary),
     text-hover: clr(text),
-    bg-hover: clr(highlight-high),
+    bg-hover: clr(highlight, bright),
   ),
 );
 

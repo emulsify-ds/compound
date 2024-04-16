@@ -1,5 +1,6 @@
 @use "../../00-base/00-defaults/01-variables" as *;
 @use "../../00-base/00-defaults/03-mixins" as *;
+@use "../../00-base/01-colors/colors" as *;
 
 // The accordion group.
 .accordion {
@@ -26,7 +27,7 @@
   align-items: center;
 
   &:hover {
-    color: clr(link);
+    color: clr(primary);
   }
 }
 
@@ -36,7 +37,7 @@
   align-items: center;
 
   &:hover {
-    color: clr(link);
+    color: clr(primary);
   }
 }
 

@@ -1,9 +1,10 @@
 @use "../../../00-base/00-defaults/01-variables" as *;
 @use "../../../00-base/00-defaults/02-breakpoints" as *;
 @use "../../../00-base/00-defaults/03-mixins" as *;
+@use "../../../00-base/01-colors/colors" as *;
 
 .footer {
-  background-color: clr(highlight-high);
+  background-color: clr(neutral, n100);
   padding: $space 0;
 
   &__inner {

@@ -1,5 +1,6 @@
 @use "../../00-base/00-defaults/01-variables" as *;
 @use "../../00-base/00-defaults/03-mixins" as *;
+@use "../../00-base/01-colors/colors" as *;
 @use "../../01-atoms/buttons/buttons" as *;
 @use "../../01-atoms/links/link/link" as *;
 @use "../../01-atoms/text/headings/headings" as *;
@@ -36,6 +37,6 @@
 
 /* Variations */
 .card--bg {
-  background-color: clr(highlight-high);
+  background-color: clr(highlight, bright);
   padding: $space;
 }
