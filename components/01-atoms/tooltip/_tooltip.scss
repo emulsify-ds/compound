@@ -1,3 +1,5 @@
+@use "../../00-base/01-colors/colors" as *;
+
 // Variables
 $tooltip-icon-size: 1.25rem;
 $tooltip-content-maxwidth: 18.5rem;
@@ -18,7 +20,7 @@ $tooltip-arrow-size: 0.5rem;
   height: $tooltip-icon-size;
   border: 1px solid clr(text);
   border-radius: 50%;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   font-size: 0.8rem;
   text-indent: 1px;
   background: none;
@@ -39,20 +41,20 @@ $tooltip-arrow-size: 0.5rem;
   border-radius: 0.15rem;
   font-size: 0.875rem;
   background-color: clr(accent);
-  color: clr(text-inverse);
+  color: clr(text, inverse);
   overflow-wrap: break-word;
-  box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0.125rem 0.375rem rgb(0 0 0 / 30%);
   z-index: 11;
 
   &::before {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     width: 0;
     height: 0;
   }
 
-  &[data-direction='top'] {
+  &[data-direction="top"] {
     transform: translateY(calc(-100% - 1rem));
 
     &::before {
@@ -64,7 +66,7 @@ $tooltip-arrow-size: 0.5rem;
     }
   }
 
-  &[data-direction='right'] {
+  &[data-direction="right"] {
     transform: translate(
       calc((#{$tooltip-content-maxwidth} / 2) + ($tooltip-icon-size * 1.5)),
       -50%
@@ -79,7 +81,7 @@ $tooltip-arrow-size: 0.5rem;
     }
   }
 
-  &[data-direction='bottom'] {
+  &[data-direction="bottom"] {
     margin-top: 2.2rem;
 
     &::before {
@@ -91,7 +93,7 @@ $tooltip-arrow-size: 0.5rem;
     }
   }
 
-  &[data-direction='left'] {
+  &[data-direction="left"] {
     transform: translate(
       calc((#{-$tooltip-content-maxwidth} / 2) - ($tooltip-icon-size * 1.5)),
       -50%

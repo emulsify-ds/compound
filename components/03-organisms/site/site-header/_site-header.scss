@@ -1,3 +1,8 @@
+@use "../../../00-base/00-defaults/01-variables" as *;
+@use "../../../00-base/00-defaults/02-breakpoints" as *;
+@use "../../../00-base/00-defaults/03-mixins" as *;
+@use "../../../00-base/01-colors/colors" as *;
+
 .header {
   margin-bottom: $space-quadruple;
 
@@ -9,7 +14,7 @@
   }
 
   &__primary {
-    @include medium {
+    @include breakpoint("medium") {
       display: flex;
       flex-flow: row nowrap;
       justify-content: space-between;
@@ -21,7 +26,7 @@
     max-width: 190px;
     padding: 1rem 0;
 
-    @include medium {
+    @include breakpoint("medium") {
       margin-right: $space;
       max-width: 300px;
       padding: 0;

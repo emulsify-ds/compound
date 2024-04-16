@@ -1,3 +1,8 @@
+@use "../../00-base/00-defaults/01-variables" as *;
+@use "../../00-base/00-defaults/02-breakpoints" as *;
+@use "../../00-base/00-defaults/03-mixins" as *;
+@use "../../00-base/01-colors/colors" as *;
+
 .pager {
   margin: $space-double 0;
 }
@@ -12,7 +17,7 @@
   display: inline-block;
   margin: 0 0.2em;
 
-  @include large {
+  @include breakpoint("large") {
     margin: 0 $space-one-half;
   }
 }
@@ -26,7 +31,7 @@
   &:hover,
   &:focus {
     background-color: clr(text);
-    color: clr(text-inverse);
+    color: clr(text, inverse);
   }
 
   &.is-active:hover,

@@ -1,3 +1,7 @@
+@use "../../../00-base/00-defaults/01-variables" as *;
+@use "../../../00-base/00-defaults/02-breakpoints" as *;
+@use "../../../00-base/01-colors/colors" as *;
+
 /* A */
 .main-menu__link {
   display: block;
@@ -16,13 +20,13 @@
   &:hover {
     color: clr(text);
 
-    @include medium {
-      background-color: clr(accent-high);
-      color: clr(highlight-high);
+    @include breakpoint("medium") {
+      background-color: clr(accent, bright);
+      color: clr(highlight, bright);
     }
   }
 
-  @include medium {
+  @include breakpoint("medium") {
     position: relative;
     display: inline-block;
     padding: $space;
@@ -33,7 +37,7 @@
 
     &::after {
       display: inline-block;
-      content: '>';
+      content: ">";
       margin-left: $space-one-half;
     }
 
@@ -53,7 +57,7 @@
   color: clr(accent);
   font-weight: normal;
 
-  @include medium {
+  @include breakpoint("medium") {
     display: block;
     padding: $space-one-third $space;
     color: clr(highlight);
@@ -61,7 +65,7 @@
 }
 
 .main-menu--sub-2 {
-  background-color: clr(highlight-high);
+  background-color: clr(highlight, bright);
 }
 
 .main-menu__link--sub-2 {

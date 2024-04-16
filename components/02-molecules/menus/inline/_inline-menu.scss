@@ -1,3 +1,9 @@
+@use "../../../00-base/00-defaults/01-variables" as *;
+@use "../../../00-base/00-defaults/02-breakpoints" as *;
+@use "../../../00-base/00-defaults/03-mixins" as *;
+@use "../../../00-base/01-colors/colors" as *;
+@use "../../../01-atoms/links/link/link" as *;
+
 .inline-menu {
   @include list-reset;
 }
@@ -5,7 +11,7 @@
 .inline-menu__item {
   margin: 0 $space $space-one-half 0;
 
-  @include large {
+  @include breakpoint("large") {
     display: inline;
     margin-bottom: $space;
   }
