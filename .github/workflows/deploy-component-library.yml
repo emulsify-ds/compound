@@ -18,6 +18,6 @@ jobs:
       - name: Build storybook
         run: npm run storybook-build
       - name: Deploy storybook
-        run: npm run storybook:deploy --  --source-branch main --ci
+        run: npm run storybook-deploy --  --source-branch main --ci
         env:
           GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
