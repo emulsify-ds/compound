@@ -1,0 +1,87 @@
+{#
+ # Available Variables:
+ # - alert_id: unique id (must be unique to each site)
+ # - alert_type: emergency, announcement (default), marketing
+ # - alert__heading
+ # - alert__content
+ # - alert__link__content
+ # - alert__link__url
+ #}
+
+{% set alert_base_class = 'alert' %}
+{% set alert_type = alert_type|default('announcement') %}
+
+{# Set emergency icons #}
+{% if alert_type == 'emergency' %}
+	{% set alert_icon = 'triangle-exclamation' %}
+	{% set alert_toggle = 'angle-down' %}
+	{% set alert_toggle__text = 'Hide alert details' %}
+	{% set alert_toggle__aria_expanded = {'aria-expanded': 'true'} %}
+	{# Set announcement icons #}
+{% elseif alert_type == 'announcement' %}
+	{% set alert_icon = 'circle-info' %}
+	{% set alert_toggle = 'xmark' %}
+	{% set alert_toggle__text = 'Close alert' %}
+	{% set alert_toggle__aria_expanded = {} %}
+	{# Set marketing icon #}
+{% else %}
+	{% set alert_toggle = 'xmark' %}
+	{% set alert_toggle__text = 'Close alert' %}
+	{% set alert_toggle__aria_expanded = {} %}
+{% endif %}
+
+{% set alert_attributes = {
+  'data-component-width': 'max',
+  'data-alert-id': 'alert-id-' ~ alert_id,
+  'data-alert-state': alert_state|default('expanded'),
+  'data-alert-type': alert_type,
+  'class': bem(alert_base_class),
+} %}
+
+<div {{ add_attributes(alert_attributes) }}>
+	<div {{ bem('inner', [], alert_base_class) }}>
+		{% if alert_icon %}
+			<div {{ bem('icon', ['type'], alert_base_class) }}>
+				{% include "@atoms/images/icons/_icon.twig" with {
+          icon__name: alert_icon,
+          icon_decorative: true,
+        } %}
+			</div>
+		{% endif %}
+		<div {{ bem('content', [], alert_base_class) }}>
+			<div {{ bem('content-inner', [], alert_base_class) }}>
+				{% include "@atoms/text/headings/_heading.twig" with {
+          heading_level: '2',
+          heading_blockname: alert_base_class,
+          heading: alert__heading,
+        } %}
+				{% if alert_content %}
+					{% include "@atoms/text/text/01-paragraph.twig" with {
+            paragraph_content: alert__content,
+            paragraph_blockname: alert_base_class,
+          } %}
+				{% endif %}
+			</div>
+			{% if alert_link__content and alert_link__url %}
+				{% include "@atoms/links/link/link.twig" with {
+          link_content: alert__link__content,
+          link_url: alert__link__url,
+          link_blockname: alert_base_class,
+        } %}
+			{% endif %}
+		</div>
+		{% set alert_control %}
+		<span {{ bem('visually-hidden') }}>{{ alert_toggle__text }}</span>
+		{% include "@atoms/images/icons/_icon.twig" with {
+        icon__name: alert_toggle,
+        icon_decorative: true,
+      } %}
+		{% endset %}
+		{% include "@atoms/buttons/button.twig" with {
+      button__content: alert_control,
+      button__base_class: 'toggle',
+      button__blockname: alert_base_class,
+      button__attributes: alert_toggle__aria_expanded,
+    } %}
+	</div>
+</div>

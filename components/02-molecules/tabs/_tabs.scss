@@ -1,11 +1,16 @@
+@use "../../00-base/00-defaults/01-variables" as *;
+@use "../../00-base/00-defaults/02-breakpoints" as *;
+@use "../../00-base/00-defaults/03-mixins" as *;
+@use "../../00-base/01-colors/colors" as *;
+
 /* Tab Navigation */
 .tabs__nav {
   @include list-reset;
 
-  border-bottom: 1px solid clr(highlight-high);
+  border-bottom: 1px solid clr(highlight, bright);
 
-  @include large {
-    border-left: 1px solid clr(highlight-high);
+  @include breakpoint("large") {
+    border-left: 1px solid clr(highlight, bright);
     display: flex;
   }
 }
@@ -32,10 +37,10 @@
 
 /* Drupal Local Tasks variant */
 .tabs__nav--local-tasks {
-  margin: 1em 0 0.5em;
+  margin: $space 0 $space-one-half;
   padding: 0;
 }
 
 .tabs__link--local-tasks {
-  padding: 0.3em 1.5em;
+  padding: $space-one-third $space + $space-one-half;
 }

@@ -1,3 +1,6 @@
+@use "../../../00-base/00-defaults/01-variables" as *;
+@use "../../../00-base/01-colors/colors" as *;
+
 // Storybook styling
 .icons-demo {
   display: flex;
@@ -9,12 +12,12 @@
     width: 100px;
 
     @media (prefers-color-scheme: dark) {
-      fill: clr(accent-high);
+      fill: clr(accent, bright);
     }
   }
 
   pre {
-    background-color: clr(muted);
+    background-color: clr(neutral);
     font-size: 0.8rem;
     margin: 0;
     text-align: center;
@@ -22,6 +25,6 @@
 }
 
 .icons-demo__item {
-  border: 1px solid clr(muted);
+  border: 1px solid clr(neutral);
   margin: $space-one-fourth;
 }

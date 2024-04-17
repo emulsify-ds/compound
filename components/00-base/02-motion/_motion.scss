@@ -1,3 +1,6 @@
+@use "../00-defaults/01-variables" as *;
+@use "../01-colors/colors" as *;
+
 /* Mixin - Transition */
 $transition-duration-base: 0.3s;
 $transition-timing-function-base: ease-in-out;
@@ -13,7 +16,7 @@ $transition-timing-function-base: ease-in-out;
 
 // Demo UI
 .motion {
-  padding: 0 1rem;
+  padding: 0 $space;
 }
 
 .motion__grid {
@@ -25,8 +28,8 @@ $transition-timing-function-base: ease-in-out;
 
 .motion__grid-item {
   @media (min-width: 920px) {
-    margin-bottom: 1rem;
-    margin-right: 1rem;
+    margin-bottom: $space;
+    margin-right: $space;
     width: 49%;
 
     &:nth-child(2n) {
@@ -36,19 +39,19 @@ $transition-timing-function-base: ease-in-out;
 }
 
 .demo-motion {
-  background-color: clr(highlight-high);
+  background-color: clr(highlight, bright);
   border-radius: 2px;
   cursor: pointer;
-  padding: 3rem;
+  padding: $space-triple;
   text-align: center;
 
   &::before {
-    content: 'Duration: #{$transition-duration-base}';
+    content: "Duration: #{$transition-duration-base}";
     display: block;
   }
 
   &::after {
-    content: 'Timing Function: #{$transition-timing-function-base}';
+    content: "Timing Function: #{$transition-timing-function-base}";
   }
 
   span {
@@ -61,8 +64,8 @@ $transition-timing-function-base: ease-in-out;
   @include transition;
 
   &:hover {
-    background-color: clr(accent-high);
-    color: clr(muted);
+    background-color: clr(accent, bright);
+    color: clr(neutral);
   }
 }
 
@@ -70,12 +73,12 @@ $transition-timing-function-base: ease-in-out;
   @include transition(transform, 0.4s, ease-in);
 
   &::before {
-    content: 'Duration: 0.4s';
+    content: "Duration: 0.4s";
     display: block;
   }
 
   &::after {
-    content: 'Timing Function: ease-in';
+    content: "Timing Function: ease-in";
   }
 
   &:hover {
@@ -87,12 +90,12 @@ $transition-timing-function-base: ease-in-out;
   @include transition(transform, 0.2s, linear);
 
   &::before {
-    content: 'Duration: 0.2s';
+    content: "Duration: 0.2s";
     display: block;
   }
 
   &::after {
-    content: 'Timing Function: linear';
+    content: "Timing Function: linear";
   }
 
   &:hover {
@@ -104,12 +107,12 @@ $transition-timing-function-base: ease-in-out;
   @include transition(transform, 0.3s, cubic-bezier(0.17, 0.67, 0.83, 0.67));
 
   &::before {
-    content: 'Duration: 0.3s';
+    content: "Duration: 0.3s";
     display: block;
   }
 
   &::after {
-    content: 'Timing Function: cubic-bezier(.17,.67,.83,.67)';
+    content: "Timing Function: cubic-bezier(.17,.67,.83,.67)";
   }
 
   &:hover {

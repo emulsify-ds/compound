@@ -1,3 +1,6 @@
+@use "../../../00-base/00-defaults/01-variables" as *;
+@use "../../../00-base/01-colors/colors" as *;
+
 /*
  * Generic header styles:
  * All arguments are optional. If not defined, the defaults below will be used
@@ -13,7 +16,7 @@ $color-heading: clr(accent);
   $color-link: inherit,
   $color-link-hover: inherit,
   $font-weight: 700,
-  $margin: 0 0 0.5em
+  $margin: 0 0 $space-one-half
 ) {
   color: $color;
   font-family: $font-family;
@@ -41,7 +44,7 @@ $color-heading: clr(accent);
   $color-link: inherit,
   $color-link-hover: inherit,
   $font-weight: 700,
-  $margin: 0 0 0.5em
+  $margin: 0 0 $space-one-half
 ) {
   color: $color;
   font-family: $font-family;
@@ -69,7 +72,7 @@ $color-heading: clr(accent);
   $color-link: inherit,
   $color-link-hover: inherit,
   $font-weight: 700,
-  $margin: 0 0 0.5em
+  $margin: 0 0 $space-one-half
 ) {
   color: $color;
   font-family: $font-family;
@@ -97,7 +100,7 @@ $color-heading: clr(accent);
   $color-link: inherit,
   $color-link-hover: inherit,
   $font-weight: 600,
-  $margin: 0 0 0.5em
+  $margin: 0 0 $space-one-half
 ) {
   color: $color;
   font-family: $font-family;
@@ -125,7 +128,7 @@ $color-heading: clr(accent);
   $color-link: inherit,
   $color-link-hover: inherit,
   $font-weight: 600,
-  $margin: 0 0 0.5em
+  $margin: 0 0 $space-one-half
 ) {
   color: $color;
   font-family: $font-family;

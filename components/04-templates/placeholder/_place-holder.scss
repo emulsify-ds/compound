@@ -1,11 +1,10 @@
-@use '../../00-base/01-colors/colors-vars';
-
-$color-place-holder: $gray-light;
+@use "../../00-base/00-defaults/01-variables" as *;
+@use "../../00-base/01-colors/colors" as *;
 
 .place-holder {
-  color: $color-place-holder;
-  border: 4px dashed $color-place-holder;
-  padding: 50px;
+  color: clr(neutral, n200);
+  border: 4px dashed clr(neutral, n200);
+  padding: $space-triple + $space-one-eighth;
 
   &__content {
     font-size: 3.2rem;

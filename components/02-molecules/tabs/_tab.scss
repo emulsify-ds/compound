@@ -1,42 +1,46 @@
+@use "../../00-base/00-defaults/01-variables" as *;
+@use "../../00-base/00-defaults/02-breakpoints" as *;
+@use "../../00-base/01-colors/colors" as *;
+
 .tabs__link,
 .tabs__link--local-tasks {
-  background-color: clr(muted);
-  border: 1px solid clr(highlight-high);
+  background-color: clr(neutral);
+  border: 1px solid clr(highlight, bright);
   border-bottom: none;
   color: clr(text);
   display: block;
   font-size: 1.1rem;
   font-weight: 600;
-  padding: 1em 2.4em;
+  padding: $space $space-double + $space-one-third;
   text-align: center;
   text-decoration: none;
   transition: color 0.3s;
 
-  @include large {
-    border-bottom: 1px solid clr(highlight-high);
+  @include breakpoint("large") {
+    border-bottom: 1px solid clr(highlight, bright);
     border-left: none;
     display: inline-block;
     font-size: 1rem;
-    padding: 0.6em 1.7em;
+    padding: 0.6rem $space + $space-one-half;
     position: relative;
     top: 1px;
     width: auto;
   }
 
   &:hover {
-    background-color: clr(highlight-high);
+    background-color: clr(highlight, bright);
     color: clr(accent);
   }
 
   &.is-active {
     background-color: clr(text);
     border: 1px solid clr(text);
-    color: clr(text-inverse);
+    color: clr(text, inverse);
 
-    @include large {
+    @include breakpoint("large") {
       background-color: clr(background);
-      border: 1px solid clr(highlight-high);
-      border-bottom: 1px solid clr(highlight-high);
+      border: 1px solid clr(highlight, bright);
+      border-bottom: 1px solid clr(highlight, bright);
       border-left: none;
       color: clr(text);
     }

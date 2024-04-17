@@ -1,7 +1,11 @@
+@use "../../../00-base/00-defaults/01-variables" as *;
+@use "../../../00-base/00-defaults/03-mixins" as *;
+@use "../../../00-base/01-colors/colors" as *;
+
 .form-item {
   color: clr(text);
-  margin-bottom: 1em;
-  max-width: 32em;
+  margin-bottom: $space;
+  max-width: 32rem;
 
   @include clearfix;
 }
@@ -9,21 +13,16 @@
 .form-item__label {
   display: block;
   font-weight: 600;
-
-  @include xs {
-    display: block;
-    margin-right: 2%;
-    padding: 0.6em 0;
-  }
+  padding: 0.6rem 0;
 }
 
 .form-item__textfield {
   border: 1px solid clr(accent);
-  padding: 0.6em;
+  padding: 0.6rem;
   max-width: 100%;
 
   &:focus {
-    border-color: clr(accent-high);
+    border-color: clr(accent, bright);
   }
 
   &::placeholder {
@@ -32,16 +31,16 @@
 }
 
 .form-item__description {
-  margin-top: 0.3em;
+  margin-top: 0.3rem;
 }
 
 .form-fieldset {
   border: none;
-  margin-bottom: 2em;
+  margin-bottom: $space-double;
   padding: 0;
 
   .form-item {
-    margin-left: 1em;
-    max-width: 31em;
+    margin-left: $space;
+    max-width: 31rem;
   }
 }

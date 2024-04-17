@@ -1,4 +1,5 @@
-// CSS-only select styling (from https://github.com/filamentgroup/select-css)
+@use "../../../00-base/00-defaults/01-variables" as *;
+@use "../../../00-base/01-colors/colors" as *;
 
 .form-item__dropdown {
   border: 1px solid clr(accent);
@@ -6,17 +7,17 @@
   position: relative;
 
   @media (prefers-color-scheme: dark) {
-    background-color: clr(background-inverse);
+    background-color: clr(background, inverse);
   }
 
   &::after {
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-top: 9px solid clr(accent);
-    content: ' ';
+    content: " ";
     position: absolute;
     top: 42%;
-    right: 1em;
+    right: $space;
     z-index: 2;
 
     /* These hacks make the select behind the arrow clickable in some browsers */
@@ -25,7 +26,7 @@
   }
 
   &:hover {
-    border-color: clr(accent-high);
+    border-color: clr(accent, bright);
   }
 }
 
@@ -35,7 +36,7 @@
   font-size: 16px;
   margin: 0;
   outline: none;
-  padding: 0.6em 0.8em 0.5em;
+  padding: 0.6rem $space-one-half + $space-one-fourth $space-one-half;
   width: 100%;
 
   :focus {
@@ -53,7 +54,7 @@
 
   /* Remove select styling */
   .form-item__select {
-    padding-right: 2em; /* Match-01 */
+    padding-right: $space-double; /* Match-01 */
 
     /* inside @supports so that iOS <= 8 display the native arrow */
     background: none; /* Match-04 */

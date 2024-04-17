@@ -1,5 +1,8 @@
+@use "../../../00-base/00-defaults/03-mixins" as *;
+@use "../../../00-base/01-colors/colors" as *;
+
 $color-breadcrumb: clr(accent);
-$color-breadcrumb-hover: clr(accent-high);
+$color-breadcrumb-hover: clr(accent, bright);
 $color-breadcrumb-active: clr(text);
 
 .breadcrumb {
@@ -24,14 +27,14 @@ $color-breadcrumb-active: clr(text);
   font-size: 0.75rem;
 
   &::after {
-    content: '/';
+    content: "/";
   }
 
   &:last-child {
     color: $color-breadcrumb-active;
 
     &::after {
-      content: '';
+      content: "";
     }
   }
 }

@@ -1,0 +1,59 @@
+@use "../../00-base/00-defaults/01-variables" as *;
+@use "../../00-base/01-colors/colors" as *;
+
+.alert {
+  background-color: clr(warning);
+  padding: $space;
+  color: clr(text);
+
+  &[data-alert-type="emergency"] {
+    background-color: clr(error);
+  }
+
+  &[data-alert-type="marketing"] {
+    background-color: clr(message);
+  }
+
+  &[data-alert-state="dismissed"] {
+    display: none;
+  }
+}
+
+.alert__paragraph,
+.alert__link {
+  [data-alert-state="collapsed"] & {
+    display: none;
+  }
+}
+
+.alert__inner {
+  display: flex;
+  align-items: center;
+}
+
+.alert__icon {
+  display: flex;
+  margin-right: $space;
+
+  svg {
+    height: $space-double;
+    width: $space-double;
+  }
+}
+
+.alert__toggle {
+  display: flex;
+  margin-left: auto;
+  transform: rotate(180deg);
+  border: none;
+  background: none;
+
+  [data-alert-state="collapsed"] & {
+    transform: rotate(0deg);
+  }
+
+  svg {
+    height: calc($space-double - $space-one-half);
+    width: calc($space-double - $space-one-half);
+  }
+}

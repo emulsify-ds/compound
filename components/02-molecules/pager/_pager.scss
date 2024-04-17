@@ -1,5 +1,10 @@
+@use "../../00-base/00-defaults/01-variables" as *;
+@use "../../00-base/00-defaults/02-breakpoints" as *;
+@use "../../00-base/00-defaults/03-mixins" as *;
+@use "../../00-base/01-colors/colors" as *;
+
 .pager {
-  margin: 2em 0;
+  margin: $space-double 0;
 }
 
 .pager__items {
@@ -12,13 +17,13 @@
   display: inline-block;
   margin: 0 0.2em;
 
-  @include large {
-    margin: 0 0.5em;
+  @include breakpoint("large") {
+    margin: 0 $space-one-half;
   }
 }
 
 .pager__link {
-  padding: 0.5em;
+  padding: $space-one-half;
   color: clr(text);
   text-decoration: none;
 
@@ -26,7 +31,7 @@
   &:hover,
   &:focus {
     background-color: clr(text);
-    color: clr(text-inverse);
+    color: clr(text, inverse);
   }
 
   &.is-active:hover,

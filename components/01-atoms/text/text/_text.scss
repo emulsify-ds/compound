@@ -1,6 +1,10 @@
+@use "../../../00-base/00-defaults/01-variables" as *;
+@use "../../../00-base/01-colors/colors" as *;
+
 /* Create a mixin for paragraph styles that can be implemented
  * in components with other classnames.
 */
+
 @mixin paragraph($margin: 0 0 1em) {
   margin: $margin;
 }
@@ -12,8 +16,8 @@
 .blockquote {
   font-style: italic;
   border-left: solid 3px clr(accent);
-  margin-left: 1em;
-  padding-left: 1em;
+  margin-left: $space;
+  padding-left: $space;
 }
 
 .hr {

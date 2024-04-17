@@ -1,8 +1,12 @@
+@use "sass:map";
+@use "../../00-base/00-defaults/01-variables" as *;
+@use "../../00-base/01-colors/colors" as *;
+
 // Sass map to define colors. Each set should have a "Dark" variation when required.
 // e.g. `default` and `default-dark`. Or `purple` and `purple-dark`.
 $button-colors: (
   primary: (
-    text: clr(text-inverse),
+    text: clr(text, inverse),
     bg: clr(primary),
     text-hover: clr(primary),
     bg-hover: clr(highlight),
@@ -11,10 +15,10 @@ $button-colors: (
     text: clr(text),
     bg: clr(primary),
     text-hover: clr(text),
-    bg-hover: clr(highlight-high),
+    bg-hover: clr(highlight, bright),
   ),
   secondary: (
-    text: clr(text-inverse),
+    text: clr(text, inverse),
     bg: clr(secondary),
     text-hover: clr(secondary),
     bg-hover: clr(highlight),
@@ -23,28 +27,28 @@ $button-colors: (
     text: clr(text),
     bg: clr(secondary),
     text-hover: clr(text),
-    bg-hover: clr(highlight-high),
+    bg-hover: clr(highlight, bright),
   ),
 );
 
 // Mixin to define colors for one or more schemes.
 // Simply pass the color scheme to the mixin to get the colors defined in the map.
-// e.g. @include buttonColors(default) will get all of the colors defined in the "default" section.
-@mixin buttonColors(
+// e.g. @include button-colors(default) will get all of the colors defined in the "default" section.
+@mixin button-colors(
   $scheme,
-  $pallate: map-get($button-colors, $scheme),
+  $pallate: map.get($button-colors, $scheme),
   $map: $button-colors
 ) {
-  color: map-get($pallate, text);
-  background-color: map-get($pallate, bg);
+  color: map.get($pallate, text);
+  background-color: map.get($pallate, bg);
 
   &:visited {
-    color: map-get($pallate, text);
+    color: map.get($pallate, text);
   }
 
   &:hover {
-    color: map-get($pallate, text-hover);
-    background-color: map-get($pallate, bg-hover);
+    color: map.get($pallate, text-hover);
+    background-color: map.get($pallate, bg-hover);
   }
 }
 
@@ -62,18 +66,18 @@ $button-colors: (
 // Button color variations
 // Note how we include dark mode options for each
 @mixin button-color-primary {
-  @include buttonColors(primary);
+  @include button-colors(primary);
 
   @media (prefers-color-scheme: dark) {
-    @include buttonColors(primary-dark);
+    @include button-colors(primary-dark);
   }
 }
 
 @mixin button-color-secondary {
-  @include buttonColors(secondary);
+  @include button-colors(secondary);
 
   @media (prefers-color-scheme: dark) {
-    @include buttonColors(secondary-dark);
+    @include button-colors(secondary-dark);
   }
 }
 

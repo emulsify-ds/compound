@@ -1,0 +1,4 @@
+alert__heading: 'This is the heading for the alert'
+alert__content: 'This is an optional text for more information if needed.'
+alert__link__content: 'Optional link'
+
