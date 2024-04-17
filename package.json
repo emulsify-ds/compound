@@ -23,6 +23,7 @@
   "scripts": {
     "a11y": "npm run storybook-build && node_modules/emulsify-core/scripts/a11y.js -r",
     "build": "webpack --config node_modules/emulsify-core/config/webpack/webpack.prod.js",
+    "build-storybook": "npm run storybook-build",
     "coverage": "npm run test && open-cli .coverage/lcov-report/index.html",
     "develop": "concurrently --raw \"npm run webpack\" \"npm run storybook\"",
     "format": "npm run lint-fix; npm run prettier-fix",
