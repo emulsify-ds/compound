@@ -1,0 +1,84 @@
+@use "../../00-base/00-defaults/01-variables" as *;
+@use "../../00-base/00-defaults/03-mixins" as *;
+@use "../../00-base/01-colors/colors" as *;
+
+// The accordion group.
+.accordion-sdc {
+  padding-block: $space;
+}
+
+.accordion-sdc__controls {
+  @include list-reset;
+
+  display: flex;
+}
+
+.accordion-sdc__controls__item {
+  &:not(:last-child) {
+    padding-right: $space;
+    margin-right: $space;
+    border-right: 1px solid;
+  }
+}
+
+.accordion-sdc-item__toggle {
+  display: flex;
+  gap: $space;
+  align-items: center;
+
+  &:hover {
+    color: clr(primary);
+  }
+}
+
+.accordion-sdc__toggle-all {
+  display: flex;
+  gap: $space;
+  align-items: center;
+
+  &:hover {
+    color: clr(primary);
+  }
+}
+
+.accordion-sdc__icon {
+  height: $space;
+  width: $space;
+  pointer-events: none;
+
+  .accordion-sdc__toggle-all--collapse & {
+    transform: rotate(180deg);
+  }
+}
+
+// Individual accordion items.
+.accordion-sdc-item {
+  border-bottom: 1px solid;
+  padding-top: $space;
+}
+
+.accordion-sdc-item__heading {
+  display: flex;
+  margin-bottom: $space;
+}
+
+.accordion-sdc-item__icon {
+  height: $space;
+  width: $space;
+
+  [aria-expanded="true"] > & {
+    transform: rotate(180deg);
+  }
+}
+
+.accordion-sdc-item__content {
+  overflow: hidden;
+
+  [data-accordion-sdc-expanded="true"] & {
+    margin-bottom: $space;
+  }
+
+  [data-accordion-sdc-expanded="false"] & {
+    max-height: 0;
+  }
+}
