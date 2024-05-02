@@ -1,6 +1,6 @@
 import accordionSDCTwig from "./accordion-sdc.twig";
 
-import { slots } from "./accordion-sdc.component.yml";
+import { name, group, props } from "./accordion-sdc.component.yml";
 import "./accordion-sdc";
 
 /**
@@ -8,18 +8,19 @@ import "./accordion-sdc";
  */
 export default {
   // Can't be a dynamic title,
-  // title: 'Molecules/AccordionSDC',
+  // title: `${group}/${name}`,
+  title: "Molecules/Accordion SDC",
   component: accordionSDCTwig,
   argTypes: {
     heading: {
       name: "Heading",
       type: "string",
-      defaultValue: slots.accordion_sdc__item__heading.examples[0],
+      defaultValue: props.properties.accordion_sdc__item__heading.data,
     },
     content: {
       name: "Content",
       type: "string",
-      defaultValue: slots.accordion_sdc__item__content.examples[0],
+      defaultValue: props.properties.accordion_sdc__item__content.data,
     },
   },
 };
@@ -33,15 +34,15 @@ export const AccordionSDC = ({ heading, content }) =>
       },
       {
         accordion_sdc__item__heading:
-          slots.accordion_sdc__item__heading.examples[0],
+          props.properties.accordion_sdc__item__heading.data,
         accordion_sdc__item__content:
-          slots.accordion_sdc__item__content.examples[0],
+          props.properties.accordion_sdc__item__content.data,
       },
       {
         accordion_sdc__item__heading:
-          slots.accordion_sdc__item__heading.examples[0],
+          props.properties.accordion_sdc__item__heading.data,
         accordion_sdc__item__content:
-          slots.accordion_sdc__item__content.examples[0],
+          props.properties.accordion_sdc__item__content.data,
       },
     ],
   });
