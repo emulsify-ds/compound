@@ -105,6 +105,12 @@
           "dependency": []
         },
         {
+          "name": "04-spacing",
+          "structure": "base",
+          "required": true,
+          "dependency": []
+        },
+        {
           "name": "buttons",
           "structure": "atoms",
           "required": true,
@@ -161,6 +167,10 @@
           "structure": "molecules"
         },
         {
+          "name": "alert",
+          "structure": "molecules"
+        },
+        {
           "name": "card",
           "structure": "molecules",
           "dependency": ["images", "text", "links", "buttons"]
@@ -184,6 +194,12 @@
         },
         {
           "name": "pager",
+          "structure": "molecules",
+          "required": true,
+          "dependency": []
+        },
+        {
+          "name": "pull-quote",
           "structure": "molecules",
           "required": true,
           "dependency": []
