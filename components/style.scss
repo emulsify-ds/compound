@@ -2,8 +2,55 @@
 @use "~normalize.css/normalize";
 
 // Components.
-@use "00-base/base";
-@use "01-atoms/atoms";
-@use "02-molecules/molecules";
-@use "03-organisms/organisms";
-@use "04-templates/templates";
+// Base.
+@forward "00-base/01-colors/color-properties";
+@forward "00-base/01-colors/colors-component-library";
+@forward "00-base/01-colors/colors";
+@forward "00-base/02-motion/motion";
+@forward "00-base/03-site/base";
+@forward "00-base/04-spacing/spacing";
+
+// Atoms.
+@forward "01-atoms/buttons/buttons";
+@forward "01-atoms/forms/checkbox/checkbox";
+@forward "01-atoms/forms/radio/radio";
+@forward "01-atoms/forms/select/select";
+@forward "01-atoms/forms/textfields/textfields";
+@forward "01-atoms/images/image/image";
+@forward "01-atoms/images/icons/icons";
+@forward "01-atoms/links/link/link";
+@forward "01-atoms/lists/list";
+@forward "01-atoms/tables/tables";
+@forward "01-atoms/text/headings/headings";
+@forward "01-atoms/text/text/text";
+@forward "01-atoms/tooltip/tooltip";
+@forward "01-atoms/videos/video";
+
+// Molecules.
+@forward "02-molecules/accordion/accordion";
+@forward "02-molecules/alert/alert";
+@forward "02-molecules/card/card";
+@forward "02-molecules/cta/cta";
+@forward "02-molecules/logo/logo";
+@forward "02-molecules/menus/breadcrumbs/breadcrumbs";
+@forward "02-molecules/menus/inline/inline-menu";
+@forward "02-molecules/menus/main-menu/00-main-menu";
+@forward "02-molecules/menus/main-menu/01-main-menu-item";
+@forward "02-molecules/menus/main-menu/02-main-menu-link";
+@forward "02-molecules/menus/main-menu/03-main-menu-toggle";
+@forward "02-molecules/menus/social-menu/social-menu";
+@forward "02-molecules/pager/pager";
+@forward "02-molecules/pull-quote/pull-quote";
+@forward "02-molecules/status/status";
+@forward "02-molecules/tabs/tabs";
+@forward "02-molecules/text-with-media/text-with-media";
+
+// Organisms.
+@forward "03-organisms/grid/grid";
+@forward "03-organisms/grid/grid-item";
+@forward "03-organisms/site/site-footer/site-footer";
+@forward "03-organisms/site/site-header/site-header";
+
+// Templates.
+@forward "04-templates/default";
+@forward "04-templates/placeholder/place-holder";
