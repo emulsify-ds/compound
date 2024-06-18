@@ -49,6 +49,7 @@ Runs [stylelint](https://stylelint.io/) for your sass files and [eslint](https:/
 
 [Single Directory Components](https://www.drupal.org/project/sdc) will be a Drupal standard and historically, Emulsify has been doing something similar already. By doing some adjustments in Compound components, Emulsify will support SDC and make it seamless.
 
+A full annotated example of a `component.yml` file can be found [here](https://www.drupal.org/node/3352951) 
 
 ### Upgrading Compound component
 
