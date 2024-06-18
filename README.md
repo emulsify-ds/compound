@@ -45,6 +45,98 @@ Runs [stylelint](https://stylelint.io/) for your sass files and [eslint](https:/
 },
 ```
 
+## Support Single Directory Components
+
+[Single Directory Components](https://www.drupal.org/project/sdc) will be a Drupal standard and historically, Emulsify has been doing something similar already. By doing some adjustments in Compound components, Emulsify will support SDC and make it seamless.
+
+A full annotated example of a `component.yml` file can be found [here](https://www.drupal.org/node/3352951) 
+
+### Upgrading Compound component
+
+A complete compound component meets the following criteria.
+
+1. A YML file is required in each component.
+2. A YML file using the same schema Single Directory Component does.
+3. A YML file with the `[name-of-component].component.yml` extension.
+4. A story file that imports and uses the metadata from the new YML schema.
+
+### Example of upgrading component
+
+The [accordion component](https://emulsify-ds.github.io/compound/?path=/docs/molecules-accordion--docs) serves as an example of how the new YML schema should look like and how to use that metadata in stories.
+
+#### Accordion YML new schema:
+
+```
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+
+name: Accordion
+group: Molecules
+status: experimental
+props:
+  type: object
+  required:
+    - accordion__item__heading
+    - accordion__item__content
+  properties:
+    accordion__item__heading:
+      type: string
+      title: Heading
+      description: The heading of the accordion item.
+      data: Art Collections
+    accordion__item__content:
+      type: string
+      title: Accordion item content
+      description: The content of the accordion item.
+      data: 'The Yale Center for British Art will present <em><a href="https://britishart.yale.edu/exhibitions-programs/bridget-riley-perceptual-abstraction">Bridget Riley: Perceptual Abstraction</a></em> from March 3 through July 24, 2022. Born in Britain in 1931, Riley is among the most important and influential painters in Britain and the world. Displayed on two floors, this major survey traces Riley’s oeuvre from the 1960s through the present by featuring over fifty works that were selected by the artist in collaboration with the YCBA. Also, revisit an exhibition hosted at the Yale University Art Gallery, <a href="https://artgallery.yale.edu/exhibitions/exhibition/basis-art-150-years-women-yale">On the Basis of Art: 150 Years of Women at Yale</a>, including a related audio guide, publication, and more.'
+```
+
+Everything in this file is optional. Still, the file needs to exist. Adding metadata here will improve the DX when using components.
+
+- `$schema`: This is so the IDE knows about the syntax for fixes and autocomplete.
+- `name`: The human readable name of the component.
+- `group`: Key to organize components together - Atomic design in this case.
+- `status`: Status can be: "experimental", "stable", "deprecated", "obsolete".
+- `props`: 
+    - Currently in Drupal 10.1, the schema will fail to validate if props section is not present, this is currently require. This may change in a future release of SDC.
+    - Schema for the props. SDC supports JSON Schema
+    - `type`: Props are always an object with keys. Each key is a variable in the component template.
+    - `required`: If the component has required properties, it;s list them here.
+    - `properties`: The key is the name of the variable in the template
+        - `type`: This information is required for every prop.
+        - `title`: A human-readable name to your props.
+        - `description`: This can be optional.
+        - `data`: The data used by storybook.
+
+#### Accordion new story:
+
+Import props from the YML schema:
+
+```
+import { props } from "./accordion.component.yml";
+```
+
+Create variable and use data from propesties
+
+```
+const accordionData = props.properties;
+
+export default {
+  title: 'Molecules/Accordion',
+  argTypes: {
+    heading: {
+      name: 'Heading',
+      type: 'string',
+      defaultValue: accordionData.accordion__item__heading.data,
+    },
+    content: {
+      name: 'Content',
+      type: 'string',
+      defaultValue: accordionData.accordion__item__content.data,
+    },
+  },
+};
+```
+
 ### Contributors
 
 <table>
@@ -174,3 +266,5 @@ Runs [stylelint](https://stylelint.io/) for your sass files and [eslint](https:/
     </td>
 </tr>
 </table>
+
+
