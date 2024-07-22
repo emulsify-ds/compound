@@ -39,9 +39,11 @@ $main-menu-medium: $medium;
 .main-menu {
   @include list-reset;
 
-  position: relative;
-  z-index: 10;
-  border-bottom: 1px solid;
+  & {
+    position: relative;
+    z-index: 10;
+    border-bottom: 1px solid;
+  }
 
   @include breakpoint("medium") {
     border-bottom: none;

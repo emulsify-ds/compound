@@ -10,7 +10,9 @@
 .pager__items {
   @include list-reset;
 
-  text-align: center;
+  & {
+    text-align: center;
+  }
 }
 
 .pager__item {

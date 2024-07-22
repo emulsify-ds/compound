@@ -19,7 +19,9 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
 .main {
   @include wrapper;
 
-  margin-bottom: 4em;
+  & {
+    margin-bottom: 4em;
+  }
 
   @include breakpoint("large") {
     display: flex;
@@ -27,7 +29,9 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
 }
 
 .main-sidebar {
-  margin-bottom: $space-double;
+  & {
+    margin-bottom: $space-double;
+  }
 
   @include breakpoint("large") {
     order: 2;

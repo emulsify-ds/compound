@@ -6,17 +6,19 @@
 .footer {
   background-color: clr(neutral, n100);
   padding: $space 0;
+}
 
-  &__inner {
-    @include wrapper;
+.footer__inner {
+  @include wrapper;
 
+  & {
     display: flex;
     flex-flow: column nowrap;
     gap: 1rem;
+  }
 
-    @include breakpoint("large") {
-      flex-direction: row;
-    }
+  @include breakpoint("large") {
+    flex-direction: row;
   }
 }
 

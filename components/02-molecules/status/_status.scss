@@ -5,7 +5,9 @@
 .status__list {
   @include list-reset;
 
-  margin-bottom: $space;
+  & {
+    margin-bottom: $space;
+  }
 }
 
 .status {

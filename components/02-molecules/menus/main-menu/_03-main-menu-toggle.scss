@@ -7,14 +7,16 @@
 .toggle-expand {
   @include link;
 
-  position: absolute;
-  top: 1rem;
-  display: inline-block;
-  margin-left: -1rem;
-  margin-top: -1rem;
-  padding: $space;
-  width: 100vw;
-  text-decoration: none;
+  & {
+    position: absolute;
+    top: 1rem;
+    display: inline-block;
+    margin-left: -1rem;
+    margin-top: -1rem;
+    padding: $space;
+    width: 100vw;
+    text-decoration: none;
+  }
 
   /* See main-menu.js */
   &--open {
