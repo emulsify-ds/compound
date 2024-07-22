@@ -1,8 +1,8 @@
-import spacingTwig from './spacing.twig';
-import spacingData from './spacing.yml';
+import spacingTwig from "./spacing.twig";
+import spacingData from "./spacing.yml";
 
 export default {
-  title: 'Base/Spacing',
+  title: "Base/Spacing",
 };
 
 export const Spacing = () => spacingTwig(spacingData);

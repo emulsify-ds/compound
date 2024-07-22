@@ -1,23 +1,23 @@
-import accordionTwig from './accordion.twig';
+import accordionTwig from "./accordion.twig";
 
-import accordionData from './accordion.yml';
+import accordionData from "./accordion.yml";
 
-import './accordion';
+import "./accordion";
 
 /**
  * Storybook Definition.
  */
 export default {
-  title: 'Molecules/Accordion',
+  title: "Molecules/Accordion",
   argTypes: {
     heading: {
-      name: 'Heading',
-      type: 'string',
+      name: "Heading",
+      type: "string",
       defaultValue: accordionData.accordion__item__heading,
     },
     content: {
-      name: 'Content',
-      type: 'string',
+      name: "Content",
+      type: "string",
       defaultValue: accordionData.accordion__item__content,
     },
   },

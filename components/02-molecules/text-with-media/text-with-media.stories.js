@@ -1,27 +1,27 @@
-import textWithMediaTwig from './text-with-media.twig';
+import textWithMediaTwig from "./text-with-media.twig";
 
-import textWithMediaData from './text-with-media.yml';
+import textWithMediaData from "./text-with-media.yml";
 
 /**
  * Storybook Definition.
  */
 export default {
-  title: 'Molecules/Text With Media',
+  title: "Molecules/Text With Media",
   argTypes: {
     position: {
-      name: 'Positioning',
-      type: 'select',
-      options: ['left', 'right'],
-      defaultValue: 'left',
+      name: "Positioning",
+      type: "select",
+      options: ["left", "right"],
+      defaultValue: "left",
     },
     textWithMediaContent: {
-      name: 'Text With Media Content (optional)',
-      type: 'string',
+      name: "Text With Media Content (optional)",
+      type: "string",
       defaultValue: textWithMediaData.text_with_media__content,
     },
     textWithMediaGroup: {
-      name: 'Text With Media Group',
-      type: 'string',
+      name: "Text With Media Group",
+      type: "string",
       defaultValue: textWithMediaData.text_with_media__group,
     },
   },

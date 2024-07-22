@@ -1,28 +1,28 @@
-import '../../02-molecules/menus/main-menu/main-menu';
+import "../../02-molecules/menus/main-menu/main-menu";
 
-import articleTwig from './article.twig';
+import articleTwig from "./article.twig";
 
-import mainMenuData from '../../02-molecules/menus/main-menu/main-menu.yml';
-import breadcrumbData from '../../02-molecules/menus/breadcrumbs/breadcrumbs.yml';
-import socialMenuData from '../../02-molecules/menus/social-menu/social-menu.yml';
-import footerMenuData from '../../02-molecules/menus/inline/inline-menu.yml';
+import mainMenuData from "../../02-molecules/menus/main-menu/main-menu.yml";
+import breadcrumbData from "../../02-molecules/menus/breadcrumbs/breadcrumbs.yml";
+import socialMenuData from "../../02-molecules/menus/social-menu/social-menu.yml";
+import footerMenuData from "../../02-molecules/menus/inline/inline-menu.yml";
 
 /**
  * Storybook Definition.
  */
 export default {
-  title: 'Pages/Content Types',
+  title: "Pages/Content Types",
   parameters: {
-    layout: 'fullscreen',
+    layout: "fullscreen",
   },
 };
 
 export const article = () =>
   articleTwig({
-    page_layout_modifier: 'contained',
+    page_layout_modifier: "contained",
     ...mainMenuData,
     ...breadcrumbData,
     ...socialMenuData,
     ...footerMenuData,
-    card__link__text: 'Click here',
+    card__link__text: "Click here",
   });

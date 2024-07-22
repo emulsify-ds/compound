@@ -1,17 +1,17 @@
-import tooltip from './tooltip.twig';
-import tooltipData from './tooltip.yml';
-import './tooltip';
+import tooltip from "./tooltip.twig";
+import tooltipData from "./tooltip.yml";
+import "./tooltip";
 
 /**
  * Storybook Definition.
  */
 export default {
-  title: 'Atoms/Tooltip',
+  title: "Atoms/Tooltip",
   argTypes: {
     direction: {
-      name: 'Direction',
-      options: ['top', 'right', 'bottom', 'left'],
-      type: 'select',
+      name: "Direction",
+      options: ["top", "right", "bottom", "left"],
+      type: "select",
       defaultValue: tooltipData.tooltip__direction,
     },
   },

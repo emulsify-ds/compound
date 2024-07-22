@@ -1,13 +1,13 @@
-import grid from './grid.twig';
+import grid from "./grid.twig";
 
-import gridData from './grid.yml';
+import gridData from "./grid.yml";
 // import gridCardData from './grid-cards.yml';
 // import gridCtaData from './grid-ctas.yml';
 
 /**
  * Storybook Definition.
  */
-export default { title: 'Organisms/Grids' };
+export default { title: "Organisms/Grids" };
 
 export const defaultGrid = () => grid(gridData);
 
