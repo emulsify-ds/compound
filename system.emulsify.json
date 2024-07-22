@@ -180,7 +180,7 @@
         {
           "name": "cta",
           "structure": "molecules",
-          "dependency": ["buttons", "text", "links",]
+          "dependency": ["buttons", "text", "links"]
         },
         {
           "name": "logo",
