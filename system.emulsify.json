@@ -83,6 +83,30 @@
           "path": "./components/style.scss",
           "destinationPath": "./components/style.scss",
           "description": "Primary style scss file"
+        },
+        {
+          "name": "base",
+          "path": "./components/base/base.scss",
+          "destinationPath": "./components/base/base.scss",
+          "description": "Aggregated base file"
+        },
+        {
+          "name": "atoms",
+          "path": "./components/atoms/atoms.scss",
+          "destinationPath": "./components/atoms/atoms.scss",
+          "description": "Aggregated atoms file"
+        },
+        {
+          "name": "molecules",
+          "path": "./components/molecules/molecules.scss",
+          "destinationPath": "./components/molecules/molecules.scss",
+          "description": "Aggregated molecules file"
+        },
+        {
+          "name": "organisms",
+          "path": "./components/organisms/organisms.scss",
+          "destinationPath": "./components/organisms/organisms.scss",
+          "description": "Aggregated organisms file"
         }
       ],
       "components": [
