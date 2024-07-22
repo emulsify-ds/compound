@@ -5,31 +5,33 @@
 
 .header {
   margin-bottom: $space-quadruple;
+}
 
-  &__inner {
-    @include wrapper;
+.header__inner {
+  @include wrapper;
 
+  & {
     display: flex;
     flex-flow: column nowrap;
   }
+}
 
-  &__primary {
-    @include breakpoint("medium") {
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: space-between;
-      padding: $space 0;
-    }
+.header__primary {
+  @include breakpoint("medium") {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: $space 0;
   }
+}
 
-  &__branding {
-    max-width: 190px;
-    padding: 1rem 0;
+.header__branding {
+  max-width: 190px;
+  padding: 1rem 0;
 
-    @include breakpoint("medium") {
-      margin-right: $space;
-      max-width: 300px;
-      padding: 0;
-    }
+  @include breakpoint("medium") {
+    margin-right: $space;
+    max-width: 300px;
+    padding: 0;
   }
 }

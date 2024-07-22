@@ -4,13 +4,17 @@
 ul {
   @include list-reset;
 
-  list-style-type: disc;
+  & {
+    list-style-type: disc;
+  }
 }
 
 ol {
   @include list-reset;
 
-  list-style-type: decimal;
+  & {
+    list-style-type: decimal;
+  }
 }
 
 .text-field {

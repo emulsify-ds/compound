@@ -1,8 +1,8 @@
 Drupal.behaviors.tabs = {
   attach(context) {
-    const el = context.querySelectorAll('.tabs');
-    const tabNavigationLinks = context.querySelectorAll('.tabs__link');
-    const tabContentContainers = context.querySelectorAll('.tabs__tab');
+    const el = context.querySelectorAll(".tabs");
+    const tabNavigationLinks = context.querySelectorAll(".tabs__link");
+    const tabContentContainers = context.querySelectorAll(".tabs__tab");
     let activeIndex = 0;
 
     /**
@@ -17,10 +17,10 @@ Drupal.behaviors.tabs = {
         index >= 0 &&
         index <= tabNavigationLinks.length
       ) {
-        tabNavigationLinks[Number(activeIndex)].classList.remove('is-active');
-        tabNavigationLinks[Number(index)].classList.add('is-active');
-        tabContentContainers[Number(activeIndex)].classList.remove('is-active');
-        tabContentContainers[Number(index)].classList.add('is-active');
+        tabNavigationLinks[Number(activeIndex)].classList.remove("is-active");
+        tabNavigationLinks[Number(index)].classList.add("is-active");
+        tabContentContainers[Number(activeIndex)].classList.remove("is-active");
+        tabContentContainers[Number(index)].classList.add("is-active");
         activeIndex = index;
       }
     }
@@ -34,7 +34,7 @@ Drupal.behaviors.tabs = {
      * @param {number} index The index of that link
      */
     function handleClick(link, index) {
-      link.addEventListener('click', (e) => {
+      link.addEventListener("click", (e) => {
         e.preventDefault();
         goToTab(index);
       });
@@ -48,7 +48,7 @@ Drupal.behaviors.tabs = {
      *   Returns nothing.
      */
     for (let e = 0; e < el.length; e += 1) {
-      el[Number(e)].classList.remove('no-js');
+      el[Number(e)].classList.remove("no-js");
     }
 
     for (let i = 0; i < tabNavigationLinks.length; i += 1) {

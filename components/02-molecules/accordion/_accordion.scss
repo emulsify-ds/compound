@@ -10,7 +10,9 @@
 .accordion__controls {
   @include list-reset;
 
-  display: flex;
+  & {
+    display: flex;
+  }
 }
 
 .accordion__controls__item {

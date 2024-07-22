@@ -1,12 +1,12 @@
-import card from './card.twig';
+import card from "./card.twig";
 
-import cardData from './card.yml';
-import cardBgData from './card-bg.yml';
+import cardData from "./card.yml";
+import cardBgData from "./card-bg.yml";
 
 /**
  * Storybook Definition.
  */
-export default { title: 'Molecules/Cards' };
+export default { title: "Molecules/Cards" };
 
 export const cardExample = () => card(cardData);
 

@@ -1,6 +1,6 @@
 Drupal.behaviors.tooltip = {
   attach(context) {
-    const tooltips = context.querySelectorAll('.js-tooltip');
+    const tooltips = context.querySelectorAll(".js-tooltip");
 
     /**
      * clickOutside
@@ -10,9 +10,9 @@ Drupal.behaviors.tooltip = {
      * @param {HTMLElement} tip The tooltip content to close
      */
     function clickOutside(tooltip, tip) {
-      document.addEventListener('click', (event) => {
+      document.addEventListener("click", (event) => {
         if (!tooltip.contains(event.target)) {
-          tip.classList.remove('tooltip__content--visible');
+          tip.classList.remove("tooltip__content--visible");
         }
       });
     }
@@ -25,15 +25,15 @@ Drupal.behaviors.tooltip = {
      * @param {HTMLElement} tooltipButton The button controlling display
      */
     function toggleTip(tooltip, tooltipButton) {
-      const tip = tooltip.querySelector('.js-tooltip__content');
-      const hasTip = tip.classList.contains('tooltip__content--visible');
+      const tip = tooltip.querySelector(".js-tooltip__content");
+      const hasTip = tip.classList.contains("tooltip__content--visible");
 
       if (!hasTip) {
-        tooltipButton.setAttribute('aria-expanded', 'true');
-        tip.classList.add('tooltip__content--visible');
+        tooltipButton.setAttribute("aria-expanded", "true");
+        tip.classList.add("tooltip__content--visible");
       } else {
-        tooltipButton.setAttribute('aria-expanded', 'false');
-        tip.classList.remove('tooltip__content--visible');
+        tooltipButton.setAttribute("aria-expanded", "false");
+        tip.classList.remove("tooltip__content--visible");
       }
 
       clickOutside(tooltip, tip);
@@ -46,14 +46,14 @@ Drupal.behaviors.tooltip = {
      *  to each of the tooltips.
      */
     tooltips.forEach((tip) => {
-      const tipButton = tip.querySelector('.tooltip__icon');
-      tipButton.addEventListener('click', () => {
+      const tipButton = tip.querySelector(".tooltip__icon");
+      tipButton.addEventListener("click", () => {
         toggleTip(tip, tipButton);
       });
 
       // Keyboard controls for closing the modal
-      tipButton.addEventListener('keyup', (e) => {
-        if (e.key === 'Escape') {
+      tipButton.addEventListener("keyup", (e) => {
+        if (e.key === "Escape") {
           toggleTip(tip, tipButton);
         }
       });

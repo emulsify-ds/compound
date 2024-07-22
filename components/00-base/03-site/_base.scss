@@ -21,7 +21,9 @@ body {
 .main {
   @include wrapper;
 
-  display: block; /* Fix for IE weirdness */
+  & {
+    display: block;
+  }
 }
 
 .visually-hidden {
