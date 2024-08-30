@@ -1,2 +1,2 @@
-// Import additional stylesheets just for storybook.
+// Import project stylesheets just for Storybook.
 import '../../../dist/css/style.css';
