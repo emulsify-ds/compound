@@ -47,7 +47,7 @@
     "webpack": "webpack --watch --config node_modules/@emulsify/core/config/webpack/webpack.dev.js"
   },
   "dependencies": {
-    "@emulsify/core": "github:emulsify-ds/emulsify-core#storybook-8",
+    "@emulsify/core": "^2.0.0",
     "@percy/cli": "^1.28.2",
     "@percy/storybook": "^5.0.1"
   },
