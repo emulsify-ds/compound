@@ -48,8 +48,8 @@
   },
   "dependencies": {
     "@emulsify/core": "^2.0.0",
-    "@percy/cli": "^1.28.2",
-    "@percy/storybook": "^5.0.1"
+    "@percy/cli": "^1.29.3",
+    "@percy/storybook": "^6.0.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.4.1",
@@ -57,12 +57,12 @@
     "@semantic-release/changelog": "^6.0.2",
     "@semantic-release/commit-analyzer": "^13.0.0",
     "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^10.1.7",
+    "@semantic-release/github": "^10.3.0",
     "@semantic-release/release-notes-generator": "^14.0.0",
     "@storybook/storybook-deployer": "2.8.16",
     "husky": "^9.1.5",
-    "lint-staged": "^15.2.9",
-    "semantic-release": "^23.0.4"
+    "lint-staged": "^15.2.10",
+    "semantic-release": "^24.1.0"
   },
   "lint-staged": {
     "components/**/*.js": [
